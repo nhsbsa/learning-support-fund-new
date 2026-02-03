@@ -1,0 +1,70 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Additional costs for your normal daily journey
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="single-return" method="POST">
+
+
+
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="placement-additional-costs">
+					<h1 class="nhsuk-heading-l">How much are you claiming for this taxi journey?</h1>
+				</label>
+
+				<dl class="nhsuk-summary-list">
+
+					<!-- Travelling from -->
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+						  Travelling from
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+						  Stephenson House, NE2 1AW
+						</dd>
+					</div>
+
+					<!-- Travelling to -->
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+						  Travelling to
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+						  Alnwick Hospital, NE66 2NS
+						</dd>
+					</div>
+
+				</dl>
+
+				<div class="nhsuk-inset-text">
+				  <span class="nhsuk-u-visually-hidden">Information: </span>
+				  <p>This is the cost of public transport that Disabled Students' Allowance did not reimburse you. You can find it on your DSA2 letter.</p>
+				</div>
+
+				<label class="nhsuk-label" for="example">
+					Cost in pounds
+				</label>
+				<div class="nhsuk-input__prefix" aria-hidden="true">£</div>
+				<input class="nhsuk-input__prefix-input nhsuk-input nhsuk-input--width-5" id="dsa-taxi-cost" name="dsa-taxi-cost" type="text">
+			</div>
+
+			<button class="nhsuk-button" type="submit">Continue</button><br>
+			<p><a href="../TDAE-task-list">Cancel</a></p>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}
