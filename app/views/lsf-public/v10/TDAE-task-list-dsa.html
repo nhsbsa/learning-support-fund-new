@@ -1,176 +1,176 @@
 {% extends 'layout-public.html' %}
 
 {% block pageTitle %}
-  Task list
+Task list
 {% endblock %}
 
 {% block content %}
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
 
-      <h1 class="nhsuk-heading-l">Travel and Dual Accommodation Expenses task list</h1>
+    <h1 class="nhsuk-heading-l">Travel and Dual Accommodation Expenses task list</h1>
 
-      <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are incomplete tasks</h2>
+    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are incomplete tasks</h2>
       <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed <span id="completedCount">0</span> of <span id="sectionLength">5</span> sections.</p>
 
-      <ol class="app-task-list">
-        <li class="section-item">
-          <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">1. </span> Claim overview
-          </h2>
-          <ul class="app-task-list__items">
-            <li class="app-task-list__item nhsuk-u-clear">
-              <span class="app-task-list__task-name">
-                <a href="TDAE-eligibility-cya">Claim overview</a>
-              </span>
-              <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
-            </li>
-          </ul>
-        </li>
+    <h2 class="nhsuk-heading-m">1. Claim overview</h2>
+    <ul class="nhsuk-task-list">
+      <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
+        <div class="nhsuk-task-list__name-and-hint">
+          <a class="nhsuk-link nhsuk-task-list__link" href="TDAE-eligibility-cya"
+            aria-describedby="claim-overview-status">
+            Claim overview
+          </a>
+        </div>
+        <div class="nhsuk-task-list__status nhsuk-task-list__status--completed" id="claim-overview-status">
+          Completed
+        </div>
+      </li>
+    </ul>
 
-        <li class="section-item">
-          <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">2. </span> Travel costs
-          </h2>
-          <ul class="app-task-list__items">
-            <li class="app-task-list__item nhsuk-u-clear">
-              <span class="app-task-list__task-name">
-                {% if data['dsa-details'] === 'completed' %}
-                  <a href="TDAE-dsa-taxi/cya-multiple">Taxi details and evidence</a>
-                {% else %}
-                  <a href="TDAE-dsa-taxi/pause">Taxi details and evidence</a>
-                {% endif %}
-              </span>
-              {% if data['dsa-details'] === 'completed' %}
-                <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
-              {% else %}
-                <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
-              {% endif %}
-            </li>
-          </ul>
-        </li>
+    <h2 class="nhsuk-heading-m">2. Travel costs</h2>
+    <ul class="nhsuk-task-list">
+      <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
+        <div class="nhsuk-task-list__name-and-hint">
+          <a class="nhsuk-link nhsuk-task-list__link" href="{% if data['dsa-details'] === 'completed' %}
+                 TDAE-dsa-taxi/cya-multiple
+               {% else %}
+                 TDAE-dsa-taxi/pause
+               {% endif %}" aria-describedby="taxi-status">
+            Taxi details and evidence
+          </a>
+        </div>
 
-        <li class="section-item">
-          <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">
-                3.
-            </span> Placement timesheets
-          </h2>
-          <ul class="app-task-list__items">
-            <li class="app-task-list__item nhsuk-u-clear">
-              <span class="app-task-list__task-name">
-                  <a href="TDAE-timesheets/timesheets-evidence-overview-optional">Placement timesheets evidence (optional)</a>
-              </span>
-              {% if data['timesheets-task'] === 'completed' %}
-                <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
-              {% elif data['timesheets-task'] === 'in-progress' %}
-                <strong class="nhsuk-tag nhsuk-tag--blue app-task-list__tag task-status">Task started</strong>
-              {% else %}
-                <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
-              {% endif %}
-            </li>
-          </ul>
-        </li>
+        {% if data['dsa-details'] === 'completed' %}
+        <div class="nhsuk-task-list__status nhsuk-task-list__status--completed" id="taxi-status">
+          Completed
+        </div>
+        {% else %}
+        <div class="nhsuk-task-list__status" id="taxi-status">
+          <strong class="nhsuk-tag nhsuk-tag--white">Not started</strong>
+        </div>
+        {% endif %}
+      </li>
+    </ul>
 
-        <li class="section-item">
-          <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">4.</span> Submit claim
-          </h2>
-          <ul class="app-task-list__items">
-            <li class="app-task-list__item nhsuk-u-clear">
-              <span class="app-task-list__task-name">
-                {% if data['dsa-details'] === 'completed'
-                %}
-                  <a class="app-task-list__task-name" href="TDAE-placement-cost-summary-dsa">Submit your claim</a>
-                {% else %}
-                  <span class="app-task-list__task-name">Submit your claim</span>
-                {% endif %}
-              </span>
-                {% if data['submit-claim'] === 'completed' %}
-                  <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
-                {% elif data['dsa-details'] === 'completed' %}
-                  <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not Started</strong>
-                {% else %}
-                  <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag task-status">Cannot start yet</strong>
-                {% endif %}
-            </li>
-          </ul>
-        </li>
-      </ol>
+    <h2 class="nhsuk-heading-m">3. Placement timesheets</h2>
+    <ul class="nhsuk-task-list">
+      <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
+        <div class="nhsuk-task-list__name-and-hint">
+          <a class="nhsuk-link nhsuk-task-list__link" href="TDAE-timesheets/timesheets-evidence-overview-optional"
+            aria-describedby="timesheets-status">
+            Placement timesheets evidence (optional)
+          </a>
+        </div>
 
-      <p><a href="TDAE-returning-student/academic-year-details">Save and come back later</a></p>
+        {% if data['timesheets-task'] === 'completed' %}
+        <div class="nhsuk-task-list__status nhsuk-task-list__status--completed" id="timesheets-status">
+          Completed
+        </div>
+        {% elif data['timesheets-task'] === 'in-progress' %}
+        <div class="nhsuk-task-list__status" id="timesheets-status">
+          <strong class="nhsuk-tag nhsuk-tag--blue">Task started</strong>
+        </div>
+        {% else %}
+        <div class="nhsuk-task-list__status" id="timesheets-status">
+          <strong class="nhsuk-tag nhsuk-tag--white">Not started</strong>
+        </div>
+        {% endif %}
+      </li>
+    </ul>
 
-      {% if data['submit-claim'] != 'completed' %}
-        <h2 class="nhsuk-heading-m">Delete claim</h2>
-        <p>If you've made a mistake or no longer want to submit this claim, you can <a href="TDAE-signpost/TDAE-delete-check">delete this claim</a>.</p>
-      {% endif %}
+    <h2 class="nhsuk-heading-m">4. Submit claim</h2>
+    <ul class="nhsuk-task-list">
+      <li class="nhsuk-task-list__item
+      {% if data['dsa-details'] === 'completed' %}
+        nhsuk-task-list__item--with-link
+      {% endif %}">
+        <div class="nhsuk-task-list__name-and-hint">
+          {% if data['dsa-details'] === 'completed' %}
+          <a class="nhsuk-link nhsuk-task-list__link" href="TDAE-placement-cost-summary-dsa"
+            aria-describedby="submit-status">
+            Submit your claim
+          </a>
+          {% else %}
+          <div>Submit your claim</div>
+          {% endif %}
+        </div>
 
-    </div>
+        {% if data['submit-claim'] === 'completed' %}
+        <div class="nhsuk-task-list__status nhsuk-task-list__status--completed" id="submit-status">
+          Completed
+        </div>
+        {% elif data['dsa-details'] === 'completed' %}
+        <div class="nhsuk-task-list__status" id="submit-status">
+          <strong class="nhsuk-tag nhsuk-tag--white">Not started</strong>
+        </div>
+        {% else %}
+        <div class="nhsuk-task-list__status nhsuk-task-list__status--cannot-start-yet" id="submit-status">
+          Cannot start yet
+        </div>
+        {% endif %}
+      </li>
+    </ul>
+
+    <p><a href="TDAE-returning-student/academic-year-details">Save and come back later</a></p>
+
+    {% if data['submit-claim'] != 'completed' %}
+    <h2 class="nhsuk-heading-m">Delete claim</h2>
+    <p>If you've made a mistake or no longer want to submit this claim, you can <a
+        href="TDAE-signpost/TDAE-delete-check">delete this claim</a>.</p>
+    {% endif %}
+
   </div>
+</div>
 {% endblock %}
 {% block pageScripts %}
 <script>
-    // To get the counter to work, you need two things:
-    // 1. This class on your section <li class="section-item">
-    // 2. This class on your status tag <strong class="task-status">
+  // Get all section headings
+  const allHeadings = document.querySelectorAll('h2.nhsuk-heading-m');
 
-    // Get all elements with the class 'container'
-    const containers = document.querySelectorAll('.section-item');
+  // Only keep headings that are followed by a task list
+  const taskSections = Array.from(allHeadings).filter(heading => {
+    const next = heading.nextElementSibling;
+    return next && next.classList.contains('nhsuk-task-list');
+  });
 
-    // Create an object to store container IDs and their values
-    const containerValues = {};
+  const completedCountEl = document.getElementById('completedCount');
+  const totalCountEl = document.getElementById('sectionLength');
 
-    // Initialize all container IDs with a value of 1
-    containers.forEach((container, index) => {
-      containerValues[index] = 1;
-    });
+  let completedSections = 0;
 
-    // Function to search within each 'container' element
-    function searchWithinContainer(container, index) {
-      // Find elements with class 'searchable' within the 'container'
-      const searchables = container.querySelectorAll('.task-status');
+  taskSections.forEach(section => {
+    // Each valid section is followed by its task list
+    const taskList = section.nextElementSibling;
 
-      // Log the content of each 'searchable' element within the 'container'
-      searchables.forEach((searchable) => {
-        console.log(searchable.textContent);
-        if (searchable.textContent !== 'Completed') {
-          console.log('Not all tasks in this container are completed');
-          // Set the value of the container ID to 0 if a task is not completed
-          containerValues[index] = 0;
-        }
-      });
-    }
-
-    // Search each container
-    containers.forEach((container, index) => {
-      searchWithinContainer(container, index);
-    });
-
-    var completedSectionCount = document.getElementById('completedCount');
-    var totalSectionCount = document.getElementById('sectionLength');
-
-    // Calculate the completed section count
-    var completedSections = Object.values(containerValues).reduce(
-      (total, value) => total + value,
-      0
+    // If any task in this list is marked as completed,
+    // we treat the whole section as completed
+    const completedStatus = taskList.querySelector(
+      '.nhsuk-task-list__status--completed'
     );
-    console.log('completed sections: ' + completedSections)
 
-    completedSectionCount.innerHTML = completedSections;
-    totalSectionCount.innerHTML = containers.length;
-  </script>
-  <script>
-      // JavaScript code
-      var currentDateElement = document.getElementById("currentDate");
+    if (completedStatus) {
+      completedSections++;
+    }
+  });
 
-      // Get the current date
-      var currentDate = new Date();
+  // Update the UI counters
+  completedCountEl.textContent = completedSections;
+  totalCountEl.textContent = taskSections.length;
+</script>
 
-      // Format the date as desired
-      var options = { day: 'numeric', month: 'long', year: 'numeric' };
-      var formattedDate = currentDate.toLocaleDateString(undefined, options);
+<script>
+  // JavaScript code
+  var currentDateElement = document.getElementById("currentDate");
 
-      // Set the formatted date as the content of the element
-      currentDateElement.textContent = formattedDate;
-    </script>
+  // Get the current date
+  var currentDate = new Date();
+
+  // Format the date as desired
+  var options = { day: 'numeric', month: 'long', year: 'numeric' };
+  var formattedDate = currentDate.toLocaleDateString(undefined, options);
+
+  // Set the formatted date as the content of the element
+  currentDateElement.textContent = formattedDate;
+</script>
 {% endblock %}

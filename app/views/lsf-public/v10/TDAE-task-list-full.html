@@ -1,380 +1,213 @@
 {% extends 'layout-public.html' %}
 
 {% block pageTitle %}
-  Task list
+Task list
 {% endblock %}
 
 {% block content %}
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
 
-      {% if data['submit-claim'] == 'completed' %}
-        {{ backLink({
-        "href": "TDAE-returning-student/TDAE-active-claims",
-        "text": "Go back"
-        }) }}
-      {% endif %}
+    {% if data['submit-claim'] == 'completed' %}
+    {{ backLink({
+    "href": "TDAE-returning-student/TDAE-active-claims",
+    "text": "Go back"
+    }) }}
+    {% endif %}
 
-      {% if data['submit-claim'] != 'completed' %}
-        <h1 class="nhsuk-heading-l">Travel and Dual Accommodation Expenses task list</h1>
-      {% else %}
-        <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-9">Travel and Dual Accommodation Expenses task list</h1>
-      {% endif %}
+    <h1 class="nhsuk-heading-l">Travel and Dual Accommodation Expenses task list</h1>
 
-      {% if data['change'] == 'yes' %}
-        <div class="nhsuk-warning-callout">
-          <h2 class="nhsuk-warning-callout__label">
-            <span role="text">
-              <span class="nhsuk-u-visually-hidden">Important: </span>
-              University feedback
-            </span>
-          </h2>
-          <p class="nhsbsa-overflow-wrap" >Your Alnwick placement address postcode is incorrect it should be NE66 2NT.</p>
+    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">
+      Claim tasks incomplete
+    </h2>
+
+    <!-- JS will calculate both numbers -->
+    <p class="nhsuk-body nhsuk-u-margin-bottom-7">
+      You have completed <span id="completedCount">0</span> of
+      <span id="sectionLength">0</span> sections.
+    </p>
+
+    <!-- ========================= -->
+    <!-- 1. CLAIM OVERVIEW -->
+    <!-- ========================= -->
+    <h2 class="nhsuk-heading-m">1. Claim overview</h2>
+
+    <ul class="nhsuk-task-list section">
+      <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
+        <div class="nhsuk-task-list__name-and-hint">
+          <a class="nhsuk-task-list__link" href="TDAE-eligibility-cya">
+            Claim overview
+          </a>
         </div>
 
-        <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-top-0">
-                <summary class="nhsuk-details__summary">
-                  <span class="nhsuk-details__summary-text">
-                    Claim notes and history
-                  </span>
-                </summary>
-                <div class="nhsuk-details__text">
-                  <table class="nhsuk-table-responsive">
-                    <thead role="rowgroup" class="nhsuk-table__head">
-                      <tr role="row">
-                        <th role="columnheader" class="" scope="col">From</th>
-                        <th role="columnheader" class="" scope="col">Date</th>
-                        <th role="columnheader" class="" scope="col">Notes</th>
-                      </tr>
-                    </thead>
-                    <tbody class="nhsuk-table__body">
-                      <tr role="row" class="nhsuk-table__row">
-                        <td class="nhsuk-table__cell" ><span>Joe</span>
-
-                                  <span> (university)</span>
-
-                        </td>
-                        <td class="nhsuk-table__cell">21 March 2025 at 09:54am</td>
-                        <td class="nhsuk-table__cell ">
-                          <strong>University checks submitted</strong><BR>
-                          <span class="wordbreak">Your Alnwick placement address postcode is incorrect it should be NE66 2NT.</span>
-                        </td>
-                      </tr>
-                    </tbody>
-                    <tbody class="nhsuk-table__body">
-                      <tr role="row" class="nhsuk-table__row">
-                        <td class="nhsuk-table__cell" ><span>Joe</span>
-                                  <span>Hutchinson</span>
-
-
-                        </td>
-                        <td class="nhsuk-table__cell">21 March 2025 at 09:21am</td>
-                        <td class="nhsuk-table__cell ">
-                          <strong>Claim submitted</strong><BR>
-                          <span class="wordbreak"></span>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-        </details>
-      {% endif %}
-
-      {% if data['submit-claim'] == 'completed' %}
-      <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-top-0">
-        <summary class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">
-            Claim notes and history
-          </span>
-        </summary>
-        <div class="nhsuk-details__text">
-          <table class="nhsuk-table-responsive">
-            <thead role="rowgroup" class="nhsuk-table__head">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col">
-                  From
-                </th>
-                <th role="columnheader" class="" scope="col">
-                  Date
-                </th>
-                <th role="columnheader" class="" scope="col">
-                  Notes
-                </th>
-              </tr>
-            </thead>
-            <tbody class="nhsuk-table__body">
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">{% if data['name'] %}
-                {{ data['name'] }}
-                {% else %}
-                Joe Bloggs
-                {% endif %}</td>
-                <td class="nhsuk-table__cell">3 September 2023</td>
-                <td class="nhsuk-table__cell "><strong>Claim submitted</strong></td>
-              </tr>
-            </tbody>
-          </table>
+        {% if data['change'] == 'yes' %}
+        <div class="nhsuk-task-list__status">
+          <strong class="nhsuk-tag nhsuk-tag--yellow task-status">
+            Action needed
+          </strong>
         </div>
-      </details>
-      {% endif %}
+        {% else %}
+        <div class="nhsuk-task-list__status nhsuk-task-list__status--completed">
+          <span class="task-status">Completed</span>
+        </div>
+        {% endif %}
+      </li>
+    </ul>
 
-      {% if data['submit-claim'] != 'completed' %}
-        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Claim tasks incomplete</h2>
-        <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed <span id="completedCount">0</span> of <span id="sectionLength">5</span> sections.</p>
-      {% endif %}
+    <!-- ========================= -->
+    <!-- 2. TRAVEL COSTS -->
+    <!-- ========================= -->
+    <h2 class="nhsuk-heading-m">2. Travel costs</h2>
 
-      <ol class="app-task-list">
-        <li class="section-item">
-          <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">1. </span> Claim overview
-          </h2>
-          <ul class="app-task-list__items">
-            <li class="app-task-list__item nhsuk-u-clear">
-              <span class="app-task-list__task-name">
-                <a href="TDAE-eligibility-cya?change=yes">Claim overview</a>
-              </span>
-              {% if data['change'] == 'yes' %}
-                <strong class="nhsuk-tag nhsuk-tag--yellow app-task-list__tag task-status">Action needed</strong>
-              {% else %}
-                <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
-              {% endif %}
-            </li>
-          </ul>
-        </li>
-          <li class="section-item">
-            <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">2. </span> Travel costs
-            </h2>
-            <ul class="app-task-list__items">
-              <li class="app-task-list__item nhsuk-u-clear">
-                <span class="app-task-list__task-name">
-                    <a href="TDAE-normal-summary-cya">University travel details</a>
-                </span>
-                  <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
-              </li>
-              <li class="app-task-list__item nhsuk-u-clear">
-                <span class="app-task-list__task-name">
-                    <a href="TDAE-placement-same-start-date">Placement travel details</a>
-                </span>
-                  <strong class="nhsuk-tag nhsuk-tag--blue app-task-list__tag task-status">Task started</strong>
-              </li>
-              <li class="app-task-list__item nhsuk-u-clear">
-                <span class="app-task-list__task-name">
-                    <a href="TDAE-normal-summary-cya">Placement travel evidence</a>
-                </span>
-                  <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
-              </li>
-              <li class="app-task-list__item nhsuk-u-clear">
-                <span class="app-task-list__task-name">
-                  {% if data['taxi-details'] == 'in-progress' %}
-                    <a href="TDAE-taxi/check">Taxi details and evidence</a>
-                  {% else %}
-                    <a href="TDAE-taxi/pause">Taxi details and evidence</a>
-                  {% endif %}
-                </span>
-                {% if data['taxi-details'] == 'in-progress' %}
-                  <strong class="nhsuk-tag nhsuk-tag--blue app-task-list__tag task-status">Task started</strong>
-                {% else %}
-                  <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
-                {% endif %}
-              </li>
-              <li class="app-task-list__item nhsuk-u-clear">
-                <span class="app-task-list__task-name">
-                  {% if data['hire-car'] == 'in-progress' %}
-                    <a href="TDAE-hire-car-check">Hire car details and evidence</a>
-                  {% else %}
-                    <a href="TDAE-hire-car-pause">Hire car details and evidence</a>
-                  {% endif %}
-                </span>
-                {% if data['hire-car'] == 'in-progress' %}
-                  <strong class="nhsuk-tag nhsuk-tag--blue app-task-list__tag task-status">Task started</strong>
-                {% else %}
-                  <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
-                {% endif %}
-              </li>
-            </ul>
-          </li>
+    <ul class="nhsuk-task-list section">
+      <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
+        <div class="nhsuk-task-list__name-and-hint">
+          <a class="nhsuk-task-list__link" href="TDAE-normal-summary-cya">
+            University travel details
+          </a>
+        </div>
+        <div class="nhsuk-task-list__status">
+          <strong class="nhsuk-tag nhsuk-tag--white task-status">
+            Not started
+          </strong>
+        </div>
+      </li>
 
-          <li class="section-item">
-            <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">
-                  3.
-              </span> Accommodation costs
-            </h2>
-            <ul class="app-task-list__items">
-              <li class="app-task-list__item nhsuk-u-clear">
-                <span class="app-task-list__task-name">
-                  {% if data['accommodation-details'] == 'in-progress' %}
-                    <a href="TDAE-accommodation-check">Accommodation details and evidence</a>
-                  {% else %}
-                    <a href="TDAE-accommodation-term-time-costs">Accommodation details and evidence</a>
-                  {% endif %}
-                </span>
-                {% if data['accommodation-details'] == 'in-progress' %}
-                  <strong class="nhsuk-tag nhsuk-tag--blue app-task-list__tag task-status">Task started</strong>
-                {% else %}
-                  <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
-                {% endif %}
-              </li>
-              <li class="app-task-list__item nhsuk-u-clear">
-                <span class="app-task-list__task-name">
-                  {% if data['accommodation-travel'] == 'in-progress' %}
-                    <a href="accommodation-journey/TDAE-accommodation-travel-check">Accommodation travel details</a>
-                  {% else %}
-                    <a href="accommodation-journey/TDAE-accommodation-journey-pause">Accommodation travel details</a>
-                  {% endif %}
-                </span>
-                {% if data['accommodation-travel'] == 'in-progress' %}
-                  <strong class="nhsuk-tag nhsuk-tag--blue app-task-list__tag task-status">Task started</strong>
-                {% else %}
-                  <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
-                {% endif %}
-              </li>
-            </ul>
-          </li>
+      <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
+        <div class="nhsuk-task-list__name-and-hint">
+          <a class="nhsuk-task-list__link" href="TDAE-placement-same-start-date">
+            Placement travel details
+          </a>
+        </div>
+        <div class="nhsuk-task-list__status">
+          <strong class="nhsuk-tag nhsuk-tag--blue task-status">
+            Task started
+          </strong>
+        </div>
+      </li>
+    </ul>
 
-          <li class="section-item">
-            <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">
-                  4.
-              </span> Overseas costs
-            </h2>
-            <ul class="app-task-list__items">
-              <li class="app-task-list__item nhsuk-u-clear">
-                <span class="app-task-list__task-name">
-                  {% if data['overseas-details'] === 'completed' %}
-                    <a href="TDAE-overseas/overseas-check">Overseas costs details and evidence</a>
-                  {% elif data['overseas-details'] === 'in-progress' %}
-                    {% if data['more-overseas-evidence'] === 'yes' %}
-                      <a href="TDAE-overseas/overseas-check">Overseas costs details and evidence</a>
-                    {% else %}
-                      <a href="TDAE-overseas/overseas-evidence-mini-cya">Overseas costs details and evidence</a>
-                    {% endif %}
-                  {% else %}
-                    <a href="TDAE-overseas/authorisation">Overseas costs details and evidence</a>
-                  {% endif %}
-                </span>
-                {% if data['overseas-details'] === 'completed' %}
-                  <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
-                {% elif data['overseas-details'] === 'in-progress' %}
-                  <strong class="nhsuk-tag nhsuk-tag--blue app-task-list__tag task-status">Task started</strong>
-                {% else %}
-                  <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
-                {% endif %}
-              </li>
-            </ul>
-          </li>
+    <!-- ========================= -->
+    <!-- 3. ACCOMMODATION COSTS -->
+    <!-- ========================= -->
+    <h2 class="nhsuk-heading-m">3. Accommodation costs</h2>
 
-          <li class="section-item">
-            <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">
-                  5.
-              </span> Placement timesheets
-            </h2>
-            <ul class="app-task-list__items">
-              <li class="app-task-list__item nhsuk-u-clear">
-                <span class="app-task-list__task-name">
-                    <a href="TDAE-timesheets/timesheets-evidence-overview-optional">Placement timesheets evidence (optional)</a>
-                </span>
-                {% if data['timesheets-task'] === 'completed' %}
-                  <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
-                {% elif data['timesheets-task'] === 'in-progress' %}
-                  <strong class="nhsuk-tag nhsuk-tag--blue app-task-list__tag task-status">Task started</strong>
-                {% else %}
-                  <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
-                {% endif %}
-              </li>
-            </ul>
-          </li>
+    <ul class="nhsuk-task-list section">
+      <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
+        <div class="nhsuk-task-list__name-and-hint">
+          <a class="nhsuk-task-list__link" href="TDAE-accommodation-term-time-costs">
+            Accommodation details and evidence
+          </a>
+        </div>
+        <div class="nhsuk-task-list__status">
+          <strong class="nhsuk-tag nhsuk-tag--white task-status">
+            Not started
+          </strong>
+        </div>
+      </li>
+    </ul>
 
-          <li class="section-item">
-            <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">
-                  6.
-              </span> Submit claim
-            </h2>
-            <ul class="app-task-list__items">
-              <li class="app-task-list__item nhsuk-u-clear">
-                <span class="app-task-list__task-name">
-                    <a class="app-task-list__task-name" href="TDAE-placement-cost-summary">Submit your claim</a>
-                </span>
-                    <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not Started</strong>
-              </li>
-            </ul>
-          </li>
-      </ol>
+    <!-- ========================= -->
+    <!-- 4. OVERSEAS COSTS -->
+    <!-- ========================= -->
+    <h2 class="nhsuk-heading-m">4. Overseas costs</h2>
 
-      <p><a href="TDAE-returning-student/academic-year-details">Save and come back later</a></p>
+    <ul class="nhsuk-task-list section">
+      <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
+        <div class="nhsuk-task-list__name-and-hint">
+          <a class="nhsuk-task-list__link" href="TDAE-overseas/authorisation">
+            Overseas costs details and evidence
+          </a>
+        </div>
+        <div class="nhsuk-task-list__status">
+          <strong class="nhsuk-tag nhsuk-tag--white task-status">
+            Not started
+          </strong>
+        </div>
+      </li>
+    </ul>
 
-      <h2 class="nhsuk-heading-m">Delete claim</h2>
-      <p>If you've made a mistake or no longer want to submit this claim, you can <a href="TDAE-signpost/TDAE-delete-check">delete this claim</a>.</p>
+    <!-- ========================= -->
+    <!-- 5. PLACEMENT TIMESHEETS -->
+    <!-- ========================= -->
+    <h2 class="nhsuk-heading-m">5. Placement timesheets</h2>
 
-    </div>
+    <ul class="nhsuk-task-list section">
+      <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
+        <div class="nhsuk-task-list__name-and-hint">
+          <a class="nhsuk-task-list__link" href="TDAE-timesheets/timesheets-evidence-overview-optional">
+            Placement timesheets evidence (optional)
+          </a>
+        </div>
+        <div class="nhsuk-task-list__status">
+          <strong class="nhsuk-tag nhsuk-tag--white task-status">
+            Not started
+          </strong>
+        </div>
+      </li>
+    </ul>
+
+    <!-- ========================= -->
+    <!-- 6. SUBMIT CLAIM -->
+    <!-- ========================= -->
+    <h2 class="nhsuk-heading-m">6. Submit claim</h2>
+
+    <ul class="nhsuk-task-list section">
+      <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
+        <div class="nhsuk-task-list__name-and-hint">
+          <a class="nhsuk-task-list__link" href="TDAE-placement-cost-summary">
+            Submit your claim
+          </a>
+        </div>
+        <div class="nhsuk-task-list__status">
+          <strong class="nhsuk-tag nhsuk-tag--white task-status">
+            Not started
+          </strong>
+        </div>
+      </li>
+    </ul>
+
+    <p>
+      <a href="TDAE-returning-student/academic-year-details">
+        Save and come back later
+      </a>
+    </p>
+
+    <h2 class="nhsuk-heading-m">Delete claim</h2>
+    <p>
+      If you've made a mistake or no longer want to submit this claim,
+      you can <a href="TDAE-signpost/TDAE-delete-check">delete this claim</a>.
+    </p>
+
   </div>
+</div>
 {% endblock %}
+
 {% block pageScripts %}
 <script>
-    // To get the counter to work, you need two things:
-    // 1. This class on your section <li class="section-item">
-    // 2. This class on your status tag <strong class="task-status">
+  // SECTION COUNTER (NHS TASK LIST VERSION)
+  //
+  // Rules:
+  // - Each `.nhsuk-task-list.section` = ONE section
+  // - A section is completed only if ALL `.task-status` values === "Completed"
 
-    // Get all elements with the class 'container'
-    const containers = document.querySelectorAll('.section-item');
+  const sections = document.querySelectorAll('.nhsuk-task-list.section');
 
-    // Create an object to store container IDs and their values
-    const containerValues = {};
+  let completedSections = 0;
 
-    // Initialize all container IDs with a value of 1
-    containers.forEach((container, index) => {
-      containerValues[index] = 1;
-    });
+  sections.forEach(section => {
+    const statuses = section.querySelectorAll('.task-status');
 
-    // Function to search within each 'container' element
-    function searchWithinContainer(container, index) {
-      // Find elements with class 'searchable' within the 'container'
-      const searchables = container.querySelectorAll('.task-status');
-
-      // Log the content of each 'searchable' element within the 'container'
-      searchables.forEach((searchable) => {
-        console.log(searchable.textContent);
-        if (searchable.textContent !== 'Completed') {
-          console.log('Not all tasks in this container are completed');
-          // Set the value of the container ID to 0 if a task is not completed
-          containerValues[index] = 0;
-        }
-      });
-    }
-
-    // Search each container
-    containers.forEach((container, index) => {
-      searchWithinContainer(container, index);
-    });
-
-    var completedSectionCount = document.getElementById('completedCount');
-    var totalSectionCount = document.getElementById('sectionLength');
-
-    // Calculate the completed section count
-    var completedSections = Object.values(containerValues).reduce(
-      (total, value) => total + value,
-      0
+    const isComplete = Array.from(statuses).every(status =>
+      status.textContent.trim() === 'Completed'
     );
-    console.log('completed sections: ' + completedSections)
 
-    completedSectionCount.innerHTML = completedSections;
-    totalSectionCount.innerHTML = containers.length;
-  </script>
-  <script>
-      // JavaScript code
-      var currentDateElement = document.getElementById("currentDate");
+    if (isComplete) {
+      completedSections++;
+    }
+  });
 
-      // Get the current date
-      var currentDate = new Date();
-
-      // Format the date as desired
-      var options = { day: 'numeric', month: 'long', year: 'numeric' };
-      var formattedDate = currentDate.toLocaleDateString(undefined, options);
-
-      // Set the formatted date as the content of the element
-      currentDateElement.textContent = formattedDate;
-    </script>
+  document.getElementById('completedCount').textContent = completedSections;
+  document.getElementById('sectionLength').textContent = sections.length;
+</script>
 {% endblock %}
