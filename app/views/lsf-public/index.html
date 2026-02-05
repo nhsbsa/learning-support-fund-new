@@ -43,23 +43,56 @@ Learning Support Fund
     <hr>
 
     <div>
-      <h2 class="nhsuk-heading-m">Versions 10 (WIP - Duplicate of V9)</h2>
+      <h2 class="nhsuk-heading-m">Version 10 (WIP - Duplicate of V9)</h2>
       <p>Currently working on simply duplicating V9, and fixing issues with the Prototype Kit update.</p>
+      <!-- <p>Choose where to start in the prototype.</p> -->
 
-      <a class="nhsuk-button" style="margin-right: 20px;"
-        href="v10/academic-year-details?questionnaire-completed=Completed">Training grant application prototype</a>
-      <a class="nhsuk-button nhsuk-button--secondary" href="v10/TDAE-task-list-full">TDAE Task list (all costs)</a>
+      <div class="nhsuk-form-group">
+        <div class="nhsuk-u-margin-right-4" style="float: left">
+          <label class="nhsuk-label" for="v10-start-point">
+            Start at
+          </label>
+          <select class="nhsuk-select" id="v10-start-point" name="v10-start-point">
+            <option value="v10/start-screen">Register</option>
+            <option value="v10/sign-in">Sign in</option>
+            <option value="v10/dashboard" selected>Dashboard</option>
+            <option value="v10/academic-year-details?questionnaire-completed=Completed">Training grant application
+            </option>
+            <option value="v10/TDAE-task-list-full">TDAE task list (all costs)</option>
+          </select>
+        </div>
+
+        <button class="nhsuk-button" style="margin-top: 12px" type="button" onclick="goToV10Start()">
+          Start prototype
+        </button>
+      </div>
     </div>
-
 
     <hr>
 
-
     <div>
       <h2 class="nhsuk-heading-m">Versions 1-9</h2>
-      <p>These can be found in the <a href="https://learning-support-fund.herokuapp.com/">old LSF prototype</a>.</p>
+      <p>These can be found in the old LSF prototype.</p>
+
+      <a class="nhsuk-action-link" href="https://learning-support-fund.herokuapp.com/">
+        <svg class="nhsuk-icon nhsuk-icon--arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          width="16" height="16" focusable="false" aria-hidden="true">
+          <path
+            d="M12 2a10 10 0 0 0-10 9h11.7l-4-4a1 1 0 0 1 1.5-1.4l5.6 5.7a1 1 0 0 1 0 1.4l-5.6 5.7a1 1 0 0 1-1.5 0 1 1 0 0 1 0-1.4l4-4H2A10 10 0 1 0 12 2z" />
+        </svg>
+        <span class="nhsuk-action-link__text">Visit old LSF prototype</span>
+      </a>
     </div>
 
   </div>
 </div>
+
+<script>
+  function goToV10Start() {
+    var select = document.getElementById('v10-start-point');
+    if (select && select.value) {
+      window.location.href = select.value;
+    }
+  }
+</script>
 {% endblock %}
