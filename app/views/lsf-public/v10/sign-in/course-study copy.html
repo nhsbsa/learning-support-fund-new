@@ -1,0 +1,136 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Page templates - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <main class="nhsuk-main-wrapper nhsuk-u-padding-top-0" id="content" role="main">
+	<div class="nhsuk-phase-banner">
+            <p class="nhsuk-phase-banner__content">
+              <strong class="nhsuk-tag nhsuk-phase-banner__content__tag">
+                BETA
+              </strong>
+              <span class="nhsuk-phase-banner__text">
+                This is a new service – your <a class="nhsuk-link" href="#">feedback</a> will help us to improve it.
+              </span>
+            </p>
+          </div>
+	
+				<div class="nhsuk-grid-row">
+					<div class="nhsuk-grid-column-two-thirds">
+						<div class="nhsuk-back-link">
+		<a class="nhsuk-back-link__link" href="/student/student-details/view" id="back">
+
+			</svg> Go back
+		</a>
+	</div>
+	<br>
+	
+	<br>
+					
+
+
+					<form name="enrolmentForm" action="/student/enrol/course" method="post" novalidate=""><input type="hidden" name="_csrf" value="7922f29f-165b-425c-b8ac-7661f8afcc1a">
+						
+						
+						<h1 class="nhsuk-heading-l">
+							<span class="nhsuk-caption-l" id="secondary-heading">
+								Course details
+								<span class="nhsuk-u-visually-hidden"> - </span>
+							</span>
+							Which course are you studying?
+						</h1>
+
+						<div class="nhsuk-form-group">
+							<p>This is the course you'll be studying during the 2024/25 academic year.</p>
+						</div>
+						
+
+						<div class="nhsuk-form-group" id="course-group">
+
+							<fieldset class="nhsuk-fieldset" id="course">
+								<legend class="nhsuk-fieldset__legend nhsuk-u-visually-hidden">Course name</legend>
+
+								<div class="nhsuk-radios">
+									
+									
+										<div class="nhsuk-radios__item">
+											<div class="nhsuk-multiple-choice">
+												<input type="radio" id="course[0]" value="16" class="nhsuk-radios__input" checked="checked" name="course"> <label class="nhsuk-label nhsuk-radios__label" for="course[0]">Adult Nursing</label>
+											</div>
+										</div>
+									
+										<div class="nhsuk-radios__item">
+											<div class="nhsuk-multiple-choice">
+												<input type="radio" id="course[1]" value="17" class="nhsuk-radios__input" name="course"> <label class="nhsuk-label nhsuk-radios__label" for="course[1]">Child Nursing</label>
+											</div>
+										</div>
+									
+										<div class="nhsuk-radios__item">
+											<div class="nhsuk-multiple-choice">
+												<input type="radio" id="course[2]" value="18" class="nhsuk-radios__input" name="course"> <label class="nhsuk-label nhsuk-radios__label" for="course[2]">Diagnostic Radiography</label>
+											</div>
+										</div>
+									
+										<div class="nhsuk-radios__item">
+											<div class="nhsuk-multiple-choice">
+												<input type="radio" id="course[3]" value="19" class="nhsuk-radios__input" name="course"> <label class="nhsuk-label nhsuk-radios__label" for="course[3]">Dietetics</label>
+											</div>
+										</div>
+									
+										<div class="nhsuk-radios__item">
+											<div class="nhsuk-multiple-choice">
+												<input type="radio" id="course[4]" value="20" class="nhsuk-radios__input" name="course"> <label class="nhsuk-label nhsuk-radios__label" for="course[4]">Learning Disabilities Nursing</label>
+											</div>
+										</div>
+									
+										<div class="nhsuk-radios__item">
+											<div class="nhsuk-multiple-choice">
+												<input type="radio" id="course[5]" value="21" class="nhsuk-radios__input" name="course"> <label class="nhsuk-label nhsuk-radios__label" for="course[5]">Mental Health Nursing</label>
+											</div>
+										</div>
+									
+										<div class="nhsuk-radios__item">
+											<div class="nhsuk-multiple-choice">
+												<input type="radio" id="course[6]" value="22" class="nhsuk-radios__input" name="course"> <label class="nhsuk-label nhsuk-radios__label" for="course[6]">Midwifery</label>
+											</div>
+										</div>
+									
+										<div class="nhsuk-radios__item">
+											<div class="nhsuk-multiple-choice">
+												<input type="radio" id="course[7]" value="23" class="nhsuk-radios__input" name="course"> <label class="nhsuk-label nhsuk-radios__label" for="course[7]">Operating Department Practitioner</label>
+											</div>
+										</div>
+									
+										<div class="nhsuk-radios__item">
+											<div class="nhsuk-multiple-choice">
+												<input type="radio" id="course[8]" value="24" class="nhsuk-radios__input" name="course"> <label class="nhsuk-label nhsuk-radios__label" for="course[8]">Physiotherapy</label>
+											</div>
+										</div>
+									
+										<div class="nhsuk-radios__item">
+											<div class="nhsuk-multiple-choice">
+												<input type="radio" id="course[9]" value="25" class="nhsuk-radios__input" name="course"> <label class="nhsuk-label nhsuk-radios__label" for="course[9]">Speech and Language Therapy</label>
+											</div>
+										</div>
+									
+										<div class="nhsuk-radios__item">
+											<div class="nhsuk-multiple-choice">
+												<input type="radio" id="course[10]" value="26" class="nhsuk-radios__input" name="course"> <label class="nhsuk-label nhsuk-radios__label" for="course[10]">Therapeutic Radiography</label>
+											</div>
+										</div>
+									
+								</div>
+							</fieldset>
+						</div>
+
+						<div class="nhsuk-form-group">
+							<button class="nhsuk-button" type="submit" name="next" id="continue">Continue</button>
+						</div>
+						<p class="nhsuk-body">If you cannot find your course, you can <a href="https://www.nhsbsa.nhs.uk/nhs-learning-support-fund-lsf/contact-us" target="_blank" rel="noopener" id="contactUsLink">contact us (opens in a new tab)</a>.</p>
+					</form>
+				</div>
+			</div>
+			</main>
+{% endblock %}

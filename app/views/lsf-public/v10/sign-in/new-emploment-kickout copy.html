@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Page templates - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <main class="nhsuk-main-wrapper nhsuk-u-padding-top-0" id="content" role="main">
+				
+		
+	
+				<div class="nhsuk-grid-row">
+					<div class="nhsuk-grid-column-two-thirds">
+				<a class="nhsuk-back-link" href="#">
+  Back
+</a>
+<br>
+						
+						<form name="enrolmentForm" action="/lsf-public/v10/sign-in/uni-attending" method="post" novalidate=""><input type="hidden" name="_csrf" value="aba7c5cd-a36f-48e4-bbd7-a0df3deb47de">
+						
+							
+							
+							<h1 class="nhsuk-heading-l">
+								<span class="nhsuk-caption-l" id="secondary-heading">
+									Course details
+									<span class="nhsuk-u-visually-hidden"> - </span>
+								</span>
+You are not eligible for a NHS Learning Support Fund
+							</h1>
+						
+						<p class="nhsuk-body">As you are receiving support from employment you are not eligible for NHS Learning Support Funding.</p>
+            <p class="nhsuk-body">If you think you're eligible, you can <a href ="">Contact us (opens new tab)</a>.</p>
+								</fieldset>
+							</div>
+              <br>
+        </div>
+
+							<div class="nhsuk-form-group">
+								<button class="nhsuk-button" type="submit" name="next" id="continue">Continue</button>
+							</div>
+							
+							
+						</form>
+					</div>
+				</div>
+			</main>
+{% endblock %}

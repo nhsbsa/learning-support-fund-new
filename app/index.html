@@ -1,0 +1,69 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+
+<!-- Variables -->
+{% set loggedIn = false %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Learning Support Fund
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <!-- Change the page title here -->
+    <h1 class="nhsuk-heading-xl"><span class="nhsuk-caption-xl nhsuk-caption--bottom">Learning Support Fund</span>Public
+    </h1>
+    <!-- Add your content here -->
+    <!-- Styles and components can be found at https://beta.nhs.uk/service-manual/styles-components-patterns -->
+    <p class="nhsuk-body-l">An online system accessed by students.</p>
+
+    <hr>
+
+    <div>
+      <h2 class="nhsuk-heading-m">Versions 10 (WIP - Duplicate of V9)</h2>
+      <p>Currently working on simply duplicating V9, and fixing issues with the Prototype Kit update.</p>
+
+      <a class="nhsuk-button" style="margin-right: 20px;"
+        href="v10/academic-year-details?questionnaire-completed=Completed">Training grant application prototype</a>
+      <a class="nhsuk-button nhsuk-button--secondary" href="v10/TDAE-task-list-full">TDAE Task list (all costs)</a>
+   <br>
+         <a class="nhsuk-button" style="margin-right: 20px;"
+        href="v10/sign-in/sign-in">Sign in</a>
+   
+    </div>
+
+
+    <hr>
+
+
+    <div>
+      <h2 class="nhsuk-heading-m">Versions 1-9</h2>
+      <p>These can be found in the <a href="https://learning-support-fund.herokuapp.com/">old LSF prototype</a>.</p>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
