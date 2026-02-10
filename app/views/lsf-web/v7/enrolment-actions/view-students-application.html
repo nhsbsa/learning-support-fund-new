@@ -4,16 +4,29 @@
 Student's application
 {% endblock %}
 {% block beforeContent %}
-  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-    <div class="nhsuk-width-container">
-      <ol class="nhsuk-breadcrumb__list">
-        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v7/current-search-student">Student search</a></li>
-        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v7/student-details">Student details</a></li>
-        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v7/student-course-details">Course details</a></li>
-      </ol>
-      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/lsf-web/v7/student-course-details">Back to Course details</a></p>
-    </div>
-  </nav>
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <ol class="nhsuk-breadcrumb__list">
+    <li class="nhsuk-breadcrumb__list-item">
+      <a class="nhsuk-breadcrumb__link" href="/lsf-web/v7/current-search-student">
+        Student search
+      </a>
+    </li>
+    <li class="nhsuk-breadcrumb__list-item">
+      <a class="nhsuk-breadcrumb__link" href="/lsf-web/v7/student-details">
+        Student details
+      </a>
+    </li>
+    <li class="nhsuk-breadcrumb__list-item">
+      <a class="nhsuk-breadcrumb__link" href="/lsf-web/v7/student-course-details">
+        Course details
+      </a>
+    </li>
+  </ol>
+
+  <a class="nhsuk-back-link" href="/lsf-web/v7/student-course-details">
+    <span class="nhsuk-u-visually-hidden">Back to</span> Course details
+  </a>
+</nav>
 {% endblock %}
 {% block content %}
 <div class="nhsuk-grid-row">
@@ -44,7 +57,8 @@ Student's application
         </dd>
       </div>
       <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key nhsuk-u-width-one-half"><a href="/lsf-web/v7/enrolment-actions/eligibility-details" id="eligibility">Eligibility details</a></dt>
+        <dt class="nhsuk-summary-list__key nhsuk-u-width-one-half"><a
+            href="/lsf-web/v7/enrolment-actions/eligibility-details" id="eligibility">Eligibility details</a></dt>
         <dd class="nhsuk-summary-list__value">Complete</dd>
       </div>
       <div class="nhsuk-summary-list__row">

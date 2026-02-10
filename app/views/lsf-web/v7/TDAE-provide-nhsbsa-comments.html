@@ -25,17 +25,21 @@ Do you want to provide any comments to the NHSBSA about this claim?
 
 <!-- Breadcrumbs -->
 <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
-  <div class="nhsuk-width-container-fluid">
-    <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-full">
-        <ol class="nhsuk-breadcrumb__list">
-          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="admin-interface">Student search</a></li>
-          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="TDAE-claims-list">Travel expense claims</a></li>
-          <li class="nhsuk-breadcrumb__item">{{ data['name'] }}</li>
-        </ol>
-      </div>
-    </div>
-  </div>
+  <ol class="nhsuk-breadcrumb__list">
+    <li class="nhsuk-breadcrumb__list-item">
+      <a class="nhsuk-breadcrumb__link" href="admin-interface">
+        Student search
+      </a>
+    </li>
+    <li class="nhsuk-breadcrumb__list-item">
+      <a class="nhsuk-breadcrumb__link" href="TDAE-claims-list">
+        Travel expense claims
+      </a>
+    </li>
+    <li class="nhsuk-breadcrumb__list-item">
+      {{ data['name'] }}
+    </li>
+  </ol>
 </nav>
 <!-- End breadcrumbs -->
 
@@ -49,46 +53,48 @@ Do you want to provide any comments to the NHSBSA about this claim?
             <div class="nhsuk-grid-column-two-thirds">
 
               {{ backLink({
-                "href": "javascript:history.go(-1)",
-                "text": "Go back"
+              "href": "javascript:history.go(-1)",
+              "text": "Go back"
               }) }}
-        
-            <form action="v4/TDAE-provide-nhsbsa-comments" method="POST">
-        
+
+              <form action="v4/TDAE-provide-nhsbsa-comments" method="POST">
+
                 <div class="nhsuk-form-group">
-        
-                    <fieldset class="nhsuk-fieldset">
-                      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-                        <h1 class="nhsuk-fieldset__heading">
-                            Do you want to provide any comments to the NHSBSA about this claim?
-                        </h1>
-                      </legend>
-        
-                      <div class="nhsuk-radios">
-        
-                        <div class="nhsuk-radios__item">
-                          <input class="nhsuk-radios__input" id="provide-comments-nhsbsa-yes" name="provide-comments-nhsbsa" type="radio" value="yes">
-                          <label class="nhsuk-label nhsuk-radios__label" for="provide-comments-nhsbsa-yes">
-                            Yes
-                          </label>
-                        </div>
-        
-                        <div class="nhsuk-radios__item">
-                          <input class="nhsuk-radios__input" id="provide-comments-nhsbsa-no" name="provide-comments-nhsbsa" type="radio" value="no">
-                          <label class="nhsuk-label nhsuk-radios__label" for="provide-comments-nhsbsa-no">
-                            No
-                          </label>
-                        </div>
-        
+
+                  <fieldset class="nhsuk-fieldset">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                      <h1 class="nhsuk-fieldset__heading">
+                        Do you want to provide any comments to the NHSBSA about this claim?
+                      </h1>
+                    </legend>
+
+                    <div class="nhsuk-radios">
+
+                      <div class="nhsuk-radios__item">
+                        <input class="nhsuk-radios__input" id="provide-comments-nhsbsa-yes"
+                          name="provide-comments-nhsbsa" type="radio" value="yes">
+                        <label class="nhsuk-label nhsuk-radios__label" for="provide-comments-nhsbsa-yes">
+                          Yes
+                        </label>
                       </div>
-                    </fieldset>
-        
-                  </div>
-        
+
+                      <div class="nhsuk-radios__item">
+                        <input class="nhsuk-radios__input" id="provide-comments-nhsbsa-no"
+                          name="provide-comments-nhsbsa" type="radio" value="no">
+                        <label class="nhsuk-label nhsuk-radios__label" for="provide-comments-nhsbsa-no">
+                          No
+                        </label>
+                      </div>
+
+                    </div>
+                  </fieldset>
+
+                </div>
+
                 <button class="nhsuk-button" type="submit">Continue</button><br>
-        
-            </form>
-              
+
+              </form>
+
             </div>
           </div>
         </div>
@@ -122,8 +128,8 @@ Do you want to provide any comments to the NHSBSA about this claim?
       </div>
     </div>
 
-    </div>
   </div>
+</div>
 
 </div>
 
