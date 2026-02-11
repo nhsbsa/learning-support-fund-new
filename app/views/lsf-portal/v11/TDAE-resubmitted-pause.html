@@ -1,0 +1,39 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+Resubmitted claim information
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <form action="TDAE-student-claim-resubmitted?Jackson=locked" method="POST">
+
+          <h1 class="nhsuk-heading-l">Resubmitted claim information</h1>
+
+          <p>This claim has previously been processed, returned to the student, and then resubmitted.</p>
+
+          <p>Sections that the student has made changes to have reset to 'Not started'. You can still review sections that they've not changed. These are marked as 'Completed'.</p>
+
+          <p>You can view comments about why the claim was originally returned to the student in the Claim notes and history section.</p>
+
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>If you submit this claim, you'll be declaring that the claim has been fully checked (even if this has been over multiple resubmissions) and is correct to the best of your knowledge.</p>
+          </div>
+
+          <button class="nhsuk-button" type="submit">Continue</button><br>
+
+      </form>
+
+    </div>
+
+</div>
+{% endblock %}

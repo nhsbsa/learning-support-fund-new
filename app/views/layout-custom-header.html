@@ -1,0 +1,80 @@
+{% extends "prototype-kit-template.njk" %}
+
+{% block head %}
+  {{ super() }}
+  <link href="/css/main.css" rel="stylesheet">
+{% endblock %}
+
+{% block pageTitle %}
+  Learning Support Fund
+{% endblock %}
+
+{% block header %}
+
+  {{ header({
+    service: {
+      text: "Learning Support Fund",
+      href: "/"
+    },
+    account: {
+      items: [
+        {
+          text: "test.name7@nhs.net",
+          icon: true
+        },
+        {
+          text: "Log out",
+          href: "#",
+          attributes: {
+            "data-toggle": "dialog",
+            "data-target": "dialog-signOut",
+            "aria-haspopup": "true"
+          }
+        }
+      ]
+    },
+    navigation: {
+      items: [
+        {
+          text: "Admin menu",
+          href: "#"
+        },
+        {
+          text: "Student search",
+          href: "/lsf-web/v7/current-search-student"
+        },
+        {
+          text: "Change password",
+          href: "#"
+        }
+      ]
+    }
+  }) }}
+
+{% endblock %}
+
+{% block footer %}
+  {{ footer({
+    links: [
+      {
+        URL: "/",
+        label: "Home"
+      },
+      {
+        URL: "/clear-data",
+        label: "Clear data"
+      },
+      {
+        URL: "/page-example",
+        label: "Example page"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block bodyEnd %}
+  {% block scripts %}
+    {% include "includes/scripts.html" %}
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
+{% endblock %}

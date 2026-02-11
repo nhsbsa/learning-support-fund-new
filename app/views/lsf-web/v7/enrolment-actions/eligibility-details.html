@@ -6,14 +6,27 @@ Eligibility details
 
 {% block beforeContent %}
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-  <div class="nhsuk-width-container">
-    <ol class="nhsuk-breadcrumb__list">
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v7/student-details">Student details</a></li>
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v7/student-course-details">Course details</a></li>
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v7/enrolment-actions/view-students-application">Student's application</a></li>
-    </ol>
-    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/lsf-web/v7/enrolment-actions/view-students-application">Back to Student's application</a></p>
-  </div>
+  <ol class="nhsuk-breadcrumb__list">
+    <li class="nhsuk-breadcrumb__list-item">
+      <a class="nhsuk-breadcrumb__link" href="/lsf-web/v7/student-details">
+        Student details
+      </a>
+    </li>
+    <li class="nhsuk-breadcrumb__list-item">
+      <a class="nhsuk-breadcrumb__link" href="/lsf-web/v7/student-course-details">
+        Course details
+      </a>
+    </li>
+    <li class="nhsuk-breadcrumb__list-item">
+      <a class="nhsuk-breadcrumb__link" href="/lsf-web/v7/enrolment-actions/view-students-application">
+        Student's application
+      </a>
+    </li>
+  </ol>
+
+  <a class="nhsuk-back-link" href="/lsf-web/v7/enrolment-actions/view-students-application">
+    <span class="nhsuk-u-visually-hidden">Back to</span> Student's application
+  </a>
 </nav>
 {% endblock %}
 
@@ -53,7 +66,7 @@ Eligibility details
               <a id="document0" href="#" target="_blank" rel="noopener">
                 <span>Full student loan award letter</span>
                 <span class="nhsuk-u-visually-hidden"> file 0 (opens in a new tab)</span>
-              </a> 
+              </a>
             </li>
           </ul>
         </dd>
