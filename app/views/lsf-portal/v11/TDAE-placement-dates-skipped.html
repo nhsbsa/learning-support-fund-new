@@ -13,16 +13,18 @@ Student and University details
     "text": "Go back"
     }) }}
 
-        <form action="TDAE-student-claim" method="POST">
+        <form action="TDAE-student-claim-full" method="POST">
             <div class="nhsuk-form-group">
                 <fieldset class="nhsuk-fieldset">
                   <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                     <h1 class="nhsuk-heading-l">No placement travel costs for period 2</h1>
                   </legend>
 
-                  <p>{% if data['name'] %}{{ data['name'] }}{% else %}Joe Bloggs{% endif %} has not claimed any placement travel costs from 27 January 2025 to 2 February 2025.</p>
-
-                  <p>If this is a mistake, select No. You can then return the claim to the university.</p>
+                  <!--<div class="nhsuk-inset-text">
+                    <span class="nhsuk-u-visually-hidden">Information: </span>-->
+                    <p>{% if data['name'] %}{{ data['name'] }}{% else %}Joe Bloggs{% endif %} has not claimed any placement travel costs from 27 January 2025 to 2 February 2025.</p>
+                  <!--</div>-->
+                  <p>If this is a mistake, select No. You can then return the claim to the student.</p>
 
                   <h2 class="nhsuk-heading-m">Do you want to continue without these details?</h2>
 

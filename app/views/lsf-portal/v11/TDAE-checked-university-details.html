@@ -1,7 +1,7 @@
 {% extends 'layout-HEI.html' %}
 
 {% block pageTitle %}
-Student and University details
+Has the student provided their University details?
 {% endblock %}
 
 {% block content %}
@@ -13,29 +13,22 @@ Student and University details
     "text": "Go back"
     }) }}
 
-        <form action="TDAE-student-claim" method="POST">
+        <form action="v11/TDAE-checked-university-details" method="POST">
             <div class="nhsuk-form-group">
                 <fieldset class="nhsuk-fieldset">
                   <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-                    <h1 class="nhsuk-heading-l">No placement travel costs for period 2</h1>
+                    <h1 class="nhsuk-heading-l">Has the student given the correct university travel details?</h1>
                   </legend>
-
-                  <p>{% if data['name'] %}{{ data['name'] }}{% else %}Joe Bloggs{% endif %} has not claimed any placement travel costs from 27 January 2025 to 2 February 2025.</p>
-
-                  <p>If this is a mistake, select No. You can then return the claim to the university.</p>
-
-                  <h2 class="nhsuk-heading-m">Do you want to continue without these details?</h2>
-
                   <div class="nhsuk-radios" data-module="nhsuk-radios">
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="dates-skipped-yes" name="dates-skipped" type="radio" value="yes">
-                      <label class="nhsuk-label nhsuk-radios__label" for="dates-skipped-yes">
+                      <input class="nhsuk-radios__input" id="university-match-yes" name="university-match" type="radio" value="yes">
+                      <label class="nhsuk-label nhsuk-radios__label" for="university-match-yes">
                         Yes
                       </label>
                     </div>
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="dates-skipped-no" name="dates-skipped" type="radio" value="no">
-                      <label class="nhsuk-label nhsuk-radios__label" for="dates-skipped-no">
+                      <input class="nhsuk-radios__input" id="university-match-no" name="university-match" type="radio" value="no">
+                      <label class="nhsuk-label nhsuk-radios__label" for="university-match-no">
                         No
                       </label>
                     </div>
