@@ -25,7 +25,7 @@ router.get('/lsf-public/v10/:page', (req, res) => {
 // Routes for LSF Public
 // ================================
 router.use('/lsf-public/v10', require('./views/lsf-public/v10/_routes'));
-
+router.use('/lsf-public/v10/sign-in', require('./views/lsf-public/v10/sign-in/_routes'));
 
 
 // ================================

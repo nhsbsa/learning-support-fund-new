@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'layout-public.html' %}
 
 {% block pageTitle %}
   Page templates - NHS.UK prototype kit
@@ -8,24 +8,13 @@
  <div class="nhsuk-width-container">
 		<main class="nhsuk-main-wrapper nhsuk-u-padding-top-0" id="content" role="main">
 			
-		<div class="nhsuk-phase-banner nhsuk-u-margin-bottom-5 no-print">
-  		<p class="nhsuk-phase-banner__content">
-    		<strong class="nhsuk-tag nhsuk-phase-banner__content__tag">BETA</strong>
-    		<span class="nhsuk-phase-banner__text">
-      		This is a new service - your <a class="nhsuk-link" target="_blank" rel="noopener" href="https://online1.snapsurveys.com/LSF_TDAE_Banner_Survey?pnm=/student/enrol/course" id="feedback">feedback (opens in a new tab)</a> will help us to improve it.
-				</span>
-  		</p>
-		</div>
+		
 	
 
 			<div class="nhsuk-grid-row">
 				<div class="nhsuk-grid-column-two-thirds">
-					<div class="nhsuk-back-link">
-		<a class="nhsuk-back-link__link" href="/student/enrol/college" id="back">
-				<path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
-			</svg> Go back
-		</a>
-	</div>
+		
+
 
 					<form name="enrolmentForm" action="/student/enrol/course" method="post" novalidate=""><input type="hidden" name="_csrf" value="90b82244-08f4-4ca5-98ce-9dd440c53438">
 						

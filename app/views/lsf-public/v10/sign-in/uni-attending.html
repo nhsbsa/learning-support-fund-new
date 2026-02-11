@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'layout-public.html' %}
 
 {% block pageTitle %}
 Page templates - NHS.UK prototype kit
@@ -22,20 +22,37 @@ Page templates - NHS.UK prototype kit
         .autocomplete__option { margin-bottom: 0; }
      </style>
 
+	
+  <br></br>
+						
+						
+							
+						<h1 class="nhsuk-label-wrapper">
+							<label class="nhsuk-label nhsuk-label--l" for="college" id="uniName">
+								<span class="nhsuk-caption-l" id="secondary-heading">
+									Course details
+									<span class="nhsuk-u-visually-hidden"> - </span>
+								</span>
+								Which university are you attending?
+							</label>
+						</h1>
 
-     <h1 class="govuk-label--l">Which university are you attending?</h1>
+						<p class="nhsuk-body">We need to know your home university. This is the university that you'll graduate from.</p>
+  
      
-     <form method="post" novalidate>
+  
+						<form class="form" action="course-study" method="post">
 
         {{ select({
           id: 'universityChoice',
           name: 'universityChoice',
           value: '',
           label: {
-            classes: 'govuk-label--m',
+            classes: 'nhsuk-hint',
             isPageHeading: true,
-            text: 'What is the name of your university?'
+            text: 'For example, University of Newcastle'
           },
+
           items: [
             { value: '', text: 'Please select' },
             { value: 'ANGLIA RUSKIN UNIVERSITY', text: 'ANGLIA RUSKIN UNIVERSITY' },
@@ -122,14 +139,14 @@ Page templates - NHS.UK prototype kit
           ]
         }) }}
 
-        {{ button ({
-            text: 'Continue'
-        }) }}
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+  Continue
+</button>
 
      </form>
 
      
-
+<p class="nhsuk-body">If you cannot find your university, you can <a href="https://www.nhsbsa.nhs.uk/nhs-learning-support-fund-lsf/contact-us" target="_blank" rel="noopener" id="contactUsLink">contact us (opens in a new tab).</a></p>
 
       <!-- DIRECT VERSION -->
 
