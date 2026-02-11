@@ -1,0 +1,67 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Page templates - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main class="nhsuk-main-wrapper nhsuk-u-padding-top-0" id="content" role="main">
+
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form class="form" action="/lsf-public/v10/sign-in/new-employment" method="post">
+
+      <h1 class="nhsuk-heading-l">
+        <span class="nhsuk-caption-l" id="secondary-heading">
+          Course details
+          <span class="nhsuk-u-visually-hidden"> - </span>
+        </span>
+        Is your employer paying for your time off to attend this course?
+      </h1>
+
+      <div class="nhsuk-hint">
+        This includes being paid your usual wage or salary while you train.
+        If you select No, you’ll need to give us your employer’s contact details
+        and a supporting letter later in your Training Grant application.
+      </div>
+
+      <div class="nhsuk-radios" data-module="nhsuk-radios">
+        <div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input"
+                 id="employment-yes"
+                 name="OptionEmployment"
+                 type="radio"
+                 value="yes">
+          <label class="nhsuk-label nhsuk-radios__label" for="employment-yes">
+            Yes
+          </label>
+        </div>
+
+        <div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input"
+                 id="employment-no"
+                 name="OptionEmployment"
+                 type="radio"
+                 value="no">
+          <label class="nhsuk-label nhsuk-radios__label" for="employment-no">
+            No
+          </label>
+        </div>
+      </div>
+
+      <br>
+
+      <button class="nhsuk-button" type="submit" id="continue">
+        Continue
+      </button>
+
+    </form>
+  </div>
+</div>
+
+</main>
+{% endblock %}

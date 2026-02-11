@@ -1,216 +1,135 @@
-{% extends 'layout.html' %}
+{% extends 'layout-public.html' %}
 
 {% block pageTitle %}
   Page templates - NHS.UK prototype kit
 {% endblock %}
 
 {% block content %}
- <div class="nhsuk-width-container">
-		<main class="nhsuk-main-wrapper nhsuk-u-padding-top-0" id="content" role="main">
-			<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-    <div class="nhsuk-width-container">
-      <ol class="nhsuk-breadcrumb__list">
-        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/student/student-details/view">Home</a></li>
-        <li class="nhsuk-breadcrumb__item">Academic year details</li>
-      </ol>
-      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/student/student-details/view">Back to Home</a></p>
-    </div>
-  </nav>
-    
-	<div class="nhsuk-width-container">
-    <main class="nhsuk-main-wrapper nhsuk-u-padding-top-0" id="content" role="main">
-		  
-		<div class="nhsuk-phase-banner nhsuk-u-margin-bottom-5 no-print">
-  		<p class="nhsuk-phase-banner__content">
-    		<strong class="nhsuk-tag nhsuk-phase-banner__content__tag">BETA</strong>
-    		<span class="nhsuk-phase-banner__text">
-      		This is a new service - your <a class="nhsuk-link" target="_blank" rel="noopener" href="https://online1.snapsurveys.com/LSF_TDAE_Banner_Survey?pnm=/student/enrolment/details" id="feedback">feedback (opens in a new tab)</a> will help us to improve it.
-				</span>
-  		</p>
-		</div>
-	
-      <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-two-thirds">
-          <div>
-            <h1 class="nhsuk-heading-l">
-              <span class="nhsuk-caption-l">
-                <span id="studentRef">Your NHS Learning Support Fund reference number is SSRN0001082</span>
-							  <span class="nhsuk-u-visually-hidden"> - </span>
-							</span>
-						  <span>Academic year February 2024 details</span>
-						</h1>
-            
-          </div>
-        </div>
-      </div>
-      <div class="nhsuk-grid-row">
-        <!-- ENROLMENT DETAILS -->
-        <div class="nhsuk-grid-column-full"> 
-          <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-one-third"> 
+ <div class="nhsuk-grid-row">
 
-              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course name</h2>
-              <p id="courseName">Adult Nursing</p>
-            </div>
-            <div class="nhsuk-grid-column-one-third"> 
-              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Attendance status</h2>              
-              <p>Pending</p>
-            </div>
-            <div class="nhsuk-grid-column-one-third"> 
-              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course length</h2>
-              <p id="courseLength">3 years 1 month</p>
-            </div>      
-          </div>
+      <div class="nhsuk-grid-column-two-thirds">
 
-          <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-one-third"> 
-              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">University</h2>
-              <p id="universityName">BIRMINGHAM CITY UNIVERSITY</p>
 
-              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Academic year</h2>
-              <p id="academicYear">February 2024</p>
-                    
-              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course details</h2>
-              <p><a id="updateEnrolment" href="/student/enrol/update?enrolmentUuid=3ed11242-913f-44c1-9214-5349bfa065ca">Edit <span class="visually-hidden">enrolment details</span></a></p>
-            </div>
-            <div class="nhsuk-grid-column-one-third"> 
-              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Declaration</h2>
-              <p><a id="declarationLink" href="/student/enrolment/declaration?enrolmentUuid=3ed11242-913f-44c1-9214-5349bfa065ca">View <span class="visually-hidden">course declaration</span></a></p>
 
-              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Attendance</h2>
-              <p id="partTime">Full Time</p>
-           
-           								
-                <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Repeat year</h3>
-                <p id="repeatYear">No</p>
-              
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Course details</span>Check your answers</h1>
 
-            </div>
-            <div class="nhsuk-grid-column-one-third">                 
-              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course year</h2>
-              <p id="courseYear">Year 2</p>
 
-              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Final year</h2>
-              <p id="finalYear">No</p>
-            </div>      
-          </div>
-        </div>
-        
-      </div>
-      
-      
-      
-      <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-full">
-          <hr aria-hidden="true" class="mb-0">
-        </div>
-        <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-5"> 
-          <h2 class="nhsuk-heading-l">Eligibility</h2>
-          <h3 class="nhsuk-heading-m">Confirm your eligibility for NHSLSF TDAE</h3>
-          <p>In order to complete TDAE applications for this academic year you will need
-          to confirm your eligibility. Once you have provided details and evidence you will
-          be able to confirm your bank details and complete applications for TDAE. You can <a href="https://www.nhsbsa.nhs.uk/nhs-learning-support-fund-lsf/travel-and-dual-accommodation-expenses" target="_blank" rel="noopener">find out more about TDAE on our website<span class="nhsuk-u-visually-hidden"> (opens in a new tab)</span></a>.</p>
+        <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                University
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Birmingham City University
+              </dd>
           
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="attending-university">
+                  Change<span class="nhsuk-u-visually-hidden"> university</span>
+                </a>
+          
+              </dd>
+          
+            </div>
+          
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Course
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Child Nursing
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="university-course">
+                  Change<span class="nhsuk-u-visually-hidden"> course</span>
+                </a>
+          
+              </dd>
+          
+            </div>
+          
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Which academic year are your applying for funding for?
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                September 2022
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="academic-year-funding">
+                  Change<span class="nhsuk-u-visually-hidden"> academic year</span>
+                </a>
+          
+              </dd>
+          
+            </div>
+          
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                What is the total length of your course?
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                3 years
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="course-duration">
+                  Change<span class="nhsuk-u-visually-hidden"> length of course</span>
+                </a>
+          
+              </dd>
+          
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Is this your final year?
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Yes
+                </dd>
             
-              <div class="nhsuk-form-group">
-                <a class="nhsuk-button" id="createTSApplication" href="/student/eligibility/start?enrolmentUuid=3ed11242-913f-44c1-9214-5349bfa065ca" role="button">Confirm eligibility</a>
+                <dd class="nhsuk-summary-list__actions">
+            
+                  <a href="final-year">
+                    Change<span class="nhsuk-u-visually-hidden"> final year</span>
+                  </a>
+            
+                </dd>
+            
               </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  What is your attendance type?
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Full time
+                </dd>
             
-          </div>
-        
+                <dd class="nhsuk-summary-list__actions">
+            
+                  <a href="full-part-time">
+                    Change<span class="nhsuk-u-visually-hidden"> attendance type</span>
+                  </a>
+            
+                </dd>
+            
+              </div>
+          
+          </dl>
 
-        
-        
-      </div>
-      
-	
-		<script>
-			function cancel(){
-				document.getElementById("dialog-content-1").tabIndex = 0;
-				document.getElementById("dialog-signOut").ariaHidden = true;
-			}
-		</script>
-	
-    </main>
+          <a class="nhsuk-button" href="student-declaration">Next</a>
+
+
+    </div>
+
   </div>
-  <footer class="group js-footer" id="footer" role="contentinfo">
-		<div class="nhsuk-footer" id="nhsuk-footer">
-			<div class="nhsuk-width-container">
-				<h2 class="nhsuk-u-visually-hidden">Support links</h2>
-				<ul class="nhsuk-footer__list">
-          <li class="nhsuk-footer__list-item">
-						<a class="nhsuk-footer__list-item-link" id="accessibilityLink" href="https://www.nhsbsa.nhs.uk/accessibility-statement-learning-support-fund-lsf">Accessibility</a>
-					</li>
-					<li class="nhsuk-footer__list-item">
-						<a class="nhsuk-footer__list-item-link" id="contactUs" href="https://www.nhsbsa.nhs.uk/nhs-learning-support-fund-lsf/contact-us">Contact us</a>
-					</li>
-					<li class="nhsuk-footer__list-item">
-						<a class="nhsuk-footer__list-item-link" id="cookies-footer-link" href="/student/cookies-policy/cookies">Cookies</a>
-					</li>
-          <li class="nhsuk-footer__list-item">
-						<a class="nhsuk-footer__list-item-link" id="privacy-footer-link" href="https://www.nhsbsa.nhs.uk/our-policies/privacy/student-services-privacy-notice">Privacy</a>
-					</li>
-          <li class="nhsuk-footer__list-item">
-						<a class="nhsuk-footer__list-item-link" id="terms-footer-link" href="https://www.nhsbsa.nhs.uk/our-policies/terms-and-conditions">Terms and conditions</a>
-					</li>
-				</ul>
-				<ul class="nhsuk-footer__list">
-					<li class="nhsuk-footer__list-item">Built by the <a class="nhsuk-footer__list-item-link" id="nhsbsa-footer-link" href="http://www.nhsbsa.nhs.uk">NHS Business Services Authority</a></li>
-				</ul>
-				<p class="nhsuk-footer__copyright">© Crown copyright</p>
-			</div>
-		</div>
-	</footer>
-  
-		<noscript>
-			<style>
-				.js-disabled {
-					display: none;
-				}
-			</style>
-		</noscript>
-    <!-- Return from Cookie journey -->
-		
-      <!-- Store the url for cookie return -->
-      <script>
-        function getURL() {
-          // checks to see if cookie prefence has been set
-          if (NHSCookieConsent.getConsented() === false) {
-            // gets the current URL
-            const getURL = document.referrer;
-            // stores URL in session storage
-            sessionStorage.setItem("sessionURL", getURL);
-          }
-        }
-      </script>
-    
-    
-    
-    <script>
-      // Document ready
-      (function () {
-        getURL();
-      })();
-    </script>
-    <!-- end of cookie scripts -->
-		<script src="/student/js/jquery-3.6.1.min.js"></script>
-		<script>
-			if (document.getElementsByClassName("nhsuk-error-summary").length > 0) {
-				document.title = 'Error: ' + document.title;
-			}
-		</script> 
-		<!-- Dialog js -->
-		<script src="/student/js/dialog.js"></script>
-
-		<!-- Prevent double click on <a href> js -->
-		<script src="/student/js/preventDoubleClickHref.js"></script>
-
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="/student/js/select2.min.js"></script>
-		
-		<script src="/student/js/swb.js"></script>
-	
-
-
-</body>
 {% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Page templates - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+ {% from "radios/macro.njk" import radios %}
+{% from "input/macro.njk" import input %}
+
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper nhsuk-u-padding-top-0" id="content" role="main">
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+
+        <form action="/lsf-public/v10/sign-in/check-your-answers" method="post">
+
+          <h1 class="nhsuk-heading-l">
+            <span class="nhsuk-caption-l">
+              Course details
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+            Are you repeating any part of your course this academic year?
+          </h1>
+
+          <div class="nhsuk-body">
+            If yes we may need to contact your university about this, as we need a reason why you are repeating
+          </div>
+
+          {% set yesHtml %}
+            {{ input({
+              id: "repeat-reason",
+              name: "repeatReason",
+              classes: "nhsuk-u-width-two-thirds",
+              label: {
+                text: "What is the reason for repeating part of your course?"
+              }
+            }) }}
+          {% endset %}
+
+          {{ radios({
+            idPrefix: "repeat-course",
+            name: "repeatCourse",
+            items: [
+              {
+                value: "yes",
+                text: "Yes",
+                conditional: {
+                  html: yesHtml
+                }
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+            ]
+          }) }}
+
+          <button class="nhsuk-button" type="submit">
+            Continue
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}
