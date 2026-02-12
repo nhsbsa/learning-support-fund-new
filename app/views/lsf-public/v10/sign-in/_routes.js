@@ -24,7 +24,7 @@ router.post('/new-employment', (req, res) => {
 
   const employNew = req.session.data['OptionEmployment']
 
-  if (employNew== 'yes') {
+  if (employNew== 'no') {
    res.redirect('/lsf-public/v10/sign-in/course-length');
   } else {
     res.redirect('/lsf-public/v10/sign-in/new-employment-kickout');
