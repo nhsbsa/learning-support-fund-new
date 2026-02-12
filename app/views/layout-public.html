@@ -54,9 +54,11 @@
 				</span>
   		</p>
 		</div>
-	<a class="nhsuk-back-link" href="#">
-  Back
-</a>
+    {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
 
 <style>
   /* sign out modal */

@@ -1,0 +1,79 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Page templates - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+ <main class="nhsuk-main-wrapper nhsuk-u-padding-top-0" id="content" role="main">
+				
+		<div class="nhsuk-phase-banner nhsuk-u-margin-bottom-5 no-print">
+  		<p class="nhsuk-phase-banner__content">
+    		<strong class="nhsuk-tag nhsuk-phase-banner__content__tag">BETA</strong>
+    		<span class="nhsuk-phase-banner__text">
+      		This is a new service - your
+				
+				
+					<a class="nhsuk-link" target="_blank" rel="noopener" href="https://online1.snapsurveys.com/LSF_TDAE_Banner_Survey?pnm=/student/dhsc/intro" id="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+				
+
+				</span>
+  		</p>
+		</div>
+	
+				
+				<div class="nhsuk-back-link">
+		<a class="nhsuk-back-link__link" href="/student/enrolment/details?enrolmentUuid=cec30eb8-0743-4093-9130-43209b4abb38" id="back">
+			<svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+				<path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+			</svg> Go back
+		</a>
+	</div>
+				
+				<div class="nhsuk-grid-row">
+					<div class="nhsuk-grid-column-two-thirds">
+						<h1 class="nhsuk-heading-l">
+							<span class="nhsuk-caption-l">
+								Department of Health and Social Care questionnaire
+								<span class="nhsuk-u-visually-hidden"> - </span>
+							</span>
+							Department of Health and Social Care questionnaire
+						</h1>
+
+						<p>Your answers to the following questions will only be used for research purposes. They will be anonymised before sharing with the Department of Health and Social Care.</p>
+
+						<p>These questions will take around 10 minutes to complete.</p>
+					
+						<div class="nhsuk-form-group">
+							<a href="/student/dhsc/start?enrolmentUuid=cec30eb8-0743-4093-9130-43209b4abb38" id="startBtn" class="nhsuk-button" role="button" data-module="nhsuk-button">Start now</a>
+						</div>
+					</div>
+				</div>
+				
+		<div class="dialog" id="dialog-signOut" aria-hidden="true">
+			<div class="dialog-holder" aria-labelledby="dialog-title-1" aria-describedby="dialog-content-1" role="alertdialog">
+				<div class="dialog-content" id="dialog-content-1" role="document" tabindex="0">
+					<h1 class="dialog-heading" id="dialog-title-1">Sign out</h1>
+					<form class="form">
+						<p>This will end your session. Are you sure you want to sign out?</p>
+						<div class="dialog-actions">
+							<a id="logoutYes" class="nhsuk-button nhsuk-u-margin-right-4" role="button" href="/student/logout">Yes</a>
+							<a id="logoutNo" class="nhsuk-button nhsuk-button--secondary" role="button" href="#" onclick="cancel()">No</a><p></p>
+						</div>
+
+						<a class="dialog-close" aria-label="close" type="button">
+							<span class="icon icon-close">x</span>
+						</a>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script>
+			function cancel(){
+				document.getElementById("dialog-content-1").tabIndex = 0;
+				document.getElementById("dialog-signOut").ariaHidden = true;
+			}
+		</script>
+	
+			</main>
+{% endblock %}
