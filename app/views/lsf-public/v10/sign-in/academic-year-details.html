@@ -1,0 +1,129 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Page templates - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+ <div class="nhsuk-width-container">
+    <main class="nhsuk-main-wrapper nhsuk-u-padding-top-0" id="content" role="main">
+		  
+		<div class="nhsuk-phase-banner nhsuk-u-margin-bottom-5 no-print">
+  		<p class="nhsuk-phase-banner__content">
+    		<strong class="nhsuk-tag nhsuk-phase-banner__content__tag">BETA</strong>
+    		<span class="nhsuk-phase-banner__text">
+      		This is a new service - your
+				
+				
+					<a class="nhsuk-link" target="_blank" rel="noopener" href="https://online1.snapsurveys.com/LSF_TDAE_Banner_Survey?pnm=/student/enrolment/details" id="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+				
+
+				</span>
+  		</p>
+		</div>
+	
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <div>
+            <h1 class="nhsuk-heading-l">
+              <span class="nhsuk-caption-l">
+                <span id="studentRef">Your NHS Learning Support Fund reference number is SSRN0001099</span>
+							  <span class="nhsuk-u-visually-hidden"> - </span>
+							</span>
+						  <span>Academic year November 2022 details</span>
+						</h1>
+            <div class="nhsuk-inset-text">
+              <span class="nhsuk-u-visually-hidden">Information: </span>
+              <p>Before you are able to apply for funding you need to answer some questions.</p>
+              <p><a id="dhscQuestions" href="/student/dhsc/intro?enrolmentUuid=cec30eb8-0743-4093-9130-43209b4abb38"><span>Answer Department of Health and Social Care questions</span></a>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nhsuk-grid-row">
+        <!-- ENROLMENT DETAILS -->
+        <div class="nhsuk-grid-column-full"> 
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-third"> 
+
+              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course name</h2>
+              <p id="courseName">Dietetics</p>
+            </div>
+            <div class="nhsuk-grid-column-one-third"> 
+              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Attendance status</h2>              
+              <p>Pending</p>
+            </div>
+            <div class="nhsuk-grid-column-one-third"> 
+              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course length</h2>
+              <p id="courseLength">3 years</p>
+            </div>      
+          </div>
+
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-third"> 
+              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">University</h2>
+              <p id="universityName">BIRMINGHAM CITY UNIVERSITY</p>
+
+              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Academic year</h2>
+              <p id="academicYear">November 2022</p>
+                    
+              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course details</h2>
+              <p><a id="updateEnrolment" href="/student/enrol/update?enrolmentUuid=cec30eb8-0743-4093-9130-43209b4abb38">Edit <span class="visually-hidden">enrolment details</span></a></p>
+            </div>
+            <div class="nhsuk-grid-column-one-third"> 
+              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Declaration</h2>
+              <p><a id="declarationLink" href="/student/enrolment/declaration?enrolmentUuid=cec30eb8-0743-4093-9130-43209b4abb38">View <span class="visually-hidden">course declaration</span></a></p>
+
+              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Attendance</h2>
+              <p id="partTime">Full Time</p>
+           
+           								
+                <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Repeat year</h3>
+                <p id="repeatYear">No</p>
+              
+
+            </div>
+            <div class="nhsuk-grid-column-one-third">                 
+              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course year</h2>
+              <p id="courseYear">Year 2</p>
+
+              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Final year</h2>
+              <p id="finalYear">No</p>
+            </div>      
+          </div>
+        </div>
+        
+      </div>
+      
+      
+      
+      
+      
+		<div class="dialog" id="dialog-signOut" aria-hidden="true">
+			<div class="dialog-holder" aria-labelledby="dialog-title-1" aria-describedby="dialog-content-1" role="alertdialog">
+				<div class="dialog-content" id="dialog-content-1" role="document" tabindex="0">
+					<h1 class="dialog-heading" id="dialog-title-1">Sign out</h1>
+					<form class="form">
+						<p>This will end your session. Are you sure you want to sign out?</p>
+						<div class="dialog-actions">
+							<a id="logoutYes" class="nhsuk-button nhsuk-u-margin-right-4" role="button" href="/student/logout">Yes</a>
+							<a id="logoutNo" class="nhsuk-button nhsuk-button--secondary" role="button" href="#" onclick="cancel()">No</a><p></p>
+						</div>
+
+						<a class="dialog-close" aria-label="close" type="button">
+							<span class="icon icon-close">x</span>
+						</a>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script>
+			function cancel(){
+				document.getElementById("dialog-content-1").tabIndex = 0;
+				document.getElementById("dialog-signOut").ariaHidden = true;
+			}
+		</script>
+	
+    </main>
+  </div>
+{% endblock %}
