@@ -1,0 +1,27 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+You cannot change from an employment based course online
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Course details</span>
+      You cannot change from an employment based course online</h1>
+
+    <p>To change your course, you can <a href="#">contact us (opens in a new tab)</a>.</p>
+
+    <p class="nhsuk-u-margin-top-9"><a href="dashboard">Cancel and return to dashboard</a></p>
+
+  </div>
+
+</div>
+{% endblock %}

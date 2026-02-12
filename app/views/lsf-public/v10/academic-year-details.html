@@ -65,7 +65,12 @@
               <p id="academicYear">September 2024</p>
 
               <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course details</h2>
-              <p><a id="updateEnrolment" href="#">Edit <span class="visually-hidden">enrolment details</span></a></p>
+              
+              {% if data['onEBcourse'] == 'Yes' %}
+              <p><a href="cant-change-from-EB-course">Edit enrolment details</a></p>
+              {% else %}
+              <p><a href="edit-enrolment-details">Edit enrolment details</a></p>
+              {% endif %}
 
               <p></p>
             </div>

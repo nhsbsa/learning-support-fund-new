@@ -1,0 +1,29 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+There are no courses starting September 2024 registered at University of Newcastle
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Course details</span>
+      There are no courses starting September 2024 registered at University of Newcastle</h1>
+
+    <p>If you cannot find your academic year, you can <a href="#">contact us (opens in a new tab)</a>.</p>
+
+    <p>Return to the dashboard to choose another course start month or university.</p>
+
+    <p><a href="dashboard">Cancel and return to dashboard</a></p>
+
+  </div>
+
+</div>
+{% endblock %}
