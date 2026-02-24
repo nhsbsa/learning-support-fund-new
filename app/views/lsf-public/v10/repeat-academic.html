@@ -14,7 +14,12 @@
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-two-thirds">
 
-        <form action="/lsf-public/v10/sign-in/enrol-check-answers" method="post">
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+        <br><br>
+        <form action="/lsf-public/v10/enrol-check-answers" method="post">
 
           <h1 class="nhsuk-heading-l">
             <span class="nhsuk-caption-l">
@@ -23,10 +28,9 @@
             </span>
             Are you repeating any part of your course this academic year?
           </h1>
-
-          <div class="nhsuk-body">
+<p>
             If yes we may need to contact your university about this, as we need a reason why you are repeating
-          </div>
+</p>
 
           {% set yesHtml %}
             {{ input({
