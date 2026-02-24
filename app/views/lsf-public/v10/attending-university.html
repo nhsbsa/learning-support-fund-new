@@ -7,6 +7,17 @@
 {% block content %}
   <div class="nhsuk-grid-row">
 
+      <!-- STYLES FROM https://github.com/alphagov/accessible-autocomplete/blob/main/dist/accessible-autocomplete.min.css -->
+      <style>.autocomplete__wrapper{position:relative}.autocomplete__hint,.autocomplete__input{-webkit-appearance:none;appearance:none;border:2px solid #0b0c0c;border-radius:0;box-sizing:border-box;height:2.5rem;line-height:1.25;margin-bottom:0;width:100%}.autocomplete__input{background-color:transparent;position:relative}.autocomplete__hint{color:#505a5f;position:absolute}.autocomplete__input--default{padding:5px}.autocomplete__input--focused{box-shadow:inset 0 0 0 2px;outline:3px solid #fd0;outline-offset:0}.autocomplete__input--show-all-values{cursor:pointer;padding:5px 35px 5px 5px}.autocomplete__dropdown-arrow-down{display:inline-block;height:24px;position:absolute;right:8px;top:10px;width:24px;z-index:-1}.autocomplete__menu{background-color:#fff;border:2px solid #0b0c0c;border-top:0;color:#0b0c0c;margin:0;max-height:342px;overflow-x:hidden;padding:0;width:100%;width:calc(100% - 4px)}.autocomplete__menu--visible{display:block}.autocomplete__menu--hidden{display:none}.autocomplete__menu--overlay{box-shadow:0 2px 6px rgba(0,0,0,.257);left:0;position:absolute;top:100%;z-index:100}.autocomplete__menu--inline{position:relative}.autocomplete__option{border-bottom:1px solid #b1b4b6;border-left-width:0;border-right-width:0;border-top-width:1px;cursor:pointer;display:block;position:relative}.autocomplete__option>*{pointer-events:none}.autocomplete__option:first-of-type{border-top-width:0}.autocomplete__option:last-of-type{border-bottom-width:0}.autocomplete__option--odd{background-color:#f3f2f1}.autocomplete__option--focused,.autocomplete__option:hover{background-color:#1d70b8;border-color:#1d70b8;color:#fff;outline:none}@media (-ms-high-contrast:active),(forced-colors:active){.autocomplete__menu{border-color:FieldText}.autocomplete__option{background-color:Field;color:FieldText}.autocomplete__option--focused,.autocomplete__option:hover{background-color:Highlight;background-color:SelectedItem;border-color:SelectedItem;color:HighlightText;color:SelectedItemText;forced-color-adjust:none;outline-color:SelectedItemText}}.autocomplete__option--no-results{background-color:#f3f2f1;color:#505a5f;cursor:not-allowed}.autocomplete__hint,.autocomplete__input,.autocomplete__option{font-size:1rem;font-weight:400}.autocomplete__hint,.autocomplete__option{padding:5px}@media (min-width:641px){.autocomplete__hint,.autocomplete__input,.autocomplete__option{font-size:1.1875rem;line-height:1.3157894737}}
+
+/*# sourceMappingURL=accessible-autocomplete.min.css.map*/</style>
+
+      <!-- TWEAK STYLES -->
+      <style>
+        .autocomplete__input { background-color: #FFF; }
+        .autocomplete__option { margin-bottom: 0; }
+     </style>
+
     <div class="nhsuk-grid-column-two-thirds">
 
         {{ backLink({
@@ -14,22 +25,162 @@
             "text": "Go back"
         }) }}
 
-        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">SSRN0000059 - Joe Bloggs</span>Please select the university you are attending</h1>
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Course details</span>Which university are you attending?</h1>
 
-        <p>If this is your first time applying for funding please select the university you plan to attend. These details can be changed at a later date if needed.</p>
+        <p>We need to know your home university. This is the university that you'll graduate from.</p>
 
         <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="attending-university">
-              University
-            </label>
-            <select class="nhsuk-select" id="attending-university" name="attending-university">
-              <option value="1" selected></option>
-              <option value="2">BIRMINGHAM CITY UNIVERSITY</option>
-              <option value="3">NORTHUMBRIA UNIVERSITY</option>
-            </select>
-        </div>
+            
+        {{ select({
+          id: 'universityChoice',
+          name: 'universityChoice',
+          value: '',
+          label: {
+            classes: 'nhsuk-hint',
+            isPageHeading: true,
+            text: 'For example, University of Newcastle'
+          },
 
-        <a class="nhsuk-button" href="university-course">Next</a><br>
+          items: [
+            { value: '', text: 'Please select' },
+            { value: 'ANGLIA RUSKIN UNIVERSITY', text: 'ANGLIA RUSKIN UNIVERSITY' },
+            { value: 'AUTOMATION TEST UNIVERSITY', text: 'AUTOMATION TEST UNIVERSITY' },
+            { value: 'BIRMINGHAM CITY UNIVERSITY', text: 'BIRMINGHAM CITY UNIVERSITY' },
+            { value: 'BIRMINGHAM METROPOLITAN COLLEGE', text: 'BIRMINGHAM METROPOLITAN COLLEGE' },
+            { value: 'BOURNEMOUTH UNIVERSITY', text: 'BOURNEMOUTH UNIVERSITY' },
+            { value: 'BPP UNIVERSITY LTD', text: 'BPP UNIVERSITY LTD' },
+            { value: 'BRUNEL UNIVERSITY LONDON', text: 'BRUNEL UNIVERSITY LONDON' },
+            { value: 'BUCKS NEW UNIVERSITY', text: 'BUCKS NEW UNIVERSITY' },
+            { value: 'CANTERBURY CHRIST CHURCH UNIVERSITY', text: 'CANTERBURY CHRIST CHURCH UNIVERSITY' },
+            { value: 'CITY UNIVERSITY LONDON', text: 'CITY UNIVERSITY LONDON' },
+            { value: 'COLCHESTER INSTITUTE', text: 'COLCHESTER INSTITUTE' },
+            { value: 'COVENTRY UNIVERSITY', text: 'COVENTRY UNIVERSITY' },
+            { value: 'DE MONTFORT UNIVERSITY', text: 'DE MONTFORT UNIVERSITY' },
+            { value: 'EDGE HILL UNIVERSITY', text: 'EDGE HILL UNIVERSITY' },
+            { value: 'KEELE UNIVERSITY', text: 'KEELE UNIVERSITY' },
+            { value: 'KINGS COLLEGE LONDON', text: 'KINGS COLLEGE LONDON' },
+            { value: 'KINGSTON UNIVERSITY', text: 'KINGSTON UNIVERSITY' },
+            { value: 'LEEDS BECKETT UNIVERSITY', text: 'LEEDS BECKETT UNIVERSITY' },
+            { value: 'LIVERPOOL JOHN MOORES UNIVERSITY', text: 'LIVERPOOL JOHN MOORES UNIVERSITY' },
+            { value: 'LONDON METROPOLITAN UNIVERSITY', text: 'LONDON METROPOLITAN UNIVERSITY' },
+            { value: 'LONDON SOUTH BANK UNIVERSITY', text: 'LONDON SOUTH BANK UNIVERSITY' },
+            { value: 'MANCHESTER METROPOLITAN UNIVERSITY', text: 'MANCHESTER METROPOLITAN UNIVERSITY' },
+            { value: 'MIDDLESEX UNIVERSITY', text: 'MIDDLESEX UNIVERSITY' },
+            { value: 'NEW COLLEGE DURHAM', text: 'NEW COLLEGE DURHAM' },
+            { value: 'NORTHUMBRIA UNIVERSITY', text: 'NORTHUMBRIA UNIVERSITY' },
+            { value: 'OXFORD BROOKES UNIVERSITY', text: 'OXFORD BROOKES UNIVERSITY' },
+            { value: 'OXFORD BROOKES UNIVERSITY', text: 'OPEN UNIVERSITY' },
+            { value: 'SHEFFIELD HALLAM UNIVERSITY', text: 'SHEFFIELD HALLAM UNIVERSITY' },
+            { value: 'SOLENT UNIVERSITY', text: 'SOLENT UNIVERSITY' },
+            { value: "ST GEORGE'S - UNIVERSITY OF LONDON", text: "ST GEORGE'S - UNIVERSITY OF LONDON" },
+            { value: 'STAFFORDSHIRE UNIVERSITY', text: 'STAFFORDSHIRE UNIVERSITY' },
+            { value: 'TEST', text: 'TEST' },
+            { value: 'TEST UNIVERSITY', text: 'TEST UNIVERSITY' },
+            { value: 'UNIVERSITY COLLEGE LONDON', text: 'UNIVERSITY COLLEGE LONDON' },
+            { value: 'UNIVERSITY OF BEDFORDSHIRE', text: 'UNIVERSITY OF BEDFORDSHIRE' },
+            { value: 'UNIVERSITY OF BIRMINGHAM', text: 'UNIVERSITY OF BIRMINGHAM' },
+            { value: 'UNIVERSITY OF BOLTON', text: 'UNIVERSITY OF BOLTON' },
+            { value: 'UNIVERSITY OF BRADFORD', text: 'UNIVERSITY OF BRADFORD' },
+            { value: 'UNIVERSITY OF BRIGHTON', text: 'UNIVERSITY OF BRIGHTON' },
+            { value: 'UNIVERSITY OF BRISTOL', text: 'UNIVERSITY OF BRISTOL' },
+            { value: 'UNIVERSITY OF CENTRAL LANCASHIRE', text: 'UNIVERSITY OF CENTRAL LANCASHIRE' },
+            { value: 'UNIVERSITY OF CHESTER', text: 'UNIVERSITY OF CHESTER' },
+            { value: 'UNIVERSITY OF CUMBRIA', text: 'UNIVERSITY OF CUMBRIA' },
+            { value: 'UNIVERSITY OF DERBY', text: 'UNIVERSITY OF DERBY' },
+            { value: 'UNIVERSITY OF EAST ANGLIA', text: 'UNIVERSITY OF EAST ANGLIA' },
+            { value: 'UNIVERSITY OF EAST LONDON', text: 'UNIVERSITY OF EAST LONDON' },
+            { value: 'UNIVERSITY OF ESSEX', text: 'UNIVERSITY OF ESSEX' },
+            { value: 'UNIVERSITY OF EXETER', text: 'UNIVERSITY OF EXETER' },
+            { value: 'UNIVERSITY OF GLOUCESTERSHIRE', text: 'UNIVERSITY OF GLOUCESTERSHIRE' },
+            { value: 'UNIVERSITY OF GREENWICH', text: 'UNIVERSITY OF GREENWICH' },
+            { value: 'UNIVERSITY OF HERTFORDSHIRE', text: 'UNIVERSITY OF HERTFORDSHIRE' },
+            { value: 'UNIVERSITY OF HUDDERSFIELD', text: 'UNIVERSITY OF HUDDERSFIELD' },
+            { value: 'UNIVERSITY OF HULL', text: 'UNIVERSITY OF HULL' },
+            { value: 'UNIVERSITY OF LEEDS', text: 'UNIVERSITY OF LEEDS' },
+            { value: 'UNIVERSITY OF LEICESTER', text: 'UNIVERSITY OF LEICESTER' },
+            { value: 'UNIVERSITY OF LINCOLN', text: 'UNIVERSITY OF LINCOLN' },
+            { value: 'UNIVERSITY OF LIVERPOOL', text: 'UNIVERSITY OF LIVERPOOL' },
+            { value: 'UNIVERSITY OF MANCHESTER', text: 'UNIVERSITY OF MANCHESTER' },
+            { value: 'UNIVERSITY OF NEWCASTLE', text: 'UNIVERSITY OF NEWCASTLE' },
+            { value: 'UNIVERSITY OF NORTHAMPTON', text: 'UNIVERSITY OF NORTHAMPTON' },
+            { value: 'UNIVERSITY OF NOTTINGHAM', text: 'UNIVERSITY OF NOTTINGHAM' },
+            { value: 'UNIVERSITY OF PLYMOUTH', text: 'UNIVERSITY OF PLYMOUTH' },
+            { value: 'UNIVERSITY OF PORTSMOUTH', text: 'UNIVERSITY OF PORTSMOUTH' },
+            { value: 'UNIVERSITY OF READING', text: 'UNIVERSITY OF READING' },
+            { value: 'UNIVERSITY OF ROEHAMPTON', text: 'UNIVERSITY OF ROEHAMPTON' },
+            { value: 'UNIVERSITY OF SALFORD', text: 'UNIVERSITY OF SALFORD' },
+            { value: 'UNIVERSITY OF SHEFFIELD', text: 'UNIVERSITY OF SHEFFIELD' },
+            { value: 'UNIVERSITY OF SOUTHAMPTON', text: 'UNIVERSITY OF SOUTHAMPTON' },
+            { value: 'UNIVERSITY OF ST MARK AND ST JOHN', text: 'UNIVERSITY OF ST MARK AND ST JOHN' },
+            { value: 'UNIVERSITY OF SUFFOLK', text: 'UNIVERSITY OF SUFFOLK' },
+            { value: 'UNIVERSITY OF SUNDERLAND', text: 'UNIVERSITY OF SUNDERLAND' },
+            { value: 'UNIVERSITY OF SURREY', text: 'UNIVERSITY OF SURREY' },
+            { value: 'UNIVERSITY OF TEESSIDE', text: 'UNIVERSITY OF TEESSIDE' },
+            { value: 'UNIVERSITY OF THE WEST OF ENGLAND', text: 'UNIVERSITY OF THE WEST OF ENGLAND' },
+            { value: 'UNIVERSITY OF WEST LONDON', text: 'UNIVERSITY OF WEST LONDON' },
+            { value: 'UNIVERSITY OF WINCHESTER', text: 'UNIVERSITY OF WINCHESTER' },
+            { value: 'UNIVERSITY OF WOLVERHAMPTON', text: 'UNIVERSITY OF WOLVERHAMPTON' },
+            { value: 'UNIVERSITY OF WORCESTER', text: 'UNIVERSITY OF WORCESTER' },
+            { value: 'UNIVERSITY OF YORK', text: 'UNIVERSITY OF YORK' },
+            { value: 'UNIVERSIYT OF PLYMOUTH', text: 'UNIVERSIYT OF PLYMOUTH' },
+            { value: 'YORK ST JOHN UNIVERSITY', text: 'YORK ST JOHN UNIVERSITY' }
+          ]
+        }) }}
+
+</div>
+
+
+      <!-- DIRECT VERSION -->
+
+      <script src="/js/accessible-autocomplete.min.js"></script>
+      <script type="text/javascript">
+
+        const enhancedAccessibleAutocomplete = (function(){
+
+          //
+          // INIT FUNCTION
+          //
+          function _init( el ){
+            
+            const selectElement = el;
+            let currentValue;
+
+            if( selectElement ){
+
+              accessibleAutocomplete.enhanceSelectElement({
+                'selectElement': selectElement,
+                'minLength': 2,
+                'defaultValue': '',
+                'showNoOptionsFound': false,
+                'confirmOnBlur': false
+              })
+
+            }
+
+          }
+          
+          //
+          //  RETURN
+          //
+          return {
+            init: _init
+          }
+
+        })();
+
+        window.addEventListener('DOMContentLoaded',function(){
+            enhancedAccessibleAutocomplete.init( document.querySelector('#universityChoice') );
+        });
+
+      </script>
+
+      <!-- End of content -->
+
+    </div>  
+  </div>
+  <p class="nhsuk-body">If you cannot find your university, you can <a href="https://www.nhsbsa.nhs.uk/nhs-learning-support-fund-lsf/contact-us" target="_blank" rel="noopener" id="contactUsLink">contact us (opens in a new tab).</a></p>
+
+        <a class="nhsuk-button" href="university-course">Continue</a><br>
         <a href="dashboard">Cancel</a>
 
 

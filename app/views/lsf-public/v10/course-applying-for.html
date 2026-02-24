@@ -1,38 +1,41 @@
 {% extends 'layout-public.html' %}
 
 {% block pageTitle %}
-  What course year are you applying for
+What course year are you applying for
 {% endblock %}
 
 {% block content %}
-  <div class="nhsuk-grid-row">
+<div class="nhsuk-grid-row">
 
-    <div class="nhsuk-grid-column-two-thirds">
+  <div class="nhsuk-grid-column-two-thirds">
 
-        {{ backLink({
-            "href": "javascript:history.go(-1)",
-            "text": "Go back"
-        }) }}
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
 
-        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">SSRN0000059 - Joe Bloggs</span>What course year are you applying for</h1>
+    <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Course details</span>How long is the
+      course you are studying?</h1>
 
-        <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="year-applying-for">
-              Course year
-            </label>
-            <select class="nhsuk-select" id="year-applying-for" name="year-applying-for">
-              <option value="1" selected>Please select...</option>
-              <option value="2">Year 1</option>
-              <option value="3">Year 2</option>
-              <option value="4">Year 3</option>
-            </select>
+    <div class="nhsuk-form-group">
+
+
+      <div class="nhsuk-radios">
+        <div class="nhsuk-radios__item">
+          <div class="nhsuk-multiple-choice">
+            <input type="radio" id="crsLen[0]" value="25" class="nhsuk-radios__input" checked="checked"
+              name="courseLength">
+            <label class="nhsuk-label nhsuk-radios__label" for="crsLen[0]">3 years</label>
+          </div>
         </div>
+      </div>
+      <br>
 
-        <a class="nhsuk-button" href="full-part-time">Next</a><br>
-        <a href="dashboard">Cancel</a>
+      <a class="nhsuk-button" href="full-part-time">Continue</a><br>
+
 
 
     </div>
 
   </div>
-{% endblock %}
+  {% endblock %}

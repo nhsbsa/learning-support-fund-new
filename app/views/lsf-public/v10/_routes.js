@@ -9,6 +9,19 @@ const session = require('express-session');
 // const moment = require('moment');
 const router = express.Router();
 
+//LSF APPLY
+router.post('/new-employment2', (req, res) => {
+
+  const employNew = req.session.data['OptionEmployment']
+
+  if (employNew== 'no') {
+   res.redirect('/lsf-public/v10/course-duration');
+  } else {
+    res.redirect('/lsf-public/v10/sign-in/new-employment-kickout');
+  }
+
+})
+
 // TDAE TIMESHEETS
 
 router.post('/v10/TDAE-timesheets', (req, res) => {
@@ -1688,6 +1701,20 @@ router.post('/v10/final-year', (req, res) => {
         res.redirect('/lsf-public/v10/course-applying-for')
     } else {
         res.redirect('/lsf-public/v10/final-year')
+    }
+
+})
+
+router.post('/v10/full-part-time', (req, res) => {
+
+    const PartfullTime = req.session.data['uniparttimefull']
+
+    if (PartfullTime  === 'parttime') {
+        res.redirect('/lsf-public/v10/enrol-check-answers')
+    } else if (PartfullTime === 'fulltime') {
+        res.redirect('/lsf-public/v10/repeat-academic')
+    } else {
+        res.redirect('/lsf-public/v10/enrol-check-answers')
     }
 
 })
