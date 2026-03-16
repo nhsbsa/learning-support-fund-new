@@ -443,7 +443,7 @@ router.post('/v10/TDAE-accommodation-term-time-costs', (req, res) => {
   if (accommodationCosts === 'yes'){
     res.redirect('/lsf-public/v10/TDAE-accommodation-pause')
   } else {
-    res.redirect('/lsf-public/v10/TDAE-accommodation-live-with-parents')
+    res.redirect('/lsf-public/v10/TDAE-signpost/TDAE-accommodation-not-eligible')
   }
 
 })
