@@ -19,17 +19,17 @@
         <div class="nhsuk-grid-column-one-third">
 <div class="nhsuk-card nhsuk-card--clickable">
               <div class="nhsuk-card__content">
-                  
+
                       <h2 class="nhsuk-card__heading nhsuk-heading-s">
                       <a style="word-break: auto-phrase;" class="nhsuk-card__link" href="academic-year">Apply for 2025/2026 academic year</a>
                       </h2>
                       <p style="word-break: auto-phrase;" class="nhsuk-body-s nhsuk-card__description">You can now apply for this academic year</p>
-                  
+
               </div>
           </div>
           <div class="nhsuk-card nhsuk-card--clickable">
               <div class="nhsuk-card__content">
-                
+
                   {% if data['questionnaire-completed'] == 'Completed' %}
                       <h2 class="nhsuk-card__heading nhsuk-heading-s">
                       <a style="word-break: auto-phrase;" class="nhsuk-card__link" href="TDAE-returning-student/academic-year-details?status=interrupted">View 2024/2025 academic year details</a>
@@ -123,6 +123,28 @@
                           </td>
                           <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Action </span> <a href="information-mismatch-confirm">Confirm change</a>
+                          </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                          <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Notification</span> Travel and Dual Accommodation advance payment
+                          </td>
+                          <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Description </span> You can now request a TDAE advance payment towards future travel and accommodation costs.
+                          </td>
+                          <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Action </span> <a href="advanced-payment/start">Request payment</a> or <br><a href="#">dismiss notification</a>
+                          </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                          <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Notification</span> Travel and Dual Accommodation advance payment
+                          </td>
+                          <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Description </span> The balance of your TDAE advance payment is £xx. Because this is below £50 you can now request another advance payment.
+                          </td>
+                          <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Action </span> <a href="advanced-payment/start">Request payment</a> or <br><a href="#">dismiss notification</a>
                           </td>
                       </tr>
                       <tr role="row" class="nhsuk-table__row">

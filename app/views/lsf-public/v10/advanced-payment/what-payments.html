@@ -1,0 +1,53 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Travel and Dual Accommodation Expenses (TDAE) advance payment
+{% endblock %}
+
+{% block beforeContent %}
+  {{ backLink({
+      "href": "javascript:history.go(-1)",
+      "text": "Go back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		<form action="declaration" method="POST">
+      <div class="nhsuk-form-group">
+				<h1 class="nhsuk-heading-l">What advance payments do you want?</h1>
+
+        <div class="nhsuk-radios" data-module="nhsuk-radios">
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="advance-payment-yes" name="advance-payment" type="radio" value="£200">
+            <label class="nhsuk-label nhsuk-radios__label" for="example">
+              £200 for travel only
+            </label>
+          </div>
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="advance-payment-no" name="advance-payment" type="radio" value="£400">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+              £400 for accommodation only
+            </label>
+          </div>
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="advance-payment-no" name="advance-payment" type="radio" value="£600">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+              £600 for travel and accommodation
+            </label>
+          </div>
+        </div>
+      </div>
+
+				<button class="nhsuk-button" type="submit">Continue</button><br>
+				<p><a href="../TDAE-returning-student/academic-year-details#tab-four">Cancel</a></p>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

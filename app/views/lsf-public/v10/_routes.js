@@ -9,6 +9,31 @@ const session = require('express-session');
 // const moment = require('moment');
 const router = express.Router();
 
+//TDAE Advance payment
+
+router.post('/v10/advance-payment/advance-payment', (req, res) => {
+
+  const advancePayment = req.session.data['advance-payment']
+  const claimTDAE = req.session.data['claim-TDAE']
+
+  if (claimTDAE === 'travelaccomm') {
+    if (advancePayment === 'no') {
+        res.redirect('/lsf-public/v10/TDAE-returning-student/academic-year-details#tab-four')
+    }
+    else {
+        res.redirect('/lsf-public/v10/advanced-payment/what-payments')
+      }
+  } else {
+    if (advancePayment === 'no') {
+        res.redirect('/lsf-public/v10/TDAE-returning-student/academic-year-details#tab-four')
+    }
+    else {
+        res.redirect('/lsf-public/v10/advanced-payment/declaration')
+      }
+    }
+
+})
+
 //LSF APPLY
 router.post('/new-employment2', (req, res) => {
 

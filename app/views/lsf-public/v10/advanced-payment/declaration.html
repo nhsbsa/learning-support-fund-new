@@ -1,0 +1,55 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Declaration
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ backLink({
+      "href": "javascript:history.go(-1)",
+      "text": "Go back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <form action="confirmation" method="POST">
+
+        <h1 class="nhsuk-heading-l">Advanced payment declaration</h1>
+
+        <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">
+              <span role="text">
+                <span class="nhsuk-u-visually-hidden">Important: </span>
+                Declaration
+              </span>
+            </h3>
+            <!--<p>I declare that the information I have provided is correct and complete.</p>
+            <p>I understand and accept that if I withhold information from NHSBSA Student Services and / or provide false or misleading information, financial support may be refused or withdrawn, and any future applications may be rejected.</p>
+            <p>I understand and accept if I withhold information from NHSBSA Student Services and / or provide false or misleading information disciplinary action may be taken against me and I may be liable to criminal prosecution.</p>
+            -->
+            <p>Declaration required here</p>
+          </div>
+
+
+
+        <div class="nhsuk-checkboxes__item nhsuk-u-margin-bottom-7">
+            <input class="nhsuk-checkboxes__input" id="COSA-declaration" name="COSA-declaration" type="checkbox" value="accepted">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="COSA-declaration">
+              Accept declaration
+            </label>
+        </div>
+
+        <button class="nhsuk-button" type="submit">Submit request</button><br>
+        <p><a href="../TDAE-returning-student/academic-year-details#tab-four">Cancel</a></p>
+
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}

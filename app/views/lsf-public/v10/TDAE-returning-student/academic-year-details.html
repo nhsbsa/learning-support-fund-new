@@ -126,6 +126,9 @@ Academic year September 2023
         <li class="nhsuk-tabs__list-item">
           <a class="nhsuk-tabs__tab" href="#tab-three">Exceptional  Support Fund</a>
         </li>
+        <li class="nhsuk-tabs__list-item">
+          <a class="nhsuk-tabs__tab" href="#tab-four">Travel and Dual Accommodation Expenses (TDAE) advance payment</a>
+        </li>
       </ul>
 
       <div class="nhsuk-tabs__panel" id="tab-one">
@@ -165,6 +168,10 @@ Academic year September 2023
         <a class="nhsuk-button nhsuk-u-margin-right-5" href="../TDAE-start-screen">Make a claim</a>
         <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-active-claims">View your active claims</a><br>
         <p><a href="TDAE-claim-history">View your previous claims</a></p>
+        <!--<h3 class="nhsuk-heading-m">Request an advanced payment</h3>
+        <p>Once you’ve claimed Travel and Dual Accommodation Expenses (TDAE), you can choose to apply for an advance payment towards future travel and accommodation costs.</p>
+        <p>The TDAE advance payment is a lump sum you can use to cover any future placement costs.</p>
+        <a class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-right-5" href="../TDAE-start-screen">Request an advanced payment</a>-->
       </div>
       <div class="nhsuk-tabs__panel" id="tab-three">
         <h3 class="nhsuk-heading-m">Exceptional Support Fund (ESF)</h3>
@@ -191,6 +198,81 @@ Academic year September 2023
               href="https://cms.nhsbsa.nhs.uk/nhs-learning-support-fund-lsf/contact-nhs-learning-support-fund">Contact
               us</a> for more information.</p>
         </div>
+        {% endif %}
+      </div>
+      <div class="nhsuk-tabs__panel" id="tab-four">
+        {% if data['ap'] == 'requested' %}
+          <h3 class="nhsuk-heading-m">Travel and Dual Accommodation Expenses (TDAE) advance payment</h3>
+          <!--<p>your current advance payment balance is £400</p>-->
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>your current advance payment balance is £400</p>
+          </div>
+          <!--<h4 class="nhsuk-heading-s">Advance payments requested</h4>-->
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption">
+              Advance payments requested
+            </caption>
+            <thead class="nhsuk-table__head">
+              <tr class="nhsuk-table__row">
+                <th scope="col" class="nhsuk-table__header">
+                  Advance payment claims
+                </th>
+                <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
+                  Claimed value
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr class="nhsuk-table__row">
+                <th scope="row" class="nhsuk-table__header">
+                  1 October 2026
+                </th>
+                <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                  £400
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        {% elseif data['ap'] == 'top-up' %}
+          <h3 class="nhsuk-heading-m">Travel and Dual Accommodation Expenses (TDAE) advance payment</h3>
+          <!--<p>your current advance payment balance is £400</p>-->
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>your current advance payment balance is £32.50</p>
+          </div>
+          <p>Because your balance is below £50 you can now request another advance payment.<p>
+          <a class="nhsuk-button nhsuk-u-margin-right-5" href="../advanced-payment/start">Request advanced payment</a>
+          <!--<h4 class="nhsuk-heading-s">Advance payments requested</h4>-->
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption">
+              Advance payments requested
+            </caption>
+            <thead class="nhsuk-table__head">
+              <tr class="nhsuk-table__row">
+                <th scope="col" class="nhsuk-table__header">
+                  Advance payment claims
+                </th>
+                <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
+                  Claimed value
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr class="nhsuk-table__row">
+                <th scope="row" class="nhsuk-table__header">
+                  1 October 2026
+                </th>
+                <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                  £400
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        {% else %}
+          <h3 class="nhsuk-heading-m">Request an advanced payment</h3>
+          <p>Once you’ve claimed Travel and Dual Accommodation Expenses (TDAE), you can choose to apply for an advance payment towards future travel and accommodation costs.</p>
+          <a class="nhsuk-button nhsuk-u-margin-right-5" href="../advanced-payment/start">Continue</a>
         {% endif %}
       </div>
     </div>

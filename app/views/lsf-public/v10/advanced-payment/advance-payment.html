@@ -1,0 +1,56 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Travel and Dual Accommodation Expenses (TDAE) advance payment
+{% endblock %}
+
+{% block beforeContent %}
+  {{ backLink({
+      "href": "javascript:history.go(-1)",
+      "text": "Go back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		<form action="../v10/advance-payment/advance-payment" method="POST">
+      <div class="nhsuk-form-group">
+        {% if data['claim-TDAE'] == "travelaccomm" %}
+          <h1 class="nhsuk-heading-l">Do you want to apply for advance payments? </h1>
+          <p class="nhsuk-body">If you select "Yes" you can request  upfront payments of £200 for travel to and from a placement and £400 for accommodation.</p>
+        {% elseif data['claim-TDAE'] == "accomm" %}
+          <h1 class="nhsuk-heading-l">Do you want an advance payment for accommodation?</h1>
+          <p class="nhsuk-body">If you select "Yes" you can request  upfront payments of £200 for travel to and from a placement and £400 for accommodation.</p>
+        {% else %}
+          <h1 class="nhsuk-heading-l">Do you want an advance payment for travel? </h1>
+          <p class="nhsuk-body">If you select "Yes" you can request an upfront payment of £200 for your travel. This will be deducted from your future travel claims.</p>
+        {% endif %}
+
+        <div class="nhsuk-radios" data-module="nhsuk-radios">
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="advance-payment-yes" name="advance-payment" type="radio" value="yes">
+            <label class="nhsuk-label nhsuk-radios__label" for="example">
+              Yes
+            </label>
+          </div>
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="advance-payment-no" name="advance-payment" type="radio" value="no">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+              No
+            </label>
+          </div>
+        </div>
+      </div>
+
+				<button class="nhsuk-button" type="submit">Continue</button><br>
+				<p><a href="../TDAE-returning-student/academic-year-details#tab-four">Cancel</a></p>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}
