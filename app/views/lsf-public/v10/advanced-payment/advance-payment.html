@@ -19,14 +19,14 @@ Travel and Dual Accommodation Expenses (TDAE) advance payment
 		<form action="../v10/advance-payment/advance-payment" method="POST">
       <div class="nhsuk-form-group">
         {% if data['claim-TDAE'] == "travelaccomm" %}
-          <h1 class="nhsuk-heading-l">Do you want to apply for advance payments? </h1>
-          <p class="nhsuk-body">If you select "Yes" you can request  upfront payments of £200 for travel to and from a placement and £400 for accommodation.</p>
+          <h1 class="nhsuk-heading-l">Do you want an advanced payment for travel and accommodation claims? </h1>
+          <p class="nhsuk-body">If you select Yes, you can receive up to £600 payment because you've previously claimed for travel and accommodation costs.</p>
         {% elseif data['claim-TDAE'] == "accomm" %}
-          <h1 class="nhsuk-heading-l">Do you want an advance payment for accommodation?</h1>
-          <p class="nhsuk-body">If you select "Yes" you can request  upfront payments of £200 for travel to and from a placement and £400 for accommodation.</p>
+          <h1 class="nhsuk-heading-l">Do you want an advanced payment for travel and accommodation claims?</h1>
+          <p class="nhsuk-body">If you select Yes, you can receive a £400 payment because you've previously claimed for accommodation costs.</p>
         {% else %}
-          <h1 class="nhsuk-heading-l">Do you want an advance payment for travel? </h1>
-          <p class="nhsuk-body">If you select "Yes" you can request an upfront payment of £200 for your travel. This will be deducted from your future travel claims.</p>
+          <h1 class="nhsuk-heading-l">Do you want an advanced payment for travel and accommodation claims? </h1>
+          <p class="nhsuk-body">If you select Yes, you can receive a £200 payment because you've previously claimed for travel costs</p>
         {% endif %}
 
         <div class="nhsuk-radios" data-module="nhsuk-radios">
