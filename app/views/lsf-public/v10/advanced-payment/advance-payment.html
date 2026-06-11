@@ -19,14 +19,14 @@ Travel and Dual Accommodation Expenses (TDAE) advance payment
 		<form action="../v10/advance-payment/advance-payment" method="POST">
       <div class="nhsuk-form-group">
         {% if data['claim-TDAE'] == "travelaccomm" %}
-          <h1 class="nhsuk-heading-l">Do you want an advanced payment for travel and accommodation claims? </h1>
-          <p class="nhsuk-body">If you select Yes, you can receive up to £600 payment because you've previously claimed for travel and accommodation costs.</p>
+          <h1 class="nhsuk-heading-l">Do you want an advance payment for travel and accommodation claims? </h1>
+          <p class="nhsuk-body">Select Yes if you wish to receive a payment of up to £600.</p>
         {% elseif data['claim-TDAE'] == "accomm" %}
-          <h1 class="nhsuk-heading-l">Do you want an advanced payment for travel and accommodation claims?</h1>
-          <p class="nhsuk-body">If you select Yes, you can receive a £400 payment because you've previously claimed for accommodation costs.</p>
+          <h1 class="nhsuk-heading-l">Do you want an advance payment for travel and accommodation claims?</h1>
+          <p class="nhsuk-body">Select Yes if you wish to receive a payment of £400.</p>
         {% else %}
-          <h1 class="nhsuk-heading-l">Do you want an advanced payment for travel and accommodation claims? </h1>
-          <p class="nhsuk-body">If you select Yes, you can receive a £200 payment because you've previously claimed for travel costs</p>
+          <h1 class="nhsuk-heading-l">Do you want an advance payment for travel and accommodation claims? </h1>
+          <p class="nhsuk-body">Select Yes if you wish to receive a payment of £200.</p>
         {% endif %}
 
         <div class="nhsuk-radios" data-module="nhsuk-radios">
