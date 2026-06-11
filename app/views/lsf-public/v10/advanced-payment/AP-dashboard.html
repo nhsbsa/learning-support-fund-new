@@ -1,0 +1,114 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Academic year September 2023
+{% endblock %}
+{% block beforeContent %}
+  {{ backLink({
+      "href": "javascript:history.go(-1)",
+      "text": "Go back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-heading-l">Travel and Dual Accommodation Expenses (TDAE) advance payment</h1>
+  </div>
+
+</div>
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {% if data['ap'] == 'requested' %}
+      <!--<p>your current advance payment balance is £400</p>-->
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>your current advance payment balance is £400</p>
+      </div>
+      <!--<h4 class="nhsuk-heading-s">Advance payments requested</h4>-->
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">
+          Advance payments requested
+        </caption>
+        <thead class="nhsuk-table__head">
+          <tr class="nhsuk-table__row">
+            <th scope="col" class="nhsuk-table__header">
+              Advance payment claims
+            </th>
+            <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
+              Claimed value
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr class="nhsuk-table__row">
+            <th scope="row" class="nhsuk-table__header">
+              1 October 2026
+            </th>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+              £400
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    {% elseif data['ap'] == 'top-up' %}
+      <!--<p>your current advance payment balance is £400</p>-->
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>your current advance payment balance is £32.50</p>
+      </div>
+      <p>Because your balance is below £50 you can now request another advance payment.<p>
+      <a class="nhsuk-button nhsuk-u-margin-right-5" href="../advanced-payment/start">Request advanced payment</a>
+      <!--<h4 class="nhsuk-heading-s">Advance payments requested</h4>-->
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">
+          Advance payments requested
+        </caption>
+        <thead class="nhsuk-table__head">
+          <tr class="nhsuk-table__row">
+            <th scope="col" class="nhsuk-table__header">
+              Advance payment claims
+            </th>
+            <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
+              Claimed value
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr class="nhsuk-table__row">
+            <th scope="row" class="nhsuk-table__header">
+              1 October 2026
+            </th>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+              £400
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    {% else %}
+    <form action="advance-payment" method="POST">
+        <p class="nhsuk-body">The TDAE advance payment is an upfront lump sum you can use to cover any future placement costs. You can request an upfront payment of £200 for travel, £400 for accommodation or £600 for both.</p>
+        <h2 class="nhsuk-heading-s">It’s not extra funding</h2>
+        <p class="nhsuk-body">Taking an advance payment simply means you get more money now and less later on. The advantage is that you’ll already have funds in place when extra travel and accommodation costs come along.</p>
+        <h2 class="nhsuk-heading-s">You can apply more than once</h2>
+        <p class="nhsuk-body">Once the balance of your TDAE advance payment drops below £50, you can apply for another one.</p>
+        <h2 class="nhsuk-heading-s">You don't have to make a decision now</h2>
+        <p class="nhsuk-body">You can apply for a TDAE advance payment at any point during your course.</p>
+        <h2 class="nhsuk-heading-s">Things you need to consider </h2>
+        <p class="nhsuk-body">If you’re thinking of requesting a TDAE advance payment for the first time, there are a couple of things you need to be aware of:</p>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><b>If you don’t use all of your advance payment</b> – if you haven't used all of your advance payment by your term 3 payment date, the unused balance will be deducted from that final payment.
+            <br>For example, if you receive an advance payment of £400, and your travel and dual accommodation costs for this year’s placements only come to £300, £100 will be deducted from your term 3 payment.</li>
+            <li><b>If you leave your course early</b> – if you leave and you haven't used all of your advance payment, you’ll need to pay the balance back.</li>
+          </ul>
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+
+    </form>
+    {% endif %}
+    <p><a href="#">Return to dashboard</a></p>
+
+  </div>
+</div>
+{% endblock %}
