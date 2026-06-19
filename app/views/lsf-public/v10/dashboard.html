@@ -61,17 +61,23 @@
               </div>
           </div>
         </div>
-        <!-- Option E if Advanced payment paid over multiple years rather than contained within academic years
+        <!-- Option E if Advanced payment paid over multiple years rather than contained within academic years -->
         <div class="nhsuk-grid-column-one-third">
           <div class="nhsuk-card nhsuk-card--clickable">
               <div class="nhsuk-card__content">
                   <h2 class="nhsuk-card__heading nhsuk-heading-s">
-                  <a style="word-break: auto-phrase;" style="word-break: auto-phrase;" class="nhsuk-card__link" href="advanced-payment/AP-dashboard">TDAE Advanced Payment</a>
+                  <a style="word-break: auto-phrase;" style="word-break: auto-phrase;" class="nhsuk-card__link" href="advanced-payment/AP-dashboard">TDAE advance payment</a>
                   </h2>
-                  <p style="word-break: auto-phrase;" class="nhsuk-body-s nhsuk-card__description">An advance payment towards future Travel and Dual Accommodation Expenses (TDAE)</p>
+                  {% if data['ap'] == 'requested' %}
+                    <p style="word-break: auto-phrase;" class="nhsuk-body-s nhsuk-card__description">View your advance payment balance for future Travel and Dual Accommodation Expenses (TDAE).</p>
+                  {% elseif data['ap'] == 'top-up' %}
+                    <p style="word-break: auto-phrase;" class="nhsuk-body-s nhsuk-card__description">You can request another advance payment and view your balance for future Travel and Dual Accommodation Expenses (TDAE).</p>
+                  {% else %}
+                    <p style="word-break: auto-phrase;" class="nhsuk-body-s nhsuk-card__description">You can request an advance payment towards future Travel and Dual Accommodation Expenses (TDAE).</p>
+                  {% endif %}
               </div>
           </div>
-        </div>-->
+        </div>
       </div>
 
     <div class="nhsuk-grid-row">
@@ -138,6 +144,7 @@
                               <span class="nhsuk-table-responsive__heading">Action </span> <a href="information-mismatch-confirm">Confirm change</a>
                           </td>
                       </tr>
+                      <!-- Removed the notifications for TDAE advance payment as state displayed in dashboard tile now
                       {% if data['ap'] == 'top-up' %}
                         <tr role="row" class="nhsuk-table__row">
                             <td role="cell" class="nhsuk-table__cell">
@@ -162,7 +169,7 @@
                                 <span class="nhsuk-table-responsive__heading">Action </span> <a href="advanced-payment/start">Request payment</a> or <br><a href="#">dismiss notification</a>
                             </td>
                         </tr>
-                      {% endif %}
+                      {% endif %}-->
                       <tr role="row" class="nhsuk-table__row">
                           <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Notification</span> Travel and Dual Accommodation Expense claim
