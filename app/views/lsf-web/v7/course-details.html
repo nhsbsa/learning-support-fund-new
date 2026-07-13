@@ -1,0 +1,1300 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Student details
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-width-container">
+			<main class="nhsuk-main-wrapper" id="maincontent" role="main">
+				<div class="nhsuk-grid-row">
+					<div class="nhsuk-grid-column-two-thirds">
+						<h1 class="nhsuk-heading-xl">
+							<span class="nhsuk-caption-l" id="studentRef">
+								<span>SSRN0000607-1</span>
+								<span class="nhsuk-u-visually-hidden"> - </span>
+							</span>
+							<span>Course details</span>
+						</h1>
+						
+							<h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-1">SSRN0000607 - Joe Hutchinson</h2>
+						
+					</div>
+					<div class="nhsuk-grid-column-one-third">
+						<div class="lockStudent">
+ 			<form action="/internal/lockStudent/update" method="POST"><input type="hidden" name="_csrf" value="8580d0e7-732f-4b09-9643-02d0a676e890">
+				<input type="hidden" name="id" id="id" value="607">
+				
+					
+					<button value="Lock" class=" nhsuk-button nhsuk-button--secondary right-floater" type="submit" name="unlock" id="unlock">Unlock<span class="nhsuk-u-visually-hidden"> account for editing</span></button>
+				
+				
+			</form>					
+		</div>
+					</div>
+				</div>
+				<div class="nhsuk-grid-row">
+					<div class="nhsuk-grid-column-full">
+						<hr>
+					</div>
+					<form name="enrolmentDetailsForm" action="/internal/enrolment/details" method="post" novalidate=""><input type="hidden" name="_csrf" value="8580d0e7-732f-4b09-9643-02d0a676e890">
+						<div class="nhsuk-grid-column-full">
+							
+						</div>
+						<div class="nhsuk-grid-column-two-thirds">
+							<div>
+								<div class="nhsuk-form-group" id="enrolled-group">
+									<label id="enrolled-label" for="enrolledDrop" class="nhsuk-label">Attendance Status</label>
+									
+									<select class="nhsuk-select" id="enrolledDrop" aria-describedby="enrolled-label" name="enrolledStatus">
+										<option value="6" id="enrolledStatusDropdown0">Discontinued</option>
+										<option value="2" id="enrolledStatusDropdown1">Information mismatch</option>
+										<option value="4" id="enrolledStatusDropdown2">Interruption</option>
+										<option value="1" id="enrolledStatusDropdown3" selected="selected">Matched student - in attendance</option>
+										<option value="8" id="enrolledStatusDropdown4">Maternity leave</option>
+										<option value="5" id="enrolledStatusDropdown5">Not enrolled</option>
+										<option value="3" id="enrolledStatusDropdown6">Pending</option>
+										<option value="7" id="enrolledStatusDropdown7">Pending NHSBSA</option>
+										<option value="9" id="enrolledStatusDropdown8">TDAE only</option>
+									</select>
+								</div>
+								
+							</div>
+						</div>
+						<div class="nhsuk-grid-column-one-third">
+							<div>
+								<input type="hidden" name="student.Id" id="student.Id" value="607"> 
+								<input type="hidden" name="Id" id="Id" value="617">
+								<button class="nhsuk-button btn-float-right" type="submit" id="save">Update</button>
+							</div>
+						</div>
+					</form>
+					<div class="nhsuk-grid-column-full clear-float">
+						<hr>
+					</div>
+				</div>
+				<div class="nhsuk-grid-row">
+					
+					<div class="nhsuk-grid-column-one-third">
+						<h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">University</h3>
+						<p id="courseCollegeName" class="wordbreak">ANGLIA RUSKIN UNIVERSITY</p>
+
+						<h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course</h3>
+						<p id="enrolmentCourseName" class="wordbreak">Adult Nursing</p>
+						
+						<h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1 ">Attendance</h3>
+						<p id="enrolmentPartTime">Full Time</p>
+						
+						
+					</div>
+
+					<div class="nhsuk-grid-column-one-third">
+						<h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Academic year</h3>
+						<p id="enrolmentYear">September 2023</p>
+
+						<h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course length</h3>
+						<p id="courseLength">3 years</p>
+						
+						<h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Final year</h3>
+						
+							<p id="repeatYear">No</p>
+							
+						
+					</div>
+					<div class="nhsuk-grid-column-one-third">
+						<h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course Year</h3>
+						<p id="courseYear">Year 3</p>
+						
+						<h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Eligibility status</h3>
+						
+							
+							<p id="eligibilityStatus">Eligible</p>
+						
+												
+						<h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Repeat year</h3>
+							<p id="repeatYear">No</p>
+						
+												
+						
+					</div>
+				</div>
+				<div class="nhsuk-grid-row">
+					<div class="nhsuk-grid-column-full">
+						<details class="nhsuk-details" id="enrolmentActions">
+							<summary class="nhsuk-details__summary">
+								<span class="nhsuk-details__summary-text" role="button">Enrolment actions</span>
+							</summary>
+							<div class="nhsuk-details__text" id="details-content">
+								<ul class="nhsuk-list">
+									
+										<li>
+											<a href="/internal/enrolment/update?enrolmentId=617" id="updateEnrolment">Edit</a>
+										</li>
+										
+											
+											<li>
+												<a href="/internal/enrolment/617/show-withdrawal-view?action=withdraw" id="withdrawalStudent">Withdraw student</a>
+											</li>
+										
+									
+									
+										<li>
+											<a href="/internal/application/calculations?&amp;enrolmentId=617" id="calculationList">View calculations</a>
+										</li>
+									
+									<li>
+										<a href="/internal/enrolment/declaration?&amp;enrolmentId=617" id="viewDeclaration">View student declarations</a>
+									</li>
+									<li>
+										<a href="/internal/view-application/summary?&amp;enrolmentId=617" id="viewApplication">View student's application</a>
+									</li>		
+								</ul>
+							</div>
+						</details>
+						<hr>
+					</div>
+				</div>
+				
+				<div class="nhsuk-grid-row">
+					<div class="nhsuk-grid-column-full">
+						<div class="nhsuk-tabs" data-module="nhsuk-tabs">
+							<div class="tabs-nav">
+								<ul class="nhsuk-tabs__list" role="tablist">
+									<li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected" role="presentation">
+										<a href="#tab-Activities" class="nhsuk-tabs__tab" id="tab_tab-Activities" role="tab" aria-controls="tab-Activities" aria-selected="true" tabindex="0">Activities</a>
+									</li>
+									<li class="nhsuk-tabs__list-item" role="presentation">
+										<a href="#tab-trainingSupport" class="nhsuk-tabs__tab" id="tab_tab-trainingSupport" role="tab" aria-controls="tab-trainingSupport" aria-selected="false" tabindex="-1">Training Grant</a>
+									</li>
+									<li class="nhsuk-tabs__list-item" role="presentation">
+										<a href="#tab-parentalSupport" class="nhsuk-tabs__tab" id="tab_tab-parentalSupport" role="tab" aria-controls="tab-parentalSupport" aria-selected="false" tabindex="-1">Parental Support</a>
+									</li>
+									<li class="nhsuk-tabs__list-item" role="presentation">
+										<a href="#tab-TDAE" class="nhsuk-tabs__tab" id="tab_tab-TDAE" role="tab" aria-controls="tab-TDAE" aria-selected="false" tabindex="-1">TDAE</a>
+									</li>
+									<li class="nhsuk-tabs__list-item" role="presentation">
+										<a href="#tab-ESF" class="nhsuk-tabs__tab" id="tab_tab-ESF" role="tab" aria-controls="tab-ESF" aria-selected="false" tabindex="-1">ESF</a>
+									</li>
+									<li class="nhsuk-tabs__list-item" role="presentation"><a href="#tab-payments" class="nhsuk-tabs__tab" id="tab_tab-payments" role="tab" aria-controls="tab-payments" aria-selected="false" tabindex="-1">Payments</a>
+									</li>
+									<li class="nhsuk-tabs__list-item" role="presentation"><a href="#tab-cosa" class="nhsuk-tabs__tab" id="tab_tab-cosa" role="tab" aria-controls="tab-cosa" aria-selected="false" tabindex="-1">COSA</a>
+									</li>
+									
+								</ul>
+							</div>
+							<div id="tab-Activities" class="nhsuk-tabs__panel" role="tabpanel" aria-labelledby="tab_tab-Activities">
+								<div class="nhsuk-grid-row">
+									<div class="nhsuk-grid-column-one-third">
+										<h2 class="nhsuk-heading-l">Activities</h2>
+										<div class="nhsuk-form-group">
+											<p><a id="addDocument" href="/internal/enrolment/add-document">Upload evidence</a></p>
+										</div>
+									</div>
+									
+									<div class="nhsuk-grid-column-two-thirds">
+										<div>
+											<hr aria-hidden="true">
+											<details class="nhsuk-details" id="activity0">
+												<summary class="nhsuk-details__summary">
+													<span class="nhsuk-details__summary-text" role="button">2025/06/30 - Training Grant Simple (Complete)</span>
+												</summary>
+												<div class="nhsuk-details__text" id="details-content-activities0">
+													
+														<h3 class="nhsuk-heading-s">SSRN0000607-1 Training Grant</h3>
+													
+													<p>
+														
+														
+														
+															
+															
+																													
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														<span class="nhsuk-hint">Date created: 25 January 2024 11:10:29</span>
+														<span class="nhsuk-hint">Date last updated: 30 June 2025 15:49:38</span>
+														<span class="nhsuk-hint">Last updated by: Michael Lee</span>
+														<span class="nhsuk-hint">Cipher: michael.lee7@nhs.net</span>
+													</p>
+													<p>
+														
+															
+															<a id="assessActivity0" href="/internal/activity/enrolmentview/activate?activityId=1043">Activate</a>
+															
+															
+															
+															
+														
+													</p>
+												</div>
+											</details>
+										</div>
+										<div>
+											<hr aria-hidden="true">
+											<details class="nhsuk-details" id="activity1">
+												<summary class="nhsuk-details__summary">
+													<span class="nhsuk-details__summary-text" role="button">2025/04/07 - HEI Late starter rejoiner (Approved)</span>
+												</summary>
+												<div class="nhsuk-details__text" id="details-content-activities1">
+													
+													<p>
+														
+														
+														
+															<span class="nhsuk-hint">Date effective: 11 January 2024</span>
+															
+																													
+														
+														
+														
+														
+														
+														
+														<span class="nhsuk-hint wordbreak">Comments: egg</span>
+														
+														
+														
+														<span class="nhsuk-hint">Date created: 01 February 2024 19:32:53</span>
+														<span class="nhsuk-hint">Date last updated: 07 April 2025 13:57:09</span>
+														<span class="nhsuk-hint">Last updated by: Michael Lee</span>
+														<span class="nhsuk-hint">Cipher: michael.lee7@nhs.net</span>
+													</p>
+													<p>
+														
+															
+															
+															
+															
+															
+															<a id="editLateStarter1" href="/internal/activity/enrolmentview/details?studentId=607&amp;activityId=1059">Edit</a>
+														
+													</p>
+												</div>
+											</details>
+										</div>
+										<div>
+											<hr aria-hidden="true">
+											<details class="nhsuk-details" id="activity2">
+												<summary class="nhsuk-details__summary">
+													<span class="nhsuk-details__summary-text" role="button">2024/11/20 - TDAE Simple (Pending)</span>
+												</summary>
+												<div class="nhsuk-details__text" id="details-content-activities2">
+													
+													<p>
+														
+														
+														
+															
+															
+																													
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														<span class="nhsuk-hint">Date created: 16 September 2024 16:56:50</span>
+														<span class="nhsuk-hint">Date last updated: 20 November 2024 13:44:43</span>
+														<span class="nhsuk-hint">Last updated by: Joe Hutchinson</span>
+														<span class="nhsuk-hint">Cipher: jrhut@nhsbsa.nhs.uk</span>
+													</p>
+													<p>
+														
+															
+															
+															
+															
+															
+															
+														
+													</p>
+												</div>
+											</details>
+										</div>
+										<div>
+											<hr aria-hidden="true">
+											<details class="nhsuk-details" id="activity3">
+												<summary class="nhsuk-details__summary">
+													<span class="nhsuk-details__summary-text" role="button">2024/11/20 - TDAE Simple (Complete)</span>
+												</summary>
+												<div class="nhsuk-details__text" id="details-content-activities3">
+													
+													<p>
+														
+														
+														
+															
+															
+																													
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														<span class="nhsuk-hint">Date created: 17 September 2024 09:05:51</span>
+														<span class="nhsuk-hint">Date last updated: 20 November 2024 13:48:04</span>
+														<span class="nhsuk-hint">Last updated by: Joe Hutchinson</span>
+														<span class="nhsuk-hint">Cipher: jrhut@nhsbsa.nhs.uk</span>
+													</p>
+													<p>
+														
+															
+															
+															
+															
+															
+															
+														
+													</p>
+												</div>
+											</details>
+										</div>
+										<div>
+											<hr aria-hidden="true">
+											<details class="nhsuk-details" id="activity4">
+												<summary class="nhsuk-details__summary">
+													<span class="nhsuk-details__summary-text" role="button">2025/08/19 - TDAE Simple (Complete)</span>
+												</summary>
+												<div class="nhsuk-details__text" id="details-content-activities4">
+													
+													<p>
+														
+														
+														
+															
+															
+																													
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														<span class="nhsuk-hint">Date created: 23 October 2024 14:53:13</span>
+														<span class="nhsuk-hint">Date last updated: 19 August 2025 10:44:20</span>
+														<span class="nhsuk-hint">Last updated by: Jai sri</span>
+														<span class="nhsuk-hint">Cipher: nhshei03@gmail.com</span>
+													</p>
+													<p>
+														
+															
+															
+															
+															
+															
+															
+														
+													</p>
+												</div>
+											</details>
+										</div>
+										<div>
+											<hr aria-hidden="true">
+											<details class="nhsuk-details" id="activity5">
+												<summary class="nhsuk-details__summary">
+													<span class="nhsuk-details__summary-text" role="button">2024/11/20 - TDAE Simple (Complete)</span>
+												</summary>
+												<div class="nhsuk-details__text" id="details-content-activities5">
+													
+													<p>
+														
+														
+														
+															
+															
+																													
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														<span class="nhsuk-hint">Date created: 20 November 2024 13:53:30</span>
+														<span class="nhsuk-hint">Date last updated: 20 November 2024 13:56:16</span>
+														<span class="nhsuk-hint">Last updated by: Joe Hutchinson</span>
+														<span class="nhsuk-hint">Cipher: jrhut@nhsbsa.nhs.uk</span>
+													</p>
+													<p>
+														
+															
+															
+															
+															
+															
+															
+														
+													</p>
+												</div>
+											</details>
+										</div>
+										<div>
+											<hr aria-hidden="true">
+											<details class="nhsuk-details" id="activity6">
+												<summary class="nhsuk-details__summary">
+													<span class="nhsuk-details__summary-text" role="button">2026/02/03 - TDAE Simple (Complete)</span>
+												</summary>
+												<div class="nhsuk-details__text" id="details-content-activities6">
+													
+													<p>
+														
+														
+														
+															
+															
+																													
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														<span class="nhsuk-hint">Date created: 27 November 2024 09:28:10</span>
+														<span class="nhsuk-hint">Date last updated: 03 February 2026 10:58:17</span>
+														<span class="nhsuk-hint">Last updated by: Michael Lee</span>
+														<span class="nhsuk-hint">Cipher: michael.lee7@nhs.net</span>
+													</p>
+													<p>
+														
+															
+															
+															
+															
+															
+															
+														
+													</p>
+												</div>
+											</details>
+										</div>
+										<div>
+											<hr aria-hidden="true">
+											<details class="nhsuk-details" id="activity7">
+												<summary class="nhsuk-details__summary">
+													<span class="nhsuk-details__summary-text" role="button">2026/01/27 - TDAE Simple (Complete)</span>
+												</summary>
+												<div class="nhsuk-details__text" id="details-content-activities7">
+													
+													<p>
+														
+														
+														
+															
+															
+																													
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														<span class="nhsuk-hint">Date created: 29 April 2025 17:33:02</span>
+														<span class="nhsuk-hint">Date last updated: 27 January 2026 11:50:15</span>
+														<span class="nhsuk-hint">Last updated by: Michael Lee</span>
+														<span class="nhsuk-hint">Cipher: michael.lee7@nhs.net</span>
+													</p>
+													<p>
+														
+															
+															
+															
+															
+															
+															
+														
+													</p>
+												</div>
+											</details>
+										</div>
+										<div>
+											<hr aria-hidden="true">
+											<details class="nhsuk-details" id="activity8">
+												<summary class="nhsuk-details__summary">
+													<span class="nhsuk-details__summary-text" role="button">2025/06/27 - Parental Support (Active)</span>
+												</summary>
+												<div class="nhsuk-details__text" id="details-content-activities8">
+													
+														<h3 class="nhsuk-heading-s">SSRN0000607-1 Parental Support</h3>
+													
+													<p>
+														
+														
+														
+															
+															
+																													
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														<span class="nhsuk-hint">Date created: 27 June 2025 16:40:53</span>
+														<span class="nhsuk-hint">Date last updated: 27 June 2025 16:40:53</span>
+														<span class="nhsuk-hint">Last updated by: Joe Hutchinson</span>
+														<span class="nhsuk-hint">Cipher: jhutchie2021+1@gmail.com</span>
+													</p>
+													<p>
+														
+															
+															
+															<a id="assessActivity8" href="/internal/application/approve-documents?applicationId=1042">Assess<span class="nhsuk-u-visually-hidden"> activity</span></a>
+															
+															
+															
+														
+													</p>
+												</div>
+											</details>
+										</div>
+										<div>
+											<hr aria-hidden="true">
+											<details class="nhsuk-details" id="activity9">
+												<summary class="nhsuk-details__summary">
+													<span class="nhsuk-details__summary-text" role="button">2026/01/27 - TDAE Complex (Complete)</span>
+												</summary>
+												<div class="nhsuk-details__text" id="details-content-activities9">
+													
+													<p>
+														
+														
+														
+															
+															
+																													
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														<span class="nhsuk-hint">Date created: 11 November 2025 14:45:25</span>
+														<span class="nhsuk-hint">Date last updated: 27 January 2026 12:55:45</span>
+														<span class="nhsuk-hint">Last updated by: Michael Lee</span>
+														<span class="nhsuk-hint">Cipher: michael.lee7@nhs.net</span>
+													</p>
+													<p>
+														
+															
+															
+															
+															
+															
+															
+														
+													</p>
+												</div>
+											</details>
+										</div>
+										<div>
+											<hr aria-hidden="true">
+											<details class="nhsuk-details" id="activity10">
+												<summary class="nhsuk-details__summary">
+													<span class="nhsuk-details__summary-text" role="button">2026/01/27 - TDAE Complex (Complete)</span>
+												</summary>
+												<div class="nhsuk-details__text" id="details-content-activities10">
+													
+													<p>
+														
+														
+														
+															
+															
+																													
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														<span class="nhsuk-hint">Date created: 27 January 2026 11:48:00</span>
+														<span class="nhsuk-hint">Date last updated: 27 January 2026 11:53:28</span>
+														<span class="nhsuk-hint">Last updated by: Michael Lee</span>
+														<span class="nhsuk-hint">Cipher: michael.lee7@nhs.net</span>
+													</p>
+													<p>
+														
+															
+															
+															
+															
+															
+															
+														
+													</p>
+												</div>
+											</details>
+										</div>
+										<div>
+											<hr aria-hidden="true">
+											<details class="nhsuk-details" id="activity11">
+												<summary class="nhsuk-details__summary">
+													<span class="nhsuk-details__summary-text" role="button">2026/01/27 - TDAE Simple (Complete)</span>
+												</summary>
+												<div class="nhsuk-details__text" id="details-content-activities11">
+													
+													<p>
+														
+														
+														
+															
+															
+																													
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														<span class="nhsuk-hint">Date created: 27 January 2026 11:48:46</span>
+														<span class="nhsuk-hint">Date last updated: 27 January 2026 11:57:16</span>
+														<span class="nhsuk-hint">Last updated by: Michael Lee</span>
+														<span class="nhsuk-hint">Cipher: michael.lee7@nhs.net</span>
+													</p>
+													<p>
+														
+															
+															
+															
+															
+															
+															
+														
+													</p>
+												</div>
+											</details>
+										</div>
+										<div>
+											<hr aria-hidden="true">
+											<details class="nhsuk-details" id="activity12">
+												<summary class="nhsuk-details__summary">
+													<span class="nhsuk-details__summary-text" role="button">2026/02/03 - TDAE Complex (Active)</span>
+												</summary>
+												<div class="nhsuk-details__text" id="details-content-activities12">
+													
+													<p>
+														
+														
+														
+															
+															
+																													
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														<span class="nhsuk-hint">Date created: 03 February 2026 10:54:01</span>
+														<span class="nhsuk-hint">Date last updated: 03 February 2026 10:54:01</span>
+														<span class="nhsuk-hint">Last updated by: Jai sri</span>
+														<span class="nhsuk-hint">Cipher: nhshei03@gmail.com</span>
+													</p>
+													<p>
+														
+															
+															
+															
+															<a id="assessActivity12" href="/internal/enrolment/check-list?tdaeApplicationUuid=c4c735bc-3018-44da-bc3e-a3953639a622">Assess</a>
+															
+															
+														
+													</p>
+												</div>
+											</details>
+										</div>
+										<hr aria-hidden="true">
+									</div>
+								</div>
+							</div>
+							
+							<div id="tab-trainingSupport" class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" role="tabpanel" aria-labelledby="tab_tab-trainingSupport">
+								<div class="nhsuk-grid-row">
+									<div class="nhsuk-grid-column-one-third">
+										<h2 class="nhsuk-heading-l">Training Grant</h2>
+									</div>
+									
+									<div class="nhsuk-grid-column-two-thirds">
+										<hr aria-hidden="true">
+										<p>
+											<a id="assessTrainingSupport" href="/internal/application/approve-documents?&amp;applicationId=695">
+												<span class="wordbreak">SSRN0000607-1 Training Grant 25 January 2024 11:18:49 (In Payment)</span>
+											</a>
+										</p>
+										<hr aria-hidden="true">
+									</div>
+								</div>
+							</div>
+
+							<div id="tab-parentalSupport" class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" role="tabpanel" aria-labelledby="tab_tab-parentalSupport">
+								<div class="nhsuk-grid-row">
+									<div class="nhsuk-grid-column-one-third">
+										<h2 class="nhsuk-heading-l">Parental Support</h2>
+									</div>
+									
+									<div class="nhsuk-grid-column-two-thirds">
+										<hr aria-hidden="true">
+										<p>
+											<a id="assessParentalResponsibility" href="/internal/application/approve-documents?applicationId=1042">
+												<span class="wordbreak">SSRN0000607-1 Parental Support 27 June 2025 16:40:53 (Active)</span>
+											</a>
+										</p>
+										<hr aria-hidden="true">
+									</div>
+								</div>
+							</div>
+							
+							<div id="tab-TDAE" class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" role="tabpanel" aria-labelledby="tab_tab-TDAE">
+								<div class="nhsuk-grid-row">
+									<div class="nhsuk-grid-column-one-third">
+                    					<h2 class="nhsuk-heading-l">TDAE</h2>
+                					</div>
+									<div class="nhsuk-grid-column-full">
+									
+										<table role="table" class="nhsuk-table-responsive">
+											<caption class="nhsuk-table__caption">Online active claims</caption>
+											<thead role="rowgroup" class="nhsuk-table__head">
+												<tr role="row">
+													<th role="columnheader" class="" scope="col">Activity</th>
+													<th role="columnheader" class="" scope="col">Status</th>
+													<th role="columnheader" class="" scope="col">Claim dates</th>
+													<th role="columnheader" class="" scope="col">Value</th>
+													<th role="columnheader" class="" scope="col">Action</th>
+												</tr>
+											</thead>
+											<tbody class="nhsuk-table__body">
+												<tr role="row" class="nhsuk-table__row">
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Activity </span>
+														<span id="tdaeAppActivity0">2139</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Status </span> 
+														
+															
+															
+															<strong id="tdaeAppStatus0" class="nhsuk-tag nhsuk-tag--white"><span>To be completed</span></strong>
+															
+															
+															
+															
+														
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Claim dates </span>
+														<span id="tdaeAppClaimDates0">01 July 2024 to 15 July 2024</span>														
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Value </span>
+														<span id="tdaeAppValue0">£10</span>														
+													</td>													
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Action </span>
+														<a id="tdaeAppActionLink0" class="nhsuk-link--no-visited-state preventDoubleClick" href="/internal/enrolment/check-list?tdaeApplicationUuid=c4c735bc-3018-44da-bc3e-a3953639a622">
+															<span>Process claim</span>
+															<span class="nhsuk-u-visually-hidden"> for activity number: 2139</span>
+														</a>
+													</td>
+												</tr>                                				
+											</tbody>
+										</table>
+										<nav class="nhsbsa-pagination__nav" role="navigation" aria-label="Pagination">
+											<ul class="nhsbsa-pagination">
+												<li class="nhsbsa-pagination__item nhsbsa-pagination-li">
+													<a class="nhsbsa-pagination__link nhsbsa-pagination__current" id="tdaePageNumberLink0" href="/internal/enrolment/details?enrolmentId=617&amp;page=1#tab-TDAE" aria-current="page" aria-label="Page 1">1</a>
+												</li>
+											</ul>
+											
+
+											<div class="nhsbsa-pagination__summary nhsbsa-summary__alignment">Showing <span id="tdaeFirstItemNumber">1</span> - <span id="tdaeLastItemNumber">1</span> of <span id="tdaeTotalItemsNumber">1 claims</span></div>
+										</nav>				
+										
+										
+										
+										<p class="nhsuk-u-margin-top-5"><a id="previousTdaeClaimsLink" href="/internal/enrolment/other-submitted-claims?enrolmentUuid=f95cba56-e095-4123-8c22-cb2b78d25ebb">View other submitted claims</a></p>
+									
+									
+										<h3 class="nhsuk-heading-m">PDF claims</h3>
+																				
+									</div>								
+
+									<div class="nhsuk-grid-column-full">
+										<hr aria-hidden="true">
+										<p class="nhsuk-u-font-weight-bold nhsuk-u-text-align-centre" id="noTdae">This enrolment has no PDF TDAE claims</p>
+										<hr aria-hidden="true">
+									</div>
+									
+								</div>
+							</div>
+							
+							<div id="tab-ESF" class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" role="tabpanel" aria-labelledby="tab_tab-ESF">
+								<div class="nhsuk-grid-row">
+									<div class="nhsuk-grid-column-one-third">
+										<h2 class="nhsuk-heading-l">ESF</h2>
+										<a class="nhsuk-button" id="createPSApplication" href="/internal/application/esfApplication?enrolmentId=617" role="button">Apply<span class="nhsuk-u-visually-hidden"> for esf</span></a>
+									</div>
+									<div class="nhsuk-grid-column-two-thirds">
+										<hr aria-hidden="true">
+										<p class="nhsuk-u-font-weight-bold nhsuk-u-text-align-centre" id="noESF">This enrolment has no ESF applications</p>
+										<hr aria-hidden="true">
+									</div>
+									
+								</div>
+							</div>
+
+							<div id="tab-payments" class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" role="tabpanel" aria-labelledby="tab_tab-payments">
+								<div class="nhsuk-grid-row">
+									<div class="nhsuk-grid-column-one-third">
+										<h2 class="nhsuk-heading-l">Payments</h2>
+										
+										<a href="/internal/payment/details?studentId=607" class="nhsuk-button" id="paymentButton" role="button">Manage payments</a>
+									</div>
+									
+									<div class="nhsuk-grid-column-full">
+										<table role="table" class="nhsuk-table-responsive" id="paymentsTable">
+											<caption class="nhsuk-u-visually-hidden">Payments table</caption>
+											<thead role="rowgroup" class="nhsuk-table__head">
+												<tr role="row">
+													<th role="columnheader" class="" scope="col">Date of next payment</th>
+													<th role="columnheader" class="" scope="col">Value</th>
+													<th role="columnheader" class="" scope="col">Award element</th>
+													<th role="columnheader" class="" scope="col">Held</th>
+													<th role="columnheader" class="" scope="col">Status</th>
+												</tr>
+											</thead>
+											<tbody class="nhsuk-table__body">
+												<tr role="row" class="nhsuk-table__row">
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Date of next payment </span>
+														<span class="nhsuk-u-visually-hidden">2023-12-08</span>
+														<span>08 Dec 2023</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Value </span>
+														<span>4.00</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Award element </span>
+														<span>Training Grant</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Held </span>
+														<span>No</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Status </span>
+														<span>Pending</span>
+													</td>
+												</tr>
+												<tr role="row" class="nhsuk-table__row">
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Date of next payment </span>
+														<span class="nhsuk-u-visually-hidden">2024-08-09</span>
+														<span>09 Aug 2024</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Value </span>
+														<span>4.00</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Award element </span>
+														<span>Training Grant</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Held </span>
+														<span>No</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Status </span>
+														<span>Pending</span>
+													</td>
+												</tr>
+												<tr role="row" class="nhsuk-table__row">
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Date of next payment </span>
+														<span class="nhsuk-u-visually-hidden">2023-12-01</span>
+														<span>01 Dec 2023</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Value </span>
+														<span>4.00</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Award element </span>
+														<span>Training Grant</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Held </span>
+														<span>No</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Status </span>
+														<span>Paid</span>
+													</td>
+												</tr>
+												<tr role="row" class="nhsuk-table__row">
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Date of next payment </span>
+														<span class="nhsuk-u-visually-hidden">2024-11-20</span>
+														<span>20 Nov 2024</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Value </span>
+														<span>10.00</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Award element </span>
+														<span>TDAE - Travel</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Held </span>
+														<span>No</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Status </span>
+														<span>Paid</span>
+													</td>
+												</tr>
+												<tr role="row" class="nhsuk-table__row">
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Date of next payment </span>
+														<span class="nhsuk-u-visually-hidden">2026-02-03</span>
+														<span>03 Feb 2026</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Value </span>
+														<span>80.00</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Award element </span>
+														<span>TDAE - Travel</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Held </span>
+														<span>No</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Status </span>
+														<span>Paid</span>
+													</td>
+												</tr>
+												<tr role="row" class="nhsuk-table__row">
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Date of next payment </span>
+														<span class="nhsuk-u-visually-hidden">2026-02-03</span>
+														<span>03 Feb 2026</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Value </span>
+														<span>24.00</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Award element </span>
+														<span>TDAE - Accom</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Held </span>
+														<span>No</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Status </span>
+														<span>Paid</span>
+													</td>
+												</tr>
+												<tr role="row" class="nhsuk-table__row">
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Date of next payment </span>
+														<span class="nhsuk-u-visually-hidden">2026-01-27</span>
+														<span>27 Jan 2026</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Value </span>
+														<span>10.00</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Award element </span>
+														<span>TDAE - Travel</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Held </span>
+														<span>No</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Status </span>
+														<span>Paid</span>
+													</td>
+												</tr>
+												<tr role="row" class="nhsuk-table__row">
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Date of next payment </span>
+														<span class="nhsuk-u-visually-hidden">2026-01-27</span>
+														<span>27 Jan 2026</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Value </span>
+														<span>28.00</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Award element </span>
+														<span>TDAE - Travel</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Held </span>
+														<span>No</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Status </span>
+														<span>Paid</span>
+													</td>
+												</tr>
+												<tr role="row" class="nhsuk-table__row">
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Date of next payment </span>
+														<span class="nhsuk-u-visually-hidden">2026-01-27</span>
+														<span>27 Jan 2026</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Value </span>
+														<span>12.00</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Award element </span>
+														<span>TDAE - Visa</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Held </span>
+														<span>No</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Status </span>
+														<span>Paid</span>
+													</td>
+												</tr>
+												<tr role="row" class="nhsuk-table__row">
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Date of next payment </span>
+														<span class="nhsuk-u-visually-hidden">2026-01-27</span>
+														<span>27 Jan 2026</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Value </span>
+														<span>4.00</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Award element </span>
+														<span>TDAE - Travel</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Held </span>
+														<span>No</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Status </span>
+														<span>Paid</span>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+							
+							<div id="tab-cosa" class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" role="tabpanel" aria-labelledby="tab_tab-cosa">
+								<div class="nhsuk-grid-row">
+									<div class="nhsuk-grid-column-one-third">
+										<h2 class="nhsuk-heading-l">COSA</h2>
+									</div>
+									<div class="nhsuk-grid-column-full">
+										<table role="table" class="nhsuk-table-l" id="cosaTable">
+											<caption class="nhsuk-u-visually-hidden">Cosa table</caption>
+											<thead role="rowgroup" class="nhsuk-table__head">
+												<tr role="row">
+													<th role="columnheader" class="" scope="col">Term</th>
+													<th role="columnheader" class="" scope="col">Student confirmed</th>
+													<th role="columnheader" class="nhsbsa-u-whitespace__normal" scope="col">Date updated by student</th>
+													<th role="columnheader" class="" scope="col">HEI confirmed</th>
+													<th role="columnheader" class="" scope="col">Date updated by HEI</th>
+													<th role="columnheader" class="nhsbsa-u-whitespace__normal" scope="col">Action</th>
+												</tr>
+											</thead>
+											<tbody class="nhsuk-table__body">
+												<tr role="row" class="nhsuk-table__row">
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-l__heading">Term </span>														
+														<span>1</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-l__heading">Student confirmed </span>														
+														Not required
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-l__heading">Date updated by student </span>														
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-l__heading">HEI confirmed </span>
+														
+														<span id="term1UniversityConfirmed">Yes</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-l__heading">Date updated by HEI </span>
+														<span id="term1HeiDateUpdated">02 May 2024</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-l__heading">Action</span>
+																												
+													</td>																																						
+												</tr>
+												<tr role="row" class="nhsuk-table__row">
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-l__heading">Term </span>														
+														<span>2</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-l__heading">Student confirmed </span>
+														<span id="term2StudentInAttendance"></span>
+														
+														
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-l__heading">Date updated by student </span>
+														<span id="term2StudentDateUpdated"></span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-l__heading">HEI confirmed </span>
+														<span id="term2UniversityConfirmed"></span>
+														
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-l__heading">Date updated by HEI </span>
+														<span id="term2HeiDateUpdated"></span>
+													</td>	
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-l__heading">Action</span>	
+																																										
+													</td>
+												</tr>
+												<tr role="row" class="nhsuk-table__row">
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-l__heading">Term </span>														
+														<span>3</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-l__heading">Student confirmed </span>
+														<span id="term3StudentInAttendance"></span>
+														
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-l__heading">Date updated by student </span>
+														<span id="term3StudentDateUpdated"></span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-l__heading">HEI confirmed </span>
+														<span id="term3UniversityConfirmed"></span>
+														
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-l__heading">Date updated by HEI </span>
+														<span id="term3HeiDateUpdated"></span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-l__heading">Action</span>		
+																																																																				
+													</td>
+												</tr>																								
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>							
+						</div>
+					</div>
+				</div>
+				
+				
+			<div class="dialog" id="dialog-signOut" aria-hidden="true">
+    		<dialog id="signout-content-1" class="dialog-holder" role="alertdialog">
+      		<div class="dialog-content" id="signoutContainer" role="document" tabindex="0">
+       		 	<h1 class="dialog-heading">Sign out</h1>
+						<form class="form">
+							<p id="signout-content-1">This will end your session. Are you sure you want to sign out?</p>
+
+							<div class="dialog-actions">
+								<a id="logoutYes" class="nhsuk-button nhsuk-u-margin-right-4" href="/internal/logout" role="button" data-module="nhsuk-button">Yes</a>
+								<a id="logoutNo" class="nhsuk-button nhsuk-button--secondary" href="#" role="button" data-module="nhsuk-button" onclick="cancel()">No</a>
+							</div>
+
+							<a class="dialog-close" aria-label="close" type="button" role="button">
+								<span class="icon icon-close">x</span>
+							</a>
+						</form>
+      		</div>
+				</dialog>
+			</div>
+			<script>
+				function cancel(){
+					document.getElementById("signoutContainer").tabIndex = 0;
+					document.getElementById("dialog-signOut").ariaHidden = true;
+				}
+			</script>
+		
+			</main>
+		</div>
+
+
+{% endblock %}
