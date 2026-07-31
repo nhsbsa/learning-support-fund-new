@@ -49,7 +49,144 @@ Student details
 					<div class="nhsuk-grid-column-full">
 						<h2 class="nhsuk-heading-m" id="paymentHistoryHeading">Payment history</h2>
 						<div id="paymentHistory">
-							
+								
+							<details class="nhsuk-details" id="paymentHistoryGroup">
+								<summary class="nhsuk-details__summary">
+									<span class="nhsuk-details__summary-text" role="button" id="paymentHistoryShowHeader">
+										TDAE Advance payments
+									</span>
+								</summary>
+								<div class="nhsuk-details__text">
+									<table role="table" class="js-table-sortable nhsuk-table-responsive" id="details-content-paymentHistory">
+										<caption class="nhsuk-u-visually-hidden">Payment history<span class="nhsuk-u-visually-hidden"> (column headers with links are sortable)</span></caption>
+										<thead role="rowgroup" class="nhsuk-table__head">
+											<tr role="row">
+												<th role="columnheader" class="sortable" scope="col" data-sort="float" aria-sort="none"><a href="#" class="table-header__button" onclick="event.preventDefault()">Amount</a></th>
+												<th role="columnheader" class="sortable" scope="col" data-sort="string" aria-sort="none"><a href="#" class="table-header__button" onclick="event.preventDefault()">Date requested</a></th>
+												<th role="columnheader" class="sortable" scope="col" data-sort="string" aria-sort="none"><a href="#" class="table-header__button" onclick="event.preventDefault()">Expected</a></th>
+											</tr>
+										</thead>
+										<tbody class="nhsuk-table__body">
+											<tr role="row" class="nhsuk-table__row">
+												
+												<td role="cell" class="nhsuk-table__cell">
+													<span class="nhsuk-table-responsive__heading">Amount </span>
+													<span class="nhsuk-u-visually-hidden" aria-hidden="true">200</span>
+													<span id="historyAmount0">£200</span>
+												</td>
+												<td id="historyDateDue0">
+													<span class="nhsuk-table-responsive__heading">Date due </span>
+													<span>09 January 2026</span>
+												</td>
+												<td id="historyDatePaid0">
+													<span class="nhsuk-table-responsive__heading">Date paid </span>
+													<span>20 January 2026</span>
+												</td>
+											</tr>
+											<tr role="row" class="nhsuk-table__row">
+												
+												<td role="cell" class="nhsuk-table__cell">
+													<span class="nhsuk-table-responsive__heading">Amount </span>
+													<span class="nhsuk-u-visually-hidden" aria-hidden="true">4.00</span>
+													<span id="historyAmount1">£200</span>
+												</td>
+												<td id="historyDateDue1">
+													<span class="nhsuk-table-responsive__heading">Date due </span>
+													<span>19 Nov 2024</span>
+												</td>
+												<td id="historyDatePaid1">
+													<span class="nhsuk-table-responsive__heading">Date paid </span>
+													<span>16 Jun 2025</span>
+												</td>
+											</tr>
+											<tr role="row" class="nhsuk-table__row">
+												
+												<td role="cell" class="nhsuk-table__cell">
+													<span class="nhsuk-table-responsive__heading">Amount </span>
+													<span class="nhsuk-u-visually-hidden" aria-hidden="true">200</span>
+													<span id="historyAmount2">£400</span>
+												</td>
+												<td id="historyDateDue2">
+													<span class="nhsuk-table-responsive__heading">Date due </span>
+													<span>19 Nov 2024</span>
+												</td>
+												<td id="historyDatePaid2">
+													<span class="nhsuk-table-responsive__heading">Date paid </span>
+													<span>16 Jun 2025</span>
+												</td>
+											</tr>
+											<tr role="row" class="nhsuk-table__row">
+												
+												<td role="cell" class="nhsuk-table__cell">
+													<span class="nhsuk-table-responsive__heading">Amount </span>
+													<span class="nhsuk-u-visually-hidden" aria-hidden="true">10.00</span>
+													<span id="historyAmount3">£200</span>
+												</td>
+												<td id="historyDateDue3">
+													<span class="nhsuk-table-responsive__heading">Date due </span>
+													<span>20 Nov 2024</span>
+												</td>
+												<td id="historyDatePaid3">
+													<span class="nhsuk-table-responsive__heading">Date paid </span>
+													<span>16 Jun 2025</span>
+												</td>
+											</tr>
+											<tr role="row" class="nhsuk-table__row">
+												
+												<td role="cell" class="nhsuk-table__cell">
+													<span class="nhsuk-table-responsive__heading">Amount </span>
+													<span class="nhsuk-u-visually-hidden" aria-hidden="true">4.00</span>
+													<span id="historyAmount4">£200</span>
+												</td>
+												<td id="historyDateDue4">
+													<span class="nhsuk-table-responsive__heading">Date due </span>
+													<span>27 Jan 2026</span>
+												</td>
+												<td id="historyDatePaid4">
+													<span class="nhsuk-table-responsive__heading">Date paid </span>
+													<span>12 Mar 2026</span>
+												</td>
+											</tr>
+											<tr role="row" class="nhsuk-table__row">
+												
+												<td role="cell" class="nhsuk-table__cell">
+													<span class="nhsuk-table-responsive__heading">Amount </span>
+													<span class="nhsuk-u-visually-hidden" aria-hidden="true">10.00</span>
+													<span id="historyAmount5">£200</span>
+												</td>
+												<td id="historyDateDue5">
+													<span class="nhsuk-table-responsive__heading">Date due </span>
+													<span>27 Jan 2026</span>
+												</td>
+												<td id="historyDatePaid5">
+													<span class="nhsuk-table-responsive__heading">Date paid </span>
+													<span>12 Mar 2026</span>
+												</td>
+											</tr>
+											<tr role="row" class="nhsuk-table__row">
+											
+												<td role="cell" class="nhsuk-table__cell">
+													<span class="nhsuk-table-responsive__heading">Amount </span>
+													<span class="nhsuk-u-visually-hidden" aria-hidden="true">28.00</span>
+													<span id="historyAmount6">£200</span>
+												</td>
+												<td id="historyDateDue6">
+													<span class="nhsuk-table-responsive__heading">Date due </span>
+													<span>27 Jan 2026</span>
+												</td>
+												<td id="historyDatePaid6">
+													<span class="nhsuk-table-responsive__heading">Date paid </span>
+													<span>12 Mar 2026</span>
+												</td>
+											</tr>
+											
+											
+											
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</details>
 							<details class="nhsuk-details" id="paymentHistoryGroup">
 								<summary class="nhsuk-details__summary">
 									<span class="nhsuk-details__summary-text" role="button" id="paymentHistoryShowHeader">
@@ -272,11 +409,107 @@ Student details
 						<div class="nhsuk-grid-column-full">
 							<h2 class="nhsuk-heading-m" id="paymentDetailsHeading">Payments by academic year</h2>
 							
-								<h3 id="enrolHeader0" class="nhsuk-heading-s">October 2022 academic year (Pending)</h3>
-								
-									<div>
-										<p id="noPaymentsEnrol0">There are no payments in this academic year</p>
-									</div>
+								<h3 id="enrolHeader0" class="nhsuk-heading-s">September 2026 academic year (Matched student - in attendance)</h3>
+								<details class="nhsuk-details" id="enrolTerm32" open="">
+											<summary class="nhsuk-details__summary">
+												<span class="nhsuk-details__summary-text" role="button">One-off payments September 2026 academic year</span>
+											</summary>
+											<div class="nhsuk-details__text" id="details-content-paymentsTerm32">
+												
+
+												<table role="table" class="js-table-sortable nhsuk-table-responsive" id="paymentsTerm3Table2">
+													<caption class="nhsuk-table__caption">One-off payments table<span class="nhsuk-u-visually-hidden"> (column headers with links are sortable)</span></caption>
+													<thead role="rowgroup" class="nhsuk-table__head">
+														<tr role="row">
+															<th role="columnheader" class="" scope="col" data-sort="string">Type</th>
+															<th role="columnheader" class="" scope="col" data-sort="float">Amount</th>
+															<th role="columnheader" class="" scope="col" data-sort="string">Date due</th>
+															<th role="columnheader" class="" scope="col" data-sort="string">Date paid</th>
+															<th role="columnheader" class="" scope="col">Hold</th>
+															<th role="columnheader" class="" scope="col">Actions</th>
+														</tr>
+													</thead>
+													<tbody class="nhsuk-table__body">
+														<tr role="row" class="nhsuk-table__row">
+															<td role="cell" class="nhsuk-table__cell" id="enrol2term3PayType0">
+																<span class="nhsuk-table-responsive__heading">Type </span>
+																<span>Training Grant</span>
+															</td>
+															<td role="cell" class="nhsuk-table__cell">
+																<span class="nhsuk-table-responsive__heading">Amount </span>
+																<span class="nhsuk-u-visually-hidden" aria-hidden="true">4.00</span>
+																<span id="enrol2term3PayAmount0">£4.00</span>
+															</td>
+															<td role="cell" class="nhsuk-table__cell">
+																<span class="nhsuk-table-responsive__heading">Date due </span>
+																<span class="nhsuk-u-visually-hidden" aria-hidden="true">2024-08-09</span>
+																<span id="enrol2term3DateDue0">09 August 2024</span>
+															</td>
+															<td role="cell" class="nhsuk-table__cell">
+																<span class="nhsuk-table-responsive__heading">Date paid </span>
+																<span class="nhsuk-u-visually-hidden" aria-hidden="true"></span>
+																<span id="enrol2term3DatePaid0"></span>
+															</td>
+															<td role="cell" class="nhsuk-table__cell">
+																<span class="nhsuk-table-responsive__heading">Hold </span>
+																
+																	<fieldset class="nhsuk-fieldset">
+																		<legend class="nhsuk-u-visually-hidden">Hold payment - Term 3 - <span>Training Grant</span></legend>
+																		<div class="nhsuk-checkboxes">
+																			<div class="nhsuk-checkboxes__item">
+																				<input class="nhsuk-checkboxes__input" type="checkbox" id="enrol2term3Held0" enabled="enabled" name="enrols[2].term3Payments[0].held" value="true">
+																				<label class="nhsuk-label nhsuk-checkboxes__label" for="enrol2term3Held0">Hold</label>
+																				<input type="hidden" id="hiddenenrol2term3Held0" value="1425" name="enrols[2].term3Payments[0].id">
+																			</div>
+																		</div>
+																	</fieldset>
+																
+															</td>
+															
+																<td role="cell" class="nhsuk-table__cell">
+																	<span class="nhsuk-table-responsive__heading">Actions </span>
+																	
+																		
+																		
+																			<ul class="nhsuk-list nhsuk-u-margin-bottom-0">
+																				<li>
+																					<a data-toggle="dialog">
+																						Delete
+																						<span class="nhsuk-u-visually-hidden"> 
+																							<span>Training Grant</span> 
+																							<span> Term 3 September 2023</span>
+																						</span>
+																					</a>
+																				</li>
+																				<li>
+																					<a id="enrol2term3Edit0">
+																						Edit
+																						<span class="nhsuk-u-visually-hidden"> 
+																							<span>Training Grant</span> 
+																							<span> Term 3 September 2023</span>
+																						</span>
+																					</a>
+																				</li>
+																			</ul>
+																		
+																	
+																</td>
+															
+															
+														</tr>
+													</tbody>
+												</table>
+
+												
+
+												<div class="nhsuk-u-margin-top-4">
+													
+														<h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-0" id="enrol2term3TotalAmount">Total amount payable for term 3: £4.00</h3>
+														
+													
+												</div>
+											</div>
+										</details>
 									
 								
 						

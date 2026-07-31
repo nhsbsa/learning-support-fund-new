@@ -5,7 +5,19 @@ Student details
 {% endblock %}
 
 {% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <ol class="nhsuk-breadcrumb__list">
+    <li class="nhsuk-breadcrumb__list-item">
+      <a class="nhsuk-breadcrumb__link" href="/lsf-web/v7/current-search-student">
+        Student search
+      </a>
+    </li>
+  </ol>
 
+  <a class="nhsuk-back-link" href="/lsf-web/v7/current-search-student">
+    <span class="nhsuk-u-visually-hidden">Back to</span> Student search
+  </a>
+</nav>
 {% endblock %}
 
 {% block content %}
