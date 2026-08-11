@@ -1,0 +1,98 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Student details
+{% endblock %}
+
+{% block beforeContent %}
+
+<br>
+<br>
+<a class="nhsuk-back-link" href="/lsf-web/v7/student-details-copy">
+  Back
+</a>
+<br>
+<br>
+<span class="nhsuk-caption-l" id="studentRef">SSRN0010001 - Emmit Marr</span>
+<h1 class="nhsuk-heading-l">
+	This payment is on hold
+</h1>
+
+<table class="nhsuk-table">
+
+  <thead class="nhsuk-table__head">
+    <tr class="nhsuk-table__row">
+      <th scope="col" class="nhsuk-table__header">
+        Claim dates
+      </th>
+       <tbody class="nhsuk-table__body">9 tuesday</tbody>
+    </tr>
+  </thead>
+  <tbody class="nhsuk-table__body">
+    <tr class="nhsuk-table__row">
+      <th scope="row" class="nhsuk-table__header">
+      TDAE claim amount
+      </th>
+      <td class="nhsuk-table__cell">
+£50
+      </td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <th scope="row" class="nhsuk-table__header">
+      Reduction amount
+      </th>
+      <td class="nhsuk-table__cell">
+     £50
+      </td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <th scope="row" class="nhsuk-table__header">
+Deduction from advance payment
+      </th>
+      <td class="nhsuk-table__cell">
+        Yes
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p>This deduction is currently on hold and is not reducing the student's advance payment.</p>
+<p>If you reset the pyament, £59 wil be taken from the remaining advance payment balance.</p>
+
+ <div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-hints-hint">
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+      <h1 class="nhsuk-fieldset__heading">
+        Do want want to reset this payment?
+      </h1>
+    </legend>
+
+    <div class="nhsuk-radios" data-module="nhsuk-radios">
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="example-hints" name="exampleHints" type="radio" value="email">
+        <label class="nhsuk-label nhsuk-radios__label" for="example-hints">
+        Yes, take this payment off hold
+        </label>
+      </div>
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="example-hints-2" name="exampleHints" type="radio" value="phone">
+        <label class="nhsuk-label nhsuk-radios__label" for="example-hints-2">
+         No,leave it on hold
+        </label>
+      </div>
+     
+    </div>
+  </fieldset>
+</div>
+
+	  <style>
+	
+      </div>s
+.nhsuk-heading-m, h3 {
+    display: block;
+    margin-top: 0;
+    font-weight: 600;
+    font-size: 1.375rem;
+    line-height: 1.3181818182;
+}
+</style>
+{% endblock %}
