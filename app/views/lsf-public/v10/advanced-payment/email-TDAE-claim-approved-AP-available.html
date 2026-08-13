@@ -1,0 +1,134 @@
+{% block content %}
+
+<style>
+  body {
+    background: #ffffff;
+  }
+
+  .prototype-page {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  .prototype-content {
+    background: #ffffff;
+    border: 1px solid #d8dde0;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+
+  .prototype-content .nhsuk-body,
+  .prototype-content .nhsuk-heading-m,
+  .prototype-content .nhsuk-heading-s {
+    font-family: Frutiger W01, Arial, sans-serif;
+  }
+
+  .prototype-content .nhsuk-body {
+    color: #212b32;
+    font-size: 19px;
+    line-height: 1.47368;
+    margin-bottom: 24px;
+  }
+
+  /* NHS heading M */
+  .prototype-content .nhsuk-heading-m {
+    color: #212b32;
+    font-size: 32px;
+    line-height: 1.25;
+    margin-top: 40px;
+    margin-bottom: 24px;
+    font-weight: 600;
+  }
+
+  /* NHS heading S */
+  .prototype-content .nhsuk-heading-s {
+    color: #212b32;
+    font-size: 24px;
+    line-height: 1.33333;
+    margin-top: 40px;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  .prototype-content a {
+    color: #005eb8;
+    text-decoration: underline;
+  }
+
+  .prototype-content a:hover {
+    color: #003d78;
+  }
+
+  .prototype-content a:focus {
+    outline: 3px solid #ffeb3b;
+    outline-offset: 0;
+    background: #ffeb3b;
+    color: #212b32;
+  }
+
+  @media (max-width: 640px) {
+    .prototype-page {
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+
+    .prototype-content {
+      padding: 25px 20px;
+    }
+
+    .prototype-content .nhsuk-body {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .prototype-content .nhsuk-heading-m {
+      font-size: 28px;
+      line-height: 1.25;
+    }
+
+    .prototype-content .nhsuk-heading-s {
+      font-size: 22px;
+    }
+  }
+</style>
+
+<div class="prototype-page">
+  <main class="prototype-content">
+
+    <p class="nhsuk-body"><b>From</b> Student Services</p>
+
+    <p class="nhsuk-body"><b>To</b> ((student email address))</p>
+
+    <h1 class="nhsuk-heading-m">TDAE claim approved - NHS Learning Support Fund</h1>
+
+    <p class="nhsuk-body">Dear ((recipientName)),</p>
+
+    <p class="nhsuk-body">
+      We've approved your Travel and Dual Accommodation Expenses (TDAE) claim.
+      We will send £((amount)) to your bank account within 10 working days.
+    </p>
+
+    <h2 class="nhsuk-heading-s">Request an advance payment</h2>
+
+    <p class="nhsuk-body">
+      Now that you've had your first TDAE claim approved, you can choose to
+      request an advance payment for future travel and accommodation costs.
+    </p>
+
+    <p class="nhsuk-body">
+      An advance payment lets you receive money before you pay for travel or
+      accommodation, instead of claiming your costs back afterwards.
+    </p>
+
+    <p class="nhsuk-body">
+      <a href="../sign-in?AP=null">Sign into your NHS Learning Support Fund account</a>
+      to find out more.
+    </p>
+
+    <p class="nhsuk-body">Student Services</p>
+
+  </main>
+</div>
+
+{% endblock %}
