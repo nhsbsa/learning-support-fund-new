@@ -65,15 +65,21 @@
         <div class="nhsuk-grid-column-one-third">
           <div class="nhsuk-card nhsuk-card--clickable">
               <div class="nhsuk-card__content">
-                  <h2 class="nhsuk-card__heading nhsuk-heading-s">
-                  <a style="word-break: auto-phrase;" style="word-break: auto-phrase;" class="nhsuk-card__link" href="advanced-payment/AP-dashboard">TDAE advance payment</a>
-                  </h2>
                   {% if data['ap'] == 'requested' %}
-                    <p style="word-break: auto-phrase;" class="nhsuk-body-s nhsuk-card__description">View your advance payment balance for future Travel and Dual Accommodation Expenses (TDAE).</p>
+                    <h2 class="nhsuk-card__heading nhsuk-heading-s">
+                    <a style="word-break: auto-phrase;" style="word-break: auto-phrase;" class="nhsuk-card__link" href="advanced-payment/AP-dashboard">View TDAE advance payment balance</a>
+                    </h2>
+                    <p style="word-break: auto-phrase;" class="nhsuk-body-s nhsuk-card__description">View your remaining advance payment balance for future Travel and Dual Accommodation Expenses (TDAE).</p>
                   {% elseif data['ap'] == 'top-up' %}
+                    <h2 class="nhsuk-card__heading nhsuk-heading-s">
+                    <a style="word-break: auto-phrase;" style="word-break: auto-phrase;" class="nhsuk-card__link" href="advanced-payment/AP-dashboard">TDAE advance payment</a>
+                    </h2>
                     <p style="word-break: auto-phrase;" class="nhsuk-body-s nhsuk-card__description">You can request another advance payment and view your balance for future Travel and Dual Accommodation Expenses (TDAE).</p>
                   {% else %}
-                    <p style="word-break: auto-phrase;" class="nhsuk-body-s nhsuk-card__description">You can request an advance payment towards future Travel and Dual Accommodation Expenses (TDAE).</p>
+                    <h2 class="nhsuk-card__heading nhsuk-heading-s">
+                    <a style="word-break: auto-phrase;" style="word-break: auto-phrase;" class="nhsuk-card__link" href="advanced-payment/AP-dashboard">Request an advance payment for TDAE costs</a>
+                    </h2>
+                    <p style="word-break: auto-phrase;" class="nhsuk-body-s nhsuk-card__description">You can request an advance payment to help pay travel and accommodation (TDAE) costs upfront.</p>
                   {% endif %}
               </div>
           </div>
