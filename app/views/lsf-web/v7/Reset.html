@@ -8,10 +8,18 @@ Student details
 
 <br>
 <br>
-<a class="nhsuk-back-link" href="/lsf-web/v7/student-details-copy">
+
+  <a class="nhsuk-back-link" href="/lsf-web/v7/TDAE-AP">
   Back
 </a>
 <br>
+<br>
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds"
+
+
+
+
 <br>
 <span class="nhsuk-caption-l" id="studentRef">SSRN0010001 - Emmit Marr</span>
 <h1 class="nhsuk-heading-l">
@@ -20,15 +28,16 @@ Student details
 
 <table class="nhsuk-table">
 
-  <thead class="nhsuk-table__head">
-    <tr class="nhsuk-table__row">
-      <th scope="col" class="nhsuk-table__header">
+  
+  <tbody class="nhsuk-table__body">
+	 <tr class="nhsuk-table__row">
+      <th scope="row" class="nhsuk-table__header">
         Claim dates
       </th>
-       <tbody class="nhsuk-table__body">9 tuesday</tbody>
+      <td class="nhsuk-table__cell">
+04 March 2026 to 04 March 2026
+      </td>
     </tr>
-  </thead>
-  <tbody class="nhsuk-table__body">
     <tr class="nhsuk-table__row">
       <th scope="row" class="nhsuk-table__header">
       TDAE claim amount
@@ -39,30 +48,30 @@ Student details
     </tr>
     <tr class="nhsuk-table__row">
       <th scope="row" class="nhsuk-table__header">
-      Reduction amount
+     Deduction from advance payment
       </th>
       <td class="nhsuk-table__cell">
-     £50
+     £200
       </td>
     </tr>
     <tr class="nhsuk-table__row">
       <th scope="row" class="nhsuk-table__header">
-Deduction from advance payment
+Remaining advance payment balance
       </th>
       <td class="nhsuk-table__cell">
-        Yes
+        £0
       </td>
     </tr>
   </tbody>
 </table>
 <p>This deduction is currently on hold and is not reducing the student's advance payment.</p>
-<p>If you reset the pyament, £59 wil be taken from the remaining advance payment balance.</p>
+<p>If you put this deduction on hold, £200 will be added back to the remaining balance.</p>
 
  <div class="nhsuk-form-group">
   <fieldset class="nhsuk-fieldset" aria-describedby="example-hints-hint">
     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
       <h1 class="nhsuk-fieldset__heading">
-        Do want want to reset this payment?
+        Do want want to reset this deduction?
       </h1>
     </legend>
 
@@ -79,14 +88,19 @@ Deduction from advance payment
          No,leave it on hold
         </label>
       </div>
-     
+   
+
     </div>
+	
   </fieldset>
 </div>
+  <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+  Save and continue
+</button>
 
 	  <style>
 	
-      </div>s
+
 .nhsuk-heading-m, h3 {
     display: block;
     margin-top: 0;
@@ -95,4 +109,6 @@ Deduction from advance payment
     line-height: 1.3181818182;
 }
 </style>
+</div>
+</div>
 {% endblock %}
