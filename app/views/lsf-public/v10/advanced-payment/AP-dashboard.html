@@ -14,7 +14,7 @@ Academic year September 2023
 <div class="nhsuk-grid-row">
 
   <div class="nhsuk-grid-column-two-thirds">
-    <h1 class="nhsuk-heading-l">Request advance payments for travel and accommodation costs</h1>
+    <h1 class="nhsuk-heading-l">Travel and Dual Accommodation Expenses (TDAE) advance payment</h1>
   </div>
 
 </div>
@@ -25,11 +25,11 @@ Academic year September 2023
       <!--<p>your current advance payment balance is £400</p>-->
       <div class="nhsuk-inset-text">
         <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p>Your current advance payment balance is £200.</p>
+        <p>Remaining balance: £200</p>
       </div>
       <!--<h4 class="nhsuk-heading-s">Advance payments requested</h4>-->
       <table class="nhsuk-table">
-        <caption class="nhsuk-table__caption">
+        <caption class="nhsuk-table__caption" style="display: none">
           Advance payments requested
         </caption>
         <thead class="nhsuk-table__head">
@@ -71,13 +71,13 @@ Academic year September 2023
       <!--<p>your current advance payment balance is £400</p>-->
       <div class="nhsuk-inset-text">
         <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p>Your current advance payment balance is £8.70.</p>
+        <p>Remaining balance: £8.70</p>
       </div>
       <p>Because your balance is below £50 you can now request another advance payment.<p>
       <a class="nhsuk-button nhsuk-u-margin-right-5" href="../advanced-payment/start">Request advanced payment</a>
       <!--<h4 class="nhsuk-heading-s">Advance payments requested</h4>-->
       <table class="nhsuk-table">
-        <caption class="nhsuk-table__caption">
+        <caption class="nhsuk-table__caption" style="display: none">
           Advance payments requested
         </caption>
         <thead class="nhsuk-table__head">
@@ -146,7 +146,7 @@ Academic year September 2023
         </div>
       </details>
     {% else %}
-    <form action="advance-payment" method="POST">
+    <!--<form action="advance-payment" method="POST">
       <h2 class="nhsuk-heading-s">What is an advance payment?</h2>
         <p class="nhsuk-body">
 If you need money in advance to pay for travel and accommodation  (TDAE) costs, you can request an advance payment rather than wait to be reimbursed.</p>
@@ -201,7 +201,7 @@ If you need money in advance to pay for travel and accommodation  (TDAE) costs, 
 
         <button class="nhsuk-button" type="submit">Find out how much you can request</button><br>
 
-    </form>
+    </form>-->
     {% endif %}
     <p><a href="../dashboard">Return to dashboard</a></p>
 
