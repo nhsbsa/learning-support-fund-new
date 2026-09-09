@@ -18,14 +18,14 @@ router.post('/v10/advance-payment/advance-payment', (req, res) => {
 
   if (claimTDAE === 'travelaccomm') {
     if (advancePayment === 'no') {
-        res.redirect('/lsf-public/v10/TDAE-returning-student/academic-year-details#tab-four')
+        res.redirect('/lsf-public/v10/dashboard')
     }
     else {
         res.redirect('/lsf-public/v10/advanced-payment/what-payments')
       }
   } else {
     if (advancePayment === 'no') {
-        res.redirect('/lsf-public/v10/TDAE-returning-student/academic-year-details#tab-four')
+        res.redirect('/lsf-public/v10/dashboard')
     }
     else {
         res.redirect('/lsf-public/v10/advanced-payment/declaration')
