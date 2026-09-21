@@ -1,0 +1,160 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Student details
+{% endblock %}
+
+{% block beforeContent %}
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <ol class="nhsuk-breadcrumb__list">
+    <li class="nhsuk-breadcrumb__list-item">
+      <a class="nhsuk-breadcrumb__link" href="current-search-student">
+        Student search
+      </a>
+    </li>
+    <li class="nhsuk-breadcrumb__list-item">
+      <a class="nhsuk-breadcrumb__link" href="student-details">
+        Student details
+      </a>
+    </li>
+    <li class="nhsuk-breadcrumb__list-item">
+      <a class="nhsuk-breadcrumb__link" href="TDAE-AP">
+        Advance payments
+      </a>
+    </li>
+  </ol>
+  <a class="nhsuk-back-link" href="#">
+    <span class="nhsuk-u-visually-hidden">Back to </span>Hospitals
+  </a>
+  </nav>
+{% endblock %}
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+<span class="nhsuk-caption-l" id="studentRef">SSRN0010001 - Emmit Marr</span>
+<h1 class="nhsuk-heading-l">
+	Pending TDAE advance payment
+</h1>
+
+<table class="nhsuk-table">
+
+
+  <tbody class="nhsuk-table__body">
+	 <tr class="nhsuk-table__row">
+      <th scope="row" class="nhsuk-table__header">
+        Advance payment requested
+      </th>
+      <td class="nhsuk-table__cell">
+        Thursday 6 January 2026
+      </td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <th scope="row" class="nhsuk-table__header">
+        Advance amount
+      </th>
+      <td class="nhsuk-table__cell">
+        £200
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>If you put this payment on hold, the student will not receive the advance payment and any approved TDAE claims will be paid directly.</p>
+
+ <div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-hints-hint">
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+      <h2 class="nhsuk-fieldset__heading">
+        Do want want to hold this TDAE advance payment?
+      </h2>
+    </legend>
+
+    <div class="nhsuk-radios" data-module="nhsuk-radios">
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+        <label class="nhsuk-label nhsuk-radios__label" for="contact">
+          Yes
+        </label>
+      </div>
+      <div class="nhsuk-radios__conditional" id="conditional-contact">
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="email">
+            Why is this payment being held?
+          </label>
+          <textarea class="nhsuk-textarea" id="additionalCostsComment" name="additionalCostsComment" rows="8"></textarea>
+          <p id="charactersRemaining" class="nhsuk-hint" aria-hidden="true">500 characters remaining</p>
+          <p id="char-count-screen-reader" class="nhsuk-u-visually-hidden" aria-live="polite">You can enter up to 500 characters</p>
+        </div>
+      </div>
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+        <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+          No
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+  <a class="nhsuk-button" href="/lsf-web/v7/TDAE-AP?AP-hold=true">
+  Save and continue
+  </a>
+  <p><a href="TDAE-AP">Cancel</a><p>
+
+</div>
+</div>
+<script>
+const textarea = document.querySelector('#additionalCostsComment');
+const countRemaining = document.getElementById('charactersRemaining');
+const staticMsg = document.querySelector('#char-count-screen-reader');
+const maxCharacters = 500;
+let timeoutId;
+
+function updateCharacterCount() {
+  const textEntered = textarea.value;
+  const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+  const addition = newLines?.length || 0;
+  const remainingCharacters = maxCharacters - textEntered.length + addition - (newLines?.length || 0);
+
+  if (remainingCharacters >= 0) {
+    countRemaining.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? '' : 's'} remaining`;
+    countRemaining.classList.remove('nhsbsa-count-error-message');
+    countRemaining.classList.add('nhsuk-hint');
+    textarea.classList.remove('nhsuk-textarea--error');
+  } else {
+    countRemaining.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? '' : 's'} too many`;
+    countRemaining.classList.add('nhsbsa-count-error-message');
+    countRemaining.classList.remove('nhsuk-hint');
+    textarea.classList.add('nhsuk-textarea--error');
+  }
+}
+
+function updateScreenReaderMessage() {
+  clearTimeout(timeoutId);
+  timeoutId = setTimeout(() => {
+    const textEntered = textarea.value;
+    const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+    const addition = newLines?.length || 0;
+    const remainingCharacters = maxCharacters - textEntered.length + addition - (newLines?.length || 0);
+    // TO DO ADD FIX FOR 1 CHARACTER
+    if (remainingCharacters < 0) {
+      staticMsg.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? '' : 's'} too many`;
+    } else {
+      staticMsg.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? '' : 's'} remaining`;
+    }
+  }, 500);
+}
+
+textarea.addEventListener('input', () => {
+  updateCharacterCount();
+  updateScreenReaderMessage();
+});
+
+// Update character count if textarea has a value on page load
+window.addEventListener('load', () => {
+  updateCharacterCount();
+  updateScreenReaderMessage();
+});
+</script>
+{% endblock %}

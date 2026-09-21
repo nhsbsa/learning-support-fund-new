@@ -3,332 +3,294 @@
 {% block pageTitle %}
 Student details
 {% endblock %}
-
 {% block beforeContent %}
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <ol class="nhsuk-breadcrumb__list">
+    <li class="nhsuk-breadcrumb__list-item">
+      <a class="nhsuk-breadcrumb__link" href="current-search-student">
+        Student search
+      </a>
+    </li>
+    <li class="nhsuk-breadcrumb__list-item">
+      <a class="nhsuk-breadcrumb__link" href="student-details">
+        Student details
+      </a>
+    </li>
+  </ol>
+  <a class="nhsuk-back-link" href="#">
+    <span class="nhsuk-u-visually-hidden">Back to </span>Hospitals
+  </a>
+  </nav>
+{% endblock %}
+{% block content %}
+<div class="nhsuk-grid-row">
 
-<br>
-<br>
-<a class="nhsuk-back-link" href="/lsf-web/v7/student-details-copy">
-  Back
-</a>
-<br>
-<br>
-<span class="nhsuk-caption-l" id="studentRef">SSRN0010001 - Emmit Marr</span>
-<h1 class="nhsuk-heading-l">
-	View TDAE advance payments
-</h1>
+	<div class="nhsuk-grid-column-full">
 
-<p>Remaining balance:
-	<span>£200</span>
-</p>
-
-<table class="nhsuk-table">
-
-  <thead class="nhsuk-table__head">
-    <tr class="nhsuk-table__row">
-		  <th scope="col" class="nhsuk-table__header">
-   Advance payment date
-      </th>
-      <th scope="col" class="nhsuk-table__header">
-   Advance amount 
-      </th>
-      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
-      Remaining balance
-      </th>
-      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
-       Status
-      </th>
-    </tr>
-  </thead>
-  <tbody class="nhsuk-table__body">
-    <tr class="nhsuk-table__row">
-      <th scope="row" class="nhsuk-table__header">
- 06 January 2026
-      </th>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        £200
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        £32.05
-      </td>
-	  <br>
-	  <br>
-	   <td class="nhsuk-table__cell">
-        <strong class="nhsuk-tag nhsuk-tag--blue">
-         Paid
-        </strong>
-      </td>
-    </tr>
-   
-  </tbody>
-</table>
+    {% if data['AP-hold'] == "true" %}
+    <div class="nhsuk-notification-banner" data-module="nhsuk-notification-banner" role="region" aria-labelledby="nhsuk-notification-banner-title">
+      <div class="nhsuk-notification-banner__header">
+        <h2 class="nhsuk-notification-banner__title" id="nhsuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="nhsuk-notification-banner__content">
+        <p class="nhsuk-notification-banner__heading">
+          The students most recent TDAE advance payment request has been put on hold.
+        </p>
+        <p>Why the advance payment is on hold:<br>
+          This is the reason text provided.</p>
+      </div>
+    </div>
+    {% endif %}
 
 
-<details class="nhsuk-details nhsuk-expander">
-	<summary class="nhsuk-details__summary">
-		<span class="nhsuk-details__summary-text" role="button">View payment details for Tuesday 06 January 2026 </span>
-	</summary>
-	<div class="nhsuk-details__text">
-		<table role="table" class="nhsuk-table-responsive">
-			<caption class="nhsuk-table__caption">Claims reducing the advance balance</caption>
-			
-			
-				<div class="nhsuk-table__body">Amount deducted shows how much was taken off the advance payment for each claim</div>
-				<tr role="row">
+    <span class="nhsuk-caption-l" id="studentRef">SSRN0010001 - Emmit Marr</span>
+    <h1 class="nhsuk-heading-l">
+      Advance payments overview
+    </h1>
 
-					<th role="columnheader" scope="col">Claim date</th>
-					<th role="columnheader" class="nhsuk-table__header--numeric" scope="col">TDAE claim amount</th>
-					<th role="columnheader" class="nhsuk-table__header--numeric" scope="col">Deduction from advance payment</th>
-					<th role="columnheader" scope="col">On hold</th>
-				
-					<th role="columnheader" scope="col">Reset</th>
-				</tr>
-			</thead>
-			<tbody class="nhsuk-table__body">
-				<tr role="row" class="nhsuk-table__row">
-					<td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading"
-							aria-hidden="true">Date </span>Tuesday 9 January 2026</td>
-					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
-							class="nhsuk-table-responsive__heading" aria-hidden="true">Placement cost </span>£8.20
-						<div class="ss-details-desktop">
-							<div class="ss-details-text" style="display: none;">
-								<dl class="nhsuk-summary-list ss-details-summary-list">
-									<div class="nhsuk-summary-list__row">
-										<dt class="nhsuk-summary-list__key ss-details-summary-list__key">Public
-											transport</dt>
-										<dd class="nhsuk-summary-list__value ss-details-summary-list__value">£5</dd>
-									</div>
-									<div class="nhsuk-summary-list__row">
-										<dt class="nhsuk-summary-list__key ss-details-summary-list__key">Driving mileage
-										</dt>
-										<dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3.20</dd>
-									</div>
-								</dl>
-							</div>
-						</div>
-					</td>
-					<td class="ss-details-mobile nhsuk-table__cell nhsuk-table__cell--numeric" style="display: none;">
-						<span class="nhsuk-table-responsive__heading" aria-hidden="true">Public transport </span>£5</td>
-					<td class="ss-details-mobile nhsuk-table__cell nhsuk-table__cell--numeric" style="display: none;">
-						<span class="nhsuk-table-responsive__heading" aria-hidden="true">Driving mileage </span>£3.20
-					</td>
-					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
-							class="nhsuk-table-responsive__heading" aria-hidden="true">University cost </span>£3
-						<div class="ss-details-desktop">
-							<div class="ss-details-text" style="display: none;">
-								<dl class="nhsuk-summary-list ss-details-summary-list">
-									<div class="nhsuk-summary-list__row">
-										<dt class="nhsuk-summary-list__key ss-details-summary-list__key">Lift cost</dt>
-										<dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3</dd>
-									</div>
-								</dl>
-							</div>
-						</div>
-					</td>
-					<td class="ss-details-mobile nhsuk-table__cell nhsuk-table__cell--numeric" style="display: none;">
-						<span class="nhsuk-table-responsive__heading" aria-hidden="true">Cycling </span>£3</td>
-					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
-							class="nhsuk-table-responsive__heading" aria-hidden="true">Held</span>No</td>
-					
-					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
-							class="nhsuk-table-responsive__heading" aria-hidden="true"></span><a href="/lsf-web/v7/reset">Reset</a></td>
-					</td>
-				</tr>
-				<tr role="row" class="nhsuk-table__row">
-					<td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading"
-							aria-hidden="true">Date </span>Monday 8 January 2026</td>
-					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
-							class="nhsuk-table-responsive__heading" aria-hidden="true">Placement cost </span>£8.20
-						<div class="ss-details-desktop">
-							<div class="ss-details-text" style="display: none;">
-								<dl class="nhsuk-summary-list ss-details-summary-list">
-									<div class="nhsuk-summary-list__row">
-										<dt class="nhsuk-summary-list__key ss-details-summary-list__key">Public
-											transport</dt>
-										<dd class="nhsuk-summary-list__value ss-details-summary-list__value">£5</dd>
-									</div>
-									<div class="nhsuk-summary-list__row">
-										<dt class="nhsuk-summary-list__key ss-details-summary-list__key">Driving mileage
-										</dt>
-										<dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3.20</dd>
-									</div>
-								</dl>
-							</div>
-						</div>
-					</td>
-					<td class="ss-details-mobile nhsuk-table__cell nhsuk-table__cell--numeric" style="display: none;">
-						<span class="nhsuk-table-responsive__heading" aria-hidden="true">Public transport </span>£5</td>
-					<td class="ss-details-mobile nhsuk-table__cell nhsuk-table__cell--numeric" style="display: none;">
-						<span class="nhsuk-table-responsive__heading" aria-hidden="true">Driving mileage </span>£3.20
-					</td>
-					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
-							class="nhsuk-table-responsive__heading" aria-hidden="true">University cost </span>£3
-						<div class="ss-details-desktop">
-							<div class="ss-details-text" style="display: none;">
-								<dl class="nhsuk-summary-list ss-details-summary-list">
-									<div class="nhsuk-summary-list__row">
-										<dt class="nhsuk-summary-list__key ss-details-summary-list__key">Lift cost</dt>
-										<dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3</dd>
-									</div>
-								</dl>
-							</div>
-						</div>
-					</td>
-					<td class="ss-details-mobile nhsuk-table__cell nhsuk-table__cell--numeric" style="display: none;">
-						<span class="nhsuk-table-responsive__heading" aria-hidden="true">Cycling </span>£3</td>
-					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
-							class="nhsuk-table-responsive__heading" aria-hidden="true">Held</span>No</td>
-					
-					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
-							class="nhsuk-table-responsive__heading" aria-hidden="true"></span><a href="reset">Reset</a></td>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-</details>
-<table class="nhsuk-table">
+    <!--<div class="nhsuk-inset-text">
+      <p>Remaining balance:
+      	<span>£32.50</span>
+      </p>
+    </div>-->
+    <p>Remaining balance:
+      <span>£32.50</span>
+    </p>
 
-  <thead class="nhsuk-table__head">
-    <tr class="nhsuk-table__row">
-		  <th scope="col" class="nhsuk-table__header">
-   Advance payment date
-      </th>
-      <th scope="col" class="nhsuk-table__header">
-   Advance amount 
-      </th>
-      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
-      Remaining balance
-      </th>
-      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
-       Status
-      </th>
-    </tr>
-  </thead>
-  <tbody class="nhsuk-table__body">
-    <tr class="nhsuk-table__row">
-      <th scope="row" class="nhsuk-table__header">
- 06 January 2026
-      </th>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        £200
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        £32.05
-      </td>
-	  <br>
-	  <br>
-	   <td class="nhsuk-table__cell">
-        <strong class="nhsuk-tag nhsuk-tag--green">
-          Approved
-        </strong>
-      </td>
-    </tr>
-   
-  </tbody>
-</table>
 
-<details class="nhsuk-details nhsuk-expander">
-   							<summary class="nhsuk-details__summary">
-       							<span class="nhsuk-details__summary-text" role="button">View payment details for Tuesday 06 January 2026</span>        							
-      						</summary>
-							<div class="nhsuk-details__text">					  							
-        						<table role="table" class="nhsuk-table-responsive">
-          							<caption class="nhsuk-table__caption">Claims reduducing this advance payment</caption>
-									<div class="nhsuk-table__body">Amount deducted shows how much was taken off the advance payment for each claim</div>
-          							<thead role="rowgroup" class="nhsuk-table__head">
-            						<tr role="row">
-            	  						<th role="columnheader" scope="col">Claim dates </th>            	  					
-        	      						<th role="columnheader" class="nhsuk-table__header--numeric" scope="col">TDAE claim amount</th>
-										<th role="columnheader" class="nhsuk-table__header--numeric" scope="col">Reduction amount</th>
-    	          						<th role="columnheader" scope="col">Held</th>
-    	          						<th role="columnheader" scope="col">Activity number</th>
-		            				</tr>
-        			  				</thead>
-									<tbody class="nhsuk-table__body">
-										<tr role="row" class="nhsuk-table__row">
-              <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Date </span>Monday 8 September 2024</td>
-              <td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Placement cost </span>£8.20
-                <div class="ss-details-desktop">
-                  <div class="ss-details-text" style="display: none;">
-                    <dl class="nhsuk-summary-list ss-details-summary-list">
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Public transport</dt>
-                        <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£5</dd>
-                      </div>
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Driving mileage</dt>
-                        <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3.20</dd>
-                      </div>
-                    </dl>
-                  </div>
-                </div>
+    <h2 class="nhsuk-heading-m">Upcoming advance payment</h2>
+
+    <table class="nhsuk-table nhsuk-table-responsive">
+
+      <thead class="nhsuk-table__head">
+        <tr class="nhsuk-table__row">
+    		  <th scope="col" class="nhsuk-table__header">
+            Advance payment requested
+          </th>
+          <th scope="col" class="nhsuk-table__header">
+           Status
+          </th>
+          <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
+            Advance amount
+          </th>
+          <!-- Removed as not been paid yet <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
+          Remaining balance
+          </th>-->
+          <th scope="col" class="nhsuk-table__header">
+           Action
+          </th>
+        </tr>
+      </thead>
+      <tbody class="nhsuk-table__body">
+        <tr class="nhsuk-table__row">
+          <th scope="row" class="nhsuk-table__header">
+            Thursday 6 January 2026
+          </th>
+          <td class="nhsuk-table__cell">
+            {% if data['AP-hold'] == "true" %}
+            <strong class="nhsuk-tag nhsuk-tag--red">
+             On hold
+            </strong>
+            {% else %}
+             <strong class="nhsuk-tag nhsuk-tag--grey">
+              Pending
+             </strong>
+             {% endif %}
+           </td>
+           <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+             £200
+           </td>
+          <!--<td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+            £32.05
+          </td>-->
+          <td class="nhsuk-table__cell">
+            {% if data['AP-hold'] == "true" %}
+              <a href="TDAE-AP-reset">Reset</a>
+            {% else %}
+              <a href="TDAE-AP-hold">Hold</a>
+            {% endif %}
+           </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <!--<p>No TDAE claim reductions recorded for this advance payment yet.</p>-->
+
+    <!--<details class="nhsuk-details nhsuk-expander">
+    	<summary class="nhsuk-details__summary">
+    		<span class="nhsuk-details__summary-text" role="button">View payment details for Tuesday 6 January 2026 </span>
+    	</summary>
+    	<div class="nhsuk-details__text">
+    		<table role="table" class="nhsuk-table-responsive">
+          <thead class="nhsuk-table__head">
+
+            <caption class="nhsuk-table__caption">Claims reducing the advance balance</caption>
+
+    				<p>Amount deducted shows how much was taken off the advance payment for each claim.</p>
+    				<tr role="row">
+
+    					<th role="columnheader" scope="col">Claim date</th>
+    					<th role="columnheader" class="nhsuk-table__header--numeric" scope="col">TDAE claim amount</th>
+    					<th role="columnheader" class="nhsuk-table__header--numeric" scope="col">Deduction from advance payment</th>
+              <th role="columnheader" scope="col">Activity number</th>
+    					<th role="columnheader" scope="col">Held</th>
+    					<th role="columnheader" scope="col">Action</th>
+    				</tr>
+    			</thead>
+    			<tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+    					<td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading"
+    							aria-hidden="true">Date </span>20 April 2026 to 23 April 2026</td>
+    					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
+    							class="nhsuk-table-responsive__heading" aria-hidden="true">Placement cost </span>£8.20
+    					</td>
+    					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
+    							class="nhsuk-table-responsive__heading" aria-hidden="true">University cost </span>£8.20
+    					</td>
+              <td class="nhsuk-table__cell"><span
+    							class="nhsuk-table-responsive__heading" aria-hidden="true"></span><a href="#">2381</a>
               </td>
-              <td class="ss-details-mobile nhsuk-table__cell nhsuk-table__cell--numeric" style="display: none;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Public transport </span>£5</td>
-              <td class="ss-details-mobile nhsuk-table__cell nhsuk-table__cell--numeric" style="display: none;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Driving mileage </span>£3.20</td>
-              <td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span class="nhsuk-table-responsive__heading" aria-hidden="true">University cost </span>£3
-                <div class="ss-details-desktop">
-                  <div class="ss-details-text" style="display: none;">
-                    <dl class="nhsuk-summary-list ss-details-summary-list">
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Lift cost</dt>
-                        <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3</dd>
-                      </div>
-                    </dl>
-                  </div>
-                </div>
+    					<td class="nhsuk-table__cell"><span
+    							class="nhsuk-table-responsive__heading" aria-hidden="true">Held</span>No</td>
+    					<td class="nhsuk-table__cell"><span
+    							class="nhsuk-table-responsive__heading" aria-hidden="true"></span><a href="/lsf-web/v7/reset">Reset</a>
               </td>
-              <td class="ss-details-mobile nhsuk-table__cell nhsuk-table__cell--numeric" style="display: none;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Cycling </span>£3</td>
-              <td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span class="nhsuk-table-responsive__heading" aria-hidden="true">held</span>No</td>
-              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-                <nobr><span class="nhsuk-table-responsive__heading" aria-hidden="true">Actions</span>6767</nobr>
+    				</tr>
+            <tr role="row" class="nhsuk-table__row">
+    					<td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading"
+    							aria-hidden="true">Date </span>20 April 2026 to 23 April 2026</td>
+    					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
+    							class="nhsuk-table-responsive__heading" aria-hidden="true">Placement cost </span>£8.20
+    					</td>
+    					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
+    							class="nhsuk-table-responsive__heading" aria-hidden="true">University cost </span>£8.20
+    					</td>
+              <td class="nhsuk-table__cell"><span
+    							class="nhsuk-table-responsive__heading" aria-hidden="true"></span><a href="#">2382</a>
               </td>
-            </tr>
-			<tr role="row" class="nhsuk-table__row">
-              <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Date </span>Monday 8 September 2024</td>
-              <td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Placement cost </span>£8.20
-                <div class="ss-details-desktop">
-                  <div class="ss-details-text" style="display: none;">
-                    <dl class="nhsuk-summary-list ss-details-summary-list">
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Public transport</dt>
-                        <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£5</dd>
-                      </div>
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Driving mileage</dt>
-                        <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3.20</dd>
-                      </div>
-                    </dl>
-                  </div>
-                </div>
+    					<td class="nhsuk-table__cell"><span
+    							class="nhsuk-table-responsive__heading" aria-hidden="true">Held</span>No</td>
+    					<td class="nhsuk-table__cell"><span
+    							class="nhsuk-table-responsive__heading" aria-hidden="true"></span><a href="/lsf-web/v7/reset">Reset</a>
               </td>
-              <td class="ss-details-mobile nhsuk-table__cell nhsuk-table__cell--numeric" style="display: none;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Public transport </span>£5</td>
-              <td class="ss-details-mobile nhsuk-table__cell nhsuk-table__cell--numeric" style="display: none;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Driving mileage </span>£3.20</td>
-              <td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span class="nhsuk-table-responsive__heading" aria-hidden="true">University cost </span>£3
-                <div class="ss-details-desktop">
-                  <div class="ss-details-text" style="display: none;">
-                    <dl class="nhsuk-summary-list ss-details-summary-list">
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Lift cost</dt>
-                        <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3</dd>
-                      </div>
-                    </dl>
-                  </div>
-                </div>
+    				</tr>
+    			</tbody>
+    		</table>
+    	</div>
+    </details>-->
+
+    <h2 class="nhsuk-heading-m">Advance payments</h2>
+
+    <table class="nhsuk-table">
+
+      <thead class="nhsuk-table__head">
+        <tr class="nhsuk-table__row">
+    		  <th scope="col" class="nhsuk-table__header">
+            Advance payment Requested
+          </th>
+          <th scope="col" class="nhsuk-table__header">
+           Status
+          </th>
+          <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
+            Advance amount
+          </th>
+          <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
+           Remaining balance
+          </th>
+        </tr>
+      </thead>
+      <tbody class="nhsuk-table__body">
+        <tr class="nhsuk-table__row">
+          <th scope="row" class="nhsuk-table__header">
+            Wednesday 15 December 2025
+          </th>
+          <td class="nhsuk-table__cell">
+             <strong class="nhsuk-tag nhsuk-tag--blue">
+               Paid
+             </strong>
+           </td>
+           <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+             £200
+           </td>
+          <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+            £32.05
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <div class="nhsuk-inset-text">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+      <p>The remaining balance of this advance payment has been deducted from their Term 3 Training grant payment.</p>
+    </div>
+
+
+    <details class="nhsuk-details nhsuk-expander">
+    	<summary class="nhsuk-details__summary">
+    		<span class="nhsuk-details__summary-text" role="button">Claims reducing this advance payment</span>
+    	</summary>
+    	<div class="nhsuk-details__text">
+    		<table role="table" class="nhsuk-table-responsive">
+          <thead class="nhsuk-table__head">
+
+            <!--<caption class="nhsuk-table__caption">Claims reducing the advance balance</caption>-->
+
+    				<p>Amount deducted shows how much was taken off the advance payment for each claim.</p>
+    				<tr role="row">
+
+    					<th role="columnheader" scope="col">Claim date</th>
+    					<th role="columnheader" class="nhsuk-table__header--numeric" scope="col">TDAE claim amount</th>
+    					<th role="columnheader" class="nhsuk-table__header--numeric" scope="col">Deduction from advance payment</th>
+              <th role="columnheader" scope="col">Activity</th>
+    					<th role="columnheader" scope="col">Held</th>
+    					<th role="columnheader" scope="col">Action</th>
+    				</tr>
+    			</thead>
+    			<tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+    					<td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading"
+    							aria-hidden="true">Date </span>25 April 2026 to 30 April 2026</td>
+    					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
+    							class="nhsuk-table-responsive__heading" aria-hidden="true">Placement cost </span>£159.75
+    					</td>
+    					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
+    							class="nhsuk-table-responsive__heading" aria-hidden="true">University cost </span>£159.75
+    					</td>
+              <td class="nhsuk-table__cell"><span
+    							class="nhsuk-table-responsive__heading" aria-hidden="true"></span><a href="#">2381</a>
               </td>
-              <td class="ss-details-mobile nhsuk-table__cell nhsuk-table__cell--numeric" style="display: none;"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Cycling </span>£3</td>
-              <td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span class="nhsuk-table-responsive__heading" aria-hidden="true">held</span>No</td>
-              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-                <nobr><span class="nhsuk-table-responsive__heading" aria-hidden="true">Actions </span>2345</nobr>
+    					<td class="nhsuk-table__cell"><span
+    							class="nhsuk-table-responsive__heading" aria-hidden="true">Held</span>No</td>
+    					<td class="nhsuk-table__cell"><span
+    							class="nhsuk-table-responsive__heading" aria-hidden="true"></span><a href="/lsf-web/v7/TDAE-AP-claim-hold">Hold</a>
               </td>
-            </tr>					
-									</tbody>
-								</table>	
-							</div>
-						</details>	
+    				</tr>
+            <tr role="row" class="nhsuk-table__row">
+    					<td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading"
+    							aria-hidden="true">Date </span>20 April 2026 to 23 April 2026</td>
+    					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
+    							class="nhsuk-table-responsive__heading" aria-hidden="true">Placement cost </span>£8.20
+    					</td>
+    					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
+    							class="nhsuk-table-responsive__heading" aria-hidden="true">University cost </span>£8.20
+    					</td>
+              <td class="nhsuk-table__cell"><span
+    							class="nhsuk-table-responsive__heading" aria-hidden="true"></span><a href="#">2382</a>
+              </td>
+    					<td class="nhsuk-table__cell"><span
+    							class="nhsuk-table-responsive__heading" aria-hidden="true">Held</span>Yes</td>
+    					<td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading" aria-hidden="true"></span><a href="/lsf-web/v7/TDAE-AP-claim-reset">Reset</a>
+              </td>
+    				</tr>
+    			</tbody>
+    		</table>
+    	</div>
+    </details>
+  </div>
 </div>
-</div>
-
-
-
 {% endblock %}

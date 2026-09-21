@@ -30,57 +30,52 @@ Student details
 {% endblock %}
 {% block content %}
 <div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-two-thirds"
+  <div class="nhsuk-grid-column-two-thirds">
+
+  <span class="nhsuk-caption-l" id="studentRef">SSRN0010001 - Emmit Marr</span>
+  <h1 class="nhsuk-heading-l">
+  	This TDAE claim deduction is on hold
+  </h1>
+
+  <dl class="nhsuk-summary-list">
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">Claim dates</dt>
+			<dd class="nhsuk-summary-list__value">
+				<div id="claimDates">15 April 2026 to 17 April 2026</div>
+			</dd>
+		</div>
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">TDAE claim amount</dt>
+			<dd class="nhsuk-summary-list__value">
+				<div id="claimAmount">£39.99</div>
+			</dd>
+		</div>
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">Deduction from advance payment</dt>
+			<dd class="nhsuk-summary-list__value">
+				<div id="reductionAmount">£39.99</div>
+			</dd>
+		</div>
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">Held</dt>
+			<dd class="nhsuk-summary-list__value">
+				<div id="held">Yes</div>
+			</dd>
+		</div>
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">Remaining advance payment balance</dt>
+			<dd class="nhsuk-summary-list__value">
+				<div id="reductionAmount">£39.99</div>
+			</dd>
+		</div>
+	</dl>
 
 
 
-
-<br>
-<span class="nhsuk-caption-l" id="studentRef">SSRN0010001 - Emmit Marr</span>
-<h1 class="nhsuk-heading-l">
-	This payment is on hold
-</h1>
-
-<table class="nhsuk-table">
-
-
-  <tbody class="nhsuk-table__body">
-	 <tr class="nhsuk-table__row">
-      <th scope="row" class="nhsuk-table__header">
-        Claim dates
-      </th>
-      <td class="nhsuk-table__cell">
-09 January 2026 to 10 January 2026
-      </td>
-    </tr>
-    <tr class="nhsuk-table__row">
-      <th scope="row" class="nhsuk-table__header">
-      TDAE claim amount
-      </th>
-      <td class="nhsuk-table__cell">
-£50
-      </td>
-    </tr>
-    <tr class="nhsuk-table__row">
-      <th scope="row" class="nhsuk-table__header">
-     Deduction from advance payment
-      </th>
-      <td class="nhsuk-table__cell">
-     £200
-      </td>
-    </tr>
-    <tr class="nhsuk-table__row">
-      <th scope="row" class="nhsuk-table__header">
-Remaining advance payment balance
-      </th>
-      <td class="nhsuk-table__cell">
-        £0
-      </td>
-    </tr>
-  </tbody>
-</table>
-<p>This deduction is currently on hold and is not reducing the student's advance payment.</p>
-<p>If you put this deduction on hold, £200 will be added back to the remaining balance.</p>
+	<div>
+		<p>This deduction is currently on hold and not reducing the student's advance payment.</p>
+		<p>If you reset this deduction, <span>£39.99</span> will be taken from the remaining advance payment balance.</p>
+	</div>
 
  <div class="nhsuk-form-group">
   <fieldset class="nhsuk-fieldset" aria-describedby="example-hints-hint">
@@ -112,6 +107,7 @@ Remaining advance payment balance
   <a class="nhsuk-button" href="/lsf-web/v7/TDAE-AP">
   Save and continue
   </a>
+  <p><a href="TDAE-AP">Cancel</a><p>
 
 	  <style>
 
