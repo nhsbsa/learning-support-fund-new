@@ -34,7 +34,7 @@ Student details
 
     <span class="nhsuk-caption-l" id="studentRef">SSRN0010001 - Emmit Marr</span>
     <h1 class="nhsuk-heading-l">
-      TDAE advance payment is currently pending
+      TDAE advance payment is currently on hold
     </h1>
 
     <table class="nhsuk-table">
@@ -60,13 +60,13 @@ Student details
       </tbody>
     </table>
 
-    <p>If you put this payment on hold, the student will not receive the advance payment and any approved TDAE claims will be paid directly.</p>
+    <p>If you reset this payment, the student will receive the advance payment and any approved TDAE claims will be deducted from it.</p>
 
  <div class="nhsuk-form-group">
   <fieldset class="nhsuk-fieldset" aria-describedby="example-hints-hint">
     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
       <h2 class="nhsuk-fieldset__heading">
-        Do you want to put this advance payment on hold?
+        Do you want to reset this advance payment?
       </h2>
     </legend>
 
@@ -74,13 +74,13 @@ Student details
       <div class="nhsuk-radios__item">
         <input class="nhsuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
         <label class="nhsuk-label nhsuk-radios__label" for="contact">
-          Yes, put it on hold
+          Yes, take this payment off hold
         </label>
       </div>
       <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact">
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="email">
-            Explain why this advance payment is on hold
+            Explain why this advance payment is being reset
           </label>
           <textarea class="nhsuk-textarea" id="additionalCostsComment" name="additionalCostsComment" rows="8"></textarea>
           <p id="charactersRemaining" class="nhsuk-hint" aria-hidden="true">500 characters remaining</p>
@@ -90,14 +90,14 @@ Student details
       <div class="nhsuk-radios__item">
         <input class="nhsuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
         <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
-          No, do not put it on hold
+          No, leave it on hold
         </label>
       </div>
     </div>
 
   </fieldset>
 </div>
-  <a class="nhsuk-button" href="/lsf-web/v7/TDAE-AP?AP-hold=true">
+  <a class="nhsuk-button" href="/lsf-web/v7/TDAE-AP?AP-hold=past">
   Submit
   </a>
 
