@@ -27,7 +27,7 @@ Student details
 
 	<div class="nhsuk-grid-column-full">
 
-    {% if data['AP-hold'] == "true" %}
+    <!-- Hold removed to be Cancelled instead {% if data['AP-hold'] == "true" %}
     <div class="nhsuk-notification-banner" data-module="nhsuk-notification-banner" role="region" aria-labelledby="nhsuk-notification-banner-title">
       <div class="nhsuk-notification-banner__header">
         <h2 class="nhsuk-notification-banner__title" id="nhsuk-notification-banner-title">
@@ -42,7 +42,7 @@ Student details
           This is the reason text provided.</p>
       </div>
     </div>
-    {% endif %}
+    {% endif %}-->
 
 
     <span class="nhsuk-caption-l" id="studentRef">SSRN0010001 - Emmit Marr</span>
@@ -50,63 +50,68 @@ Student details
       View TDAE advance payments
     </h1>
 
-    <h2 class="nhsuk-heading-m">Upcoming advance payment</h2>
+    {% if data['AP-cancel'] != "true" %}
+      <h2 class="nhsuk-heading-m">Upcoming advance payment</h2>
 
-    <table class="nhsuk-table nhsuk-table-responsive">
+      <table class="nhsuk-table nhsuk-table-responsive">
 
-      <thead class="nhsuk-table__head">
-        <tr class="nhsuk-table__row">
-    		  <th scope="col" class="nhsuk-table__header">
-            Advance payment requested
-          </th>
-          <th scope="col" class="nhsuk-table__header">
-           Status
-          </th>
-          <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
-            Advance amount
-          </th>
-          <!-- Removed as not been paid yet <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
-          Remaining balance
-          </th>-->
-          <th scope="col" class="nhsuk-table__header">
-           Action
-          </th>
-        </tr>
-      </thead>
-      <tbody class="nhsuk-table__body">
-        <tr class="nhsuk-table__row">
-          <th scope="row" class="nhsuk-table__header">
-            6 January 2026
-          </th>
-          <td class="nhsuk-table__cell">
-            {% if data['AP-hold'] == "true" %}
-            <strong class="nhsuk-tag nhsuk-tag--red">
-             On hold
-            </strong>
-            {% else %}
-             <strong class="nhsuk-tag nhsuk-tag--grey">
-              Pending
-             </strong>
-             {% endif %}
-           </td>
-           <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-             £200
-           </td>
-          <!--<td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-            £32.05
-          </td>-->
-          <td class="nhsuk-table__cell">
-            {% if data['AP-hold'] == "true" %}
-              <a href="TDAE-AP-reset">Reset</a>
-            {% else %}
-              <a href="TDAE-AP-hold">Hold</a>
-            {% endif %}
-           </td>
-        </tr>
+        <thead class="nhsuk-table__head">
+          <tr class="nhsuk-table__row">
+      		  <th scope="col" class="nhsuk-table__header">
+              Advance payment requested
+            </th>
+            <th scope="col" class="nhsuk-table__header">
+             Status
+            </th>
+            <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
+              Advance amount
+            </th>
+            <!-- Removed as not been paid yet <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
+            Remaining balance
+            </th>-->
+            <th scope="col" class="nhsuk-table__header">
+             Action
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr class="nhsuk-table__row">
+            <th scope="row" class="nhsuk-table__header">
+              6 January 2026
+            </th>
+            <td class="nhsuk-table__cell">
+              {% if data['AP-hold'] == "true" %}
+              <strong class="nhsuk-tag nhsuk-tag--red">
+               On hold
+              </strong>
+              {% else %}
+               <strong class="nhsuk-tag nhsuk-tag--grey">
+                Pending
+               </strong>
+               {% endif %}
+             </td>
+             <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+               £200
+             </td>
+            <!--<td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+              £32.05
+            </td>-->
+            <td class="nhsuk-table__cell">
+              <!-- Hold removed to be Cancelled instead
+              {% if data['AP-hold'] == "true" %}
+                <a href="TDAE-AP-reset">Reset</a>
+              {% else %}
+                <a href="TDAE-AP-hold">Hold</a>
+              {% endif %}-->
+              <a href="TDAE-AP-cancel">Cancel</a>
+             </td>
+          </tr>
 
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+    {% endif %}
 
+    <!-- Hold removed to be Cancelled instead
     {% if data['AP-hold'] == "true" or data['AP-hold'] == "past" %}
     <details class="nhsuk-details">
       <summary class="nhsuk-details__summary">
@@ -140,8 +145,11 @@ Student details
       </div>
     </details>
     {% endif %}
+    -->
 
     <h2 class="nhsuk-heading-m">Advance payments</h2>
+
+    <p>Overall balance: £32.05</p>
 
     <div class="nhsuk-card">
       <div class="nhsuk-card__content">
@@ -170,7 +178,7 @@ Student details
               Remaining balance
             </dt>
             <dd class="nhsuk-summary-list__value">
-              £32.05
+              £0
             </dd>
           </div>
         </dl>
@@ -237,7 +245,7 @@ Student details
 
         <div class="nhsuk-inset-text">
           <span class="nhsuk-u-visually-hidden">Information: </span>
-          <p>The remaining balance for this advance payment has been deducted from the Term 3 Training Grant payment</p>
+          <p>The remaining balance of £32.05 for this advance payment has been deducted from the Term 3 Training Grant payment.</p>
         </div>
 
       </div>
@@ -337,10 +345,51 @@ Student details
 
       </div>
     </div>
+    {% if data['AP-cancel'] == "true" %}
+    <details class="nhsuk-details nhsuk-expander">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Cancelled advance payments
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <table class="nhsuk-table nhsuk-table-responsive">
 
-    <p>'Amount taken from advance payment' shows how much of each TDAE claim was taken from the advance payment.</p>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th scope="col" class="nhsuk-table__header">
+                Advance payment requested
+              </th>
+              <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
+               Advance amount
+              </th>
+              <th scope="col" class="nhsuk-table__header">
+                Reason for cancellation
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <th scope="row" class="nhsuk-table__header">
+                6 January 2026
+              </th>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                £200
+               </td>
+               <td class="nhsuk-table__cell">
+                This is the reason why the advance payment has been put on hold this message can be up to 500 characters long this is 133 characters.
+               </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+    {% endif %}
+    <!-- Only to be displayed to Students
+      <p>'Amount taken from advance payment' shows how much of each TDAE claim was taken from the advance payment.</p>
 
-    <p>If the TDAE claim is more than the amount of advance payment you have remaining, the rest will be paid into the student's bank account.</p>
+      <p>If the TDAE claim is more than the amount of advance payment you have remaining, the rest will be paid into the student's bank account.</p>
+    -->
 
   </div>
 </div>
