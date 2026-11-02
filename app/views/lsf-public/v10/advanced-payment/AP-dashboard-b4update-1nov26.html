@@ -1,0 +1,252 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Academic year September 2023
+{% endblock %}
+{% block beforeContent %}
+  {{ backLink({
+      "href": "../dashboard",
+      "text": "Go to dashboard"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-heading-l">Travel and Dual Accommodation Expenses (TDAE) advance payment</h1>
+  </div>
+
+</div>
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {% if data['ap'] != 'top-up' and data['ap'] != 'end' %}
+    <h2 class="nhsuk-heading-m">Requested advance payment</h2>
+
+    <div class="nhsuk-card">
+      <div class="nhsuk-card__content">
+        <table class="nhsuk-table nhsuk-table-responsive">
+
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+        		  <th scope="col" class="nhsuk-table__header">
+                Advance payment requested
+              </th>
+              <th scope="col" class="nhsuk-table__header">
+               Status
+              </th>
+              <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
+                Advance amount
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <th scope="row" class="nhsuk-table__header">
+                6 January 2026
+              </th>
+              <td class="nhsuk-table__cell">
+                 <strong class="nhsuk-tag nhsuk-tag--grey">
+                  Pending
+                 </strong>
+               </td>
+               <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                 £200
+               </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {% endif %}
+    {% if data['ap'] == 'top-up' %}
+      <h2 class="nhsuk-heading-m">Advance payment remaining: £32.05</h2>
+
+      <h3 class="nhsuk-heading-s">Request another advance payment</h3>
+
+      <p>You have £50 or less remaining. You can now request another advance payment.</p>
+
+      <a class="nhsuk-button" href="../advanced-payment/start">Request advance payment</a>
+      <!--<h4 class="nhsuk-heading-s">Advance payments requested</h4>-->
+
+      <h2 class="nhsuk-heading-m">Advance payments</h2>
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <!--<h2 class="nhsuk-card__heading nhsuk-heading-m">
+            Karen Francis
+          </h2>-->
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Advance payment Requested
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                15 December 2025
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Advance amount
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                £200
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Remaining balance
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                £32.05
+              </dd>
+            </div>
+          </dl>
+
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View TDAE claims reducing this advance payment
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <table role="table" class="nhsuk-table-responsive">
+                <thead class="nhsuk-table__head">
+          				<tr role="row">
+          					<th role="columnheader" scope="col">Claim date</th>
+          					<th role="columnheader" class="nhsuk-table__header--numeric" scope="col">TDAE claim amount</th>
+          					<th role="columnheader" class="nhsuk-table__header--numeric" scope="col">Amount taken from advance payment</th>
+          				</tr>
+          			</thead>
+          			<tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+          					<td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading"
+          							aria-hidden="true">Date </span>27 January to 3 February 2026</td>
+          					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
+          							class="nhsuk-table-responsive__heading" aria-hidden="true">Placement cost </span>£159.75
+          					</td>
+          					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
+          							class="nhsuk-table-responsive__heading" aria-hidden="true">University cost </span>£159.75
+          					</td>
+          				</tr>
+                  <tr role="row" class="nhsuk-table__row">
+          					<td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading"
+          							aria-hidden="true">Date </span>25 December 2025 to 1 January 2026</td>
+          					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
+          							class="nhsuk-table-responsive__heading" aria-hidden="true">Placement cost </span>£8.20
+          					</td>
+          					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
+          							class="nhsuk-table-responsive__heading" aria-hidden="true">University cost </span>£8.20
+          					</td>
+          				</tr>
+          			</tbody>
+          		</table>
+            </div>
+          </details>
+
+          <!--<div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>The remaining balance of £32.05 for this advance payment has been deducted from the Term 3 Training Grant payment.</p>
+          </div>-->
+
+          <p>'Amount taken from advance payment' shows how much of each TDAE claim was taken from your advance payment.</p>
+
+          <p>If your TDAE claim is more than the amount of advance payment you have remaining, the rest will be paid into your bank account.</p>
+        </div>
+      </div>
+    {% elseif data['ap'] == 'end' %}
+      <h2 class="nhsuk-heading-m">Advance payment remaining: £0</h2>
+
+      <h2 class="nhsuk-heading-m">Advance payments</h2>
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <!--<h2 class="nhsuk-card__heading nhsuk-heading-m">
+            Karen Francis
+          </h2>-->
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Advance payment Requested
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                15 December 2025
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Advance amount
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                £200
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Remaining balance
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                £0
+              </dd>
+            </div>
+          </dl>
+
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View TDAE claims reducing this advance payment
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <table role="table" class="nhsuk-table-responsive">
+                <thead class="nhsuk-table__head">
+          				<tr role="row">
+          					<th role="columnheader" scope="col">Claim date</th>
+          					<th role="columnheader" class="nhsuk-table__header--numeric" scope="col">TDAE claim amount</th>
+          					<th role="columnheader" class="nhsuk-table__header--numeric" scope="col">Amount taken from advance payment</th>
+          				</tr>
+          			</thead>
+          			<tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+          					<td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading"
+          							aria-hidden="true">Date </span>27 January to 3 February 2026</td>
+          					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
+          							class="nhsuk-table-responsive__heading" aria-hidden="true">Placement cost </span>£159.75
+          					</td>
+          					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
+          							class="nhsuk-table-responsive__heading" aria-hidden="true">University cost </span>£159.75
+          					</td>
+          				</tr>
+                  <tr role="row" class="nhsuk-table__row">
+          					<td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading"
+          							aria-hidden="true">Date </span>25 December 2025 to 1 January 2026</td>
+          					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
+          							class="nhsuk-table-responsive__heading" aria-hidden="true">Placement cost </span>£8.20
+          					</td>
+          					<td class="nhsuk-table__cell nhsuk-table__cell--numeric"><span
+          							class="nhsuk-table-responsive__heading" aria-hidden="true">University cost </span>£8.20
+          					</td>
+          				</tr>
+          			</tbody>
+          		</table>
+            </div>
+          </details>
+
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>The remaining balance of £32.05 for this advance payment has been deducted from the Term 3 Training Grant payment.</p>
+          </div>
+
+          <p>'Amount taken from advance payment' shows how much of each TDAE claim was taken from your advance payment.</p>
+
+          <p>If your TDAE claim is more than the amount of advance payment you have remaining, the rest will be paid into your bank account.</p>
+        </div>
+      </div>
+    {% endif %}
+    <p><a href="../dashboard">Return to dashboard</a></p>
+
+  </div>
+</div>
+{% endblock %}

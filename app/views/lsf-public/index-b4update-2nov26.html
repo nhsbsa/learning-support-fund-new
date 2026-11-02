@@ -1,0 +1,197 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+
+<!-- Variables -->
+{% set loggedIn = false %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Learning Support Fund
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <!-- Change the page title here -->
+    <h1 class="nhsuk-heading-xl"><span class="nhsuk-caption-xl nhsuk-caption--bottom">Learning Support Fund</span>Public
+    </h1>
+    <!-- Add your content here -->
+    <!-- Styles and components can be found at https://beta.nhs.uk/service-manual/styles-components-patterns -->
+    <p class="nhsuk-body-l">An online system accessed by students.</p>
+
+    <hr>
+
+
+    <!-- VERSION 10 -->
+
+    <div>
+      <h2 class="nhsuk-heading-l">Version 10</h2>
+
+      <div class="nhsuk-form-group">
+        <div class="nhsuk-u-margin-right-4" style="float: left">
+          <label class="nhsuk-label" for="v10-start-point">
+            Start at
+          </label>
+          <select class="nhsuk-select" id="v10-start-point" name="v10-start-point">
+            <option value="v10/start-screen">Register</option>
+            <option value="v10/sign-in">Sign in</option>
+            <option value="v10/dashboard" selected>Dashboard</option>
+            <option value="v10/academic-year-details?questionnaire-completed=Completed">Training grant application
+            </option>
+            <option value="v10/TDAE-task-list-full">TDAE task list (all costs)</option>
+          </select>
+        </div>
+
+        <button class="nhsuk-button" style="margin-top: 12px" type="button" onclick="goToV10Start()">
+          Start prototype
+        </button>
+      </div>
+    </div>
+
+    <h3 class="nhsuk-heading-s">Work completed</h3>
+
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          TDAE Advanced Payment - initial prototype
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p><b><a href="https://miro.com/app/board/uXjVHOaJNQc=/?moveToWidget=3458764674386836393&cot=14">Miro board link</a></b></p>
+        <p><b>Links to new journeys / pages:</b></p>
+        <ul>
+          <!-- Option D pages
+          <li><a href="v10/dashboard?ap=null">Dashboard (can request advance payment)</a> - two new notifications for advance payment being available and top up being available</li>
+          <li><a href="v10/dashboard?ap=top-up">Dashboard (top-up available)</a> - two new notifications for advance payment being available and top up being available</li>
+          <li><a href="v10/TDAE-returning-student/academic-year-details?ap=new#tab-four">Academic year September 2024 details</a> - New tab added advance payment available</li>
+          <li><a href="v10/TDAE-returning-student/academic-year-details?ap=requested#tab-four">Academic year September 2024 details</a> - New tab added advance payment requested</li>
+          <li><a href="v10/TDAE-returning-student/academic-year-details?ap=top-up#tab-four">Academic year September 2024 details</a> - New tab added advance payment can be topped-up</li>
+          <li><a href="v10/advanced-payment/start?claim-TDAE=travel">Request payment journey</a> - Requesting an advanced payment start journey (travel only TDAE claim submitted)</li>
+          <li><a href="v10/advanced-payment/start?claim-TDAE=accomm">Request payment journey</a> - Requesting an advanced payment start journey (accommodation only TDAE claim submitted)</li>
+          <li><a href="v10/advanced-payment/start?claim-TDAE=travelaccomm">Request payment journey</a> - Requesting an advanced payment start journey (travel and accommodation TDAE claim submitted)</li>
+          -->
+          <li><a href="v10/advanced-payment/email-TDAE-claim-approved-AP-available">Email</a> - TDAE claim approved student can request an advance payment for first time</li>
+          <li><a href="v10/advanced-payment/email-TDAE-claim-approved-AP-top-up">Email</a> - TDAE claim approved and balance is below £50 so can request an advance payment again</li>
+          <li><a href="v10/advanced-payment/email-term-3-payment-deduction">Email</a> - Advance warning of final year term 3 deduction</li>
+          <li><a href="v10/advanced-payment/email-term-3-payment-confirmed">Email</a> - Term 3 payment confirmed with TDAE advance payment deducted</li>
+          <li><a href="v10/dashboard?ap=null">Dashboard</a> - Student can request a payment for first time</li>
+          <li><a href="v10/dashboard?ap=requested">Dashboard</a> - Student has requested a payment and balance is above £50</li>
+          <li><a href="v10/dashboard?ap=top-up">Dashboard</a> - Student has requested a payment and balance is below £50 so can request again</li>
+          <li><a href="v10/advanced-payment/AP-dashboard?ap=null&claim-TDAE=travel">Request payment journey</a> - Requesting an advanced payment start journey (travel only TDAE claim submitted)</li>
+          <li><a href="v10/advanced-payment/AP-dashboard?ap=null&claim-TDAE=accomm">Request payment journey</a> - Requesting an advanced payment start journey (accommodation only TDAE claim submitted)</li>
+          <li><a href="v10/advanced-payment/AP-dashboard?ap=null&claim-TDAE=travelaccomm">Request payment journey</a> - Requesting an advanced payment start journey (travel and accommodation TDAE claim submitted)</li>
+          <li><a href="v10/advanced-payment/AP-dashboard?ap=requested">TDAE Advanced payment page</a> - payment requested</li>
+          <li><a href="v10/advanced-payment/AP-dashboard?ap=top-up">TDAE Advanced payment page</a> - payment can be topped-up</li>
+        </ul>
+
+
+      </div>
+    </details>
+
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Ticket 3724: Preventing changes to or from an Employment Based (EB) course
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p><b>Jira ticket: <a href="https://bsa2468.atlassian.net/browse/P3LCL-3724">3724</a></b></p>
+        <p><b>Links to new journeys / pages:</b></p>
+        <ul>
+          <li><a href="v10/academic-year-details?onEBcourse=No&onlyEBcoursesAvailable=Yes">Update course details</a> -
+            student IS NOT currently on an EB course,
+            and only EB courses are available</li>
+          <li><a href="v10/academic-year-details?onEBcourse=No&onlyEBcoursesAvailable=No">Update course details</a> -
+            student IS NOT currently on an EB course, and some non-EB courses are available
+          </li>
+          <li><a href="v10/academic-year-details?onEBcourse=Yes">Update course details</a> -
+            student IS currently on an EB course</li>
+        </ul>
+
+
+      </div>
+    </details>
+     <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Ticket 3725: Preventing changes to or from an Employment Based (EB) course
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p><b>Jira tickets:</p>
+         <ul>
+          <li><a href="https://bsa2468.atlassian.net/browse/P3LCL-3725">3725</a></li>
+          <li><a href="https://bsa2468.atlassian.net/browse/SSCRD-362">362</a>
+
+          </li>
+
+        </ul>
+
+        <p><b>Links to new journeys / pages:</b></p>
+        <ul>
+          <li><a href="v10/new-employment2.html">Is an employer providing any financial support?</a> -
+           If student selects that they are on an EB course they will now see this screen</li>
+          <li><a href="v10/new-employment-kickout">a new kick out screen if user selects yes to being provided financial support</a> -
+
+          </li>
+
+        </ul>
+
+
+      </div>
+    </details>
+
+    <hr style="margin-top: 60px; margin-bottom: 60px">
+
+
+
+
+    <!-- VERSIONS 1-9 -->
+
+    <div>
+      <h2 class="nhsuk-heading-l">Versions 1-9</h2>
+      <p>These can be found in the old LSF prototype.</p>
+
+      <a class="nhsuk-action-link" href="https://learning-support-fund.herokuapp.com/">
+        <svg class="nhsuk-icon nhsuk-icon--arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          width="16" height="16" focusable="false" aria-hidden="true">
+          <path
+            d="M12 2a10 10 0 0 0-10 9h11.7l-4-4a1 1 0 0 1 1.5-1.4l5.6 5.7a1 1 0 0 1 0 1.4l-5.6 5.7a1 1 0 0 1-1.5 0 1 1 0 0 1 0-1.4l4-4H2A10 10 0 1 0 12 2z" />
+        </svg>
+        <span class="nhsuk-action-link__text">Visit old LSF prototype</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function goToV10Start() {
+    var select = document.getElementById('v10-start-point');
+    if (select && select.value) {
+      window.location.href = select.value;
+    }
+  }
+</script>
+{% endblock %}
